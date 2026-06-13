@@ -1,0 +1,135 @@
+---
+import '../../styles/global.css';
+
+const whatsappNumber = '221774797157';
+const whatsappText = encodeURIComponent(
+  'Bonjour Atelier Faye Auto, ma voiture ne démarre pas. Je vous envoie une photo ou une courte vidéo pour avoir votre avis.'
+);
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+
+const title = 'Ma voiture ne démarre pas : que vérifier ? | Atelier Faye Auto, Dakar';
+const description =
+  'Votre voiture ne démarre pas à Dakar ? 5 vérifications simples avant d’appeler un mécanicien, et les causes les plus fréquentes. Atelier Faye Auto, Dakar.';
+
+const schema = {
+  '@context': 'https://schema.org', '@type': 'Article',
+  headline: 'Ma voiture ne démarre pas : 5 vérifications avant d’appeler',
+  description, inLanguage: 'fr',
+  author: { '@type': 'Organization', name: 'Atelier Faye Auto' },
+  publisher: {
+    '@type': 'AutoRepair', name: 'Atelier Faye Auto',
+    address: { '@type': 'PostalAddress', addressLocality: 'Dakar', addressCountry: 'SN' },
+    areaServed: 'Dakar', telephone: '+221774797157',
+  },
+};
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/conseil-demarrage.webp" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Comment savoir si le problème vient de la batterie ou du démarreur ?', acceptedAnswer: { '@type': 'Answer', text: 'Un cliquetis rapide indique souvent une batterie faible ; un seul clac sec puis rien oriente vers le démarreur. Un test sur place tranche en quelques minutes.' } },
+        { '@type': 'Question', name: 'Ma voiture redémarre avec des câbles puis se décharge encore, pourquoi ?', acceptedAnswer: { '@type': 'Answer', text: 'C’est le signe classique d’un alternateur qui ne recharge plus la batterie en roulant. À faire contrôler rapidement.' } },
+        { '@type': 'Question', name: 'Combien de temps dure une batterie sous le climat de Dakar ?', acceptedAnswer: { '@type': 'Answer', text: 'La chaleur accélère l’usure : une batterie prévue pour quatre à cinq ans peut n’en tenir que deux ou trois, surtout en trajets courts. Un test régulier évite la panne.' } },
+        { '@type': 'Question', name: 'Que faire si ma voiture refuse de démarrer ?', acceptedAnswer: { '@type': 'Answer', text: 'Enregistrez le bruit au démarrage et envoyez la vidéo sur WhatsApp : le son nous oriente déjà beaucoup, et on vous dit quoi vérifier.' } }
+      ]
+    })} />
+  </head>
+  <body>
+    <header class="article-header">
+      <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
+        <img src="/images/logo-atelier-faye-auto.png" alt="Atelier Faye Auto" />
+      </a>
+      <a class="nav-cta-article" href={whatsappUrl}>Parler au garage</a>
+    </header>
+    <main class="article-shell">
+      <nav class="breadcrumb" aria-label="Fil d’ariane">
+        <a href="/">Accueil</a> <span>›</span> <a href="/#conseils">Conseils</a> <span>›</span> Démarrage
+      </nav>
+      <article class="article-body">
+        <p class="article-kicker">Conseils auto · Démarrage</p>
+        <h1>Ma voiture ne démarre pas : que vérifier avant d’appeler ?</h1>
+        <img class="article-photo" src="/images/conseil-demarrage.webp" alt="Clé sur le contact d’une voiture qui ne démarre pas — Atelier Faye Auto, Dakar" width="1664" height="936" loading="eager" />
+        <p class="article-lead">
+          Rien de plus stressant que de tourner la clé… et rien. Avant d’imaginer le pire, sachez que la
+          cause est souvent simple — et parfois réglable en deux minutes. Voici comment y voir clair.
+        </p>
+
+        <h2>D’abord, écoutez ce qui se passe</h2>
+        <p>Le premier indice, c’est le bruit quand vous tournez la clé :</p>
+        <ul>
+          <li><strong>Rien du tout</strong>, tableau de bord éteint → batterie à plat ou cosses débranchées.</li>
+          <li><strong>Un cliquetis rapide</strong> « clic-clic-clic » → batterie trop faible pour lancer le démarreur.</li>
+          <li><strong>Le moteur tourne</strong> mais ne « prend » pas → problème de carburant, d’allumage ou de bougies.</li>
+        </ul>
+
+        <h2>Les 5 vérifications à faire vous-même</h2>
+        <ol>
+          <li>Les voyants du tableau de bord s’allument-ils ? Faibles ou absents → batterie.</li>
+          <li>Allumez les phares : s’ils sont faiblards, la batterie est déchargée.</li>
+          <li>Les cosses de la batterie : propres et bien serrées ? Une cosse oxydée suffit à tout bloquer.</li>
+          <li>Le levier : bien sur P ou N (boîte automatique) ?</li>
+          <li>Le carburant : un coup d’œil à la jauge. Ça paraît bête, mais ça arrive.</li>
+        </ol>
+
+        <h2>Si ça ne suffit pas, les causes les plus courantes</h2>
+        <ul>
+          <li>La batterie (la championne, surtout par forte chaleur).</li>
+          <li>Le démarreur (un clic unique, puis rien).</li>
+          <li>L’alternateur (la batterie se vide à chaque fois, même rechargée).</li>
+          <li>Les bougies ou l’allumage (le moteur tourne mais ne démarre pas).</li>
+          <li>La sécurité antidémarrage (témoin clé ou cadenas allumé).</li>
+        </ul>
+
+        <div class="local-box">
+          <h2>À Dakar, surveillez votre batterie</h2>
+          <p>
+            La chaleur de Dakar est l’ennemie numéro un des batteries : elle accélère leur usure. Ajoutez
+            les trajets courts et les longs arrêts dans les embouteillages, et une batterie qui devrait tenir
+            quatre ans peut lâcher en deux. Un test régulier évite la mauvaise surprise du matin.
+          </p>
+        </div>
+
+        <section class="faq" aria-label="Questions fréquentes">
+          <h2>Questions fréquentes</h2>
+          <details>
+            <summary>Comment savoir si le problème vient de la batterie ou du démarreur ?</summary>
+            <p>Un « clic-clic-clic » rapide quand vous tournez la clé indique le plus souvent une batterie trop faible. Un seul « clac » sec, puis plus rien, oriente plutôt vers le démarreur. Dans le doute, un test sur place tranche en quelques minutes.</p>
+          </details>
+          <details>
+            <summary>Ma voiture redémarre avec des câbles puis se décharge encore, pourquoi ?</summary>
+            <p>C’est le signe classique d’un alternateur qui ne recharge plus la batterie pendant que vous roulez. La batterie se vide alors à chaque trajet, même neuve. Mieux vaut faire contrôler l’alternateur rapidement.</p>
+          </details>
+          <details>
+            <summary>Combien de temps dure une batterie sous le climat de Dakar ?</summary>
+            <p>La chaleur accélère l’usure : une batterie annoncée pour quatre ou cinq ans peut n’en tenir que deux ou trois ici, surtout avec des trajets courts. Un test régulier évite la panne du matin.</p>
+          </details>
+          <details>
+            <summary>Que faire concrètement si ma voiture refuse de démarrer ?</summary>
+            <p>Enregistrez le bruit au moment où vous tournez la clé et envoyez-nous la vidéo sur WhatsApp : le son nous oriente déjà beaucoup. On vous dit alors quoi vérifier ou s’il faut passer à l’atelier.</p>
+          </details>
+        </section>
+
+        <div class="article-cta">
+          <h2>Bloqué ? Envoyez-nous une vidéo</h2>
+          <p>
+            Enregistrez le bruit quand vous tournez la clé et envoyez-le-nous sur WhatsApp : le son nous en
+            dit déjà beaucoup. L’Atelier Faye Auto vous accueille à Dakar.
+          </p>
+          <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

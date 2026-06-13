@@ -1331,3 +1331,111 @@ h1, h2, h3,
 }
 
 h2[id] { scroll-margin-top: 90px; }
+
+/* === CONSEILS : cartes cliquables + pages articles === */
+.tip-card {
+  display: block;
+  padding: 22px;
+  border-radius: 14px;
+  background: #fffdf8;
+  border: 1px solid rgba(138, 148, 155, 0.22);
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.tip-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(20, 38, 44, 0.10); }
+.tip-card h3 { color: var(--petrol); line-height: 1.2; }
+.tip-card p { color: rgba(28, 42, 48, 0.7); }
+.tip-card small { color: var(--mint); font-weight: 700; }
+
+.article-header {
+  display: flex; align-items: center; gap: 16px;
+  width: min(820px, calc(100% - 40px)); margin: 0 auto; padding: 16px 0;
+}
+.article-header .logo-link img { width: auto !important; height: 46px !important; max-height: none !important; }
+.nav-cta-article {
+  margin-left: auto; padding: 11px 22px; border-radius: 10px;
+  background: var(--petrol); color: #fff; font-weight: 700; text-decoration: none;
+}
+
+.article-shell { width: min(720px, calc(100% - 40px)); margin: 0 auto; padding: 8px 0 80px; }
+.breadcrumb { font-size: 14px; color: rgba(28, 42, 48, 0.6); margin-bottom: 26px; }
+.breadcrumb a { color: var(--petrol); text-decoration: none; }
+.breadcrumb span { margin: 0 6px; }
+
+.article-kicker { text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px; font-weight: 700; color: var(--mint); margin: 0 0 10px; }
+.article-body h1 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: clamp(30px, 5vw, 46px); line-height: 1.08; letter-spacing: -0.02em;
+  color: var(--petrol); margin: 0 0 20px;
+}
+.article-lead { font-size: 19px; line-height: 1.6; color: rgba(28, 42, 48, 0.82); margin-bottom: 12px; }
+.article-body h2 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: 24px; letter-spacing: -0.01em; color: var(--petrol); margin: 36px 0 12px;
+}
+.article-body p { font-size: 17px; line-height: 1.7; color: rgba(28, 42, 48, 0.82); }
+.article-body ul, .article-body ol { padding-left: 22px; margin: 12px 0; }
+.article-body li { font-size: 17px; line-height: 1.7; color: rgba(28, 42, 48, 0.82); margin-bottom: 8px; }
+
+.local-box { margin: 36px 0; padding: 24px 26px; border-radius: 14px; background: #DFF5EC; border: 1px solid rgba(47, 191, 143, 0.3); }
+.local-box h2 { margin-top: 0; }
+
+.article-cta { margin-top: 44px; padding: 30px 26px; border-radius: 16px; background: var(--petrol); text-align: center; }
+.article-cta h2 { color: #fff; margin-top: 0; }
+.article-cta p { color: rgba(255, 255, 255, 0.82); }
+.article-cta .whatsapp-button { display: inline-flex; width: auto; margin-top: 10px; padding: 0 32px; }
+
+/* === Photo d'en-tête des articles === */
+.article-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 14px;
+  margin: 4px 0 26px;
+  display: block;
+}
+
+/* === Vignettes des cartes conseils === */
+.tip-card { padding: 0; overflow: hidden; }
+.tip-thumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.tip-card-body { padding: 20px; }
+
+/* === FAQ en accordéon (articles) === */
+.faq { margin-top: 40px; }
+.faq > h2 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: 24px; letter-spacing: -0.01em; color: var(--petrol); margin-bottom: 14px;
+}
+.faq details {
+  border: 1px solid rgba(138, 148, 155, 0.28);
+  border-radius: 12px;
+  background: #fffdf8;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 48px 16px 18px;
+  position: relative;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--petrol);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 18px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px; font-weight: 700; color: var(--mint);
+  transition: transform 0.2s ease;
+}
+.faq details[open] summary::after { content: "−"; }
+.faq details[open] summary { border-bottom: 1px solid rgba(138, 148, 155, 0.2); }
+.faq details p {
+  margin: 0; padding: 14px 18px 18px;
+  font-size: 16px; line-height: 1.65; color: rgba(28, 42, 48, 0.82);
+}

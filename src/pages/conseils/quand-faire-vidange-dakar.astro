@@ -1,0 +1,142 @@
+---
+import '../../styles/global.css';
+
+const whatsappNumber = '221774797157';
+const whatsappText = encodeURIComponent(
+  'Bonjour Atelier Faye Auto, je souhaite faire la vidange de ma voiture. Pouvez-vous me dire quand passer et le tarif ?'
+);
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+
+const title = 'Quand faire sa vidange à Dakar ? | Atelier Faye Auto, Dakar';
+const description =
+  'À quelle fréquence faire sa vidange à Dakar ? Pourquoi les conditions locales raccourcissent l’intervalle, et les signes à surveiller. Atelier Faye Auto, Dakar.';
+
+const schema = {
+  '@context': 'https://schema.org', '@type': 'Article',
+  headline: 'Quand faire sa vidange à Dakar ?',
+  description, inLanguage: 'fr',
+  author: { '@type': 'Organization', name: 'Atelier Faye Auto' },
+  publisher: {
+    '@type': 'AutoRepair', name: 'Atelier Faye Auto',
+    address: { '@type': 'PostalAddress', addressLocality: 'Dakar', addressCountry: 'SN' },
+    areaServed: 'Dakar', telephone: '+221774797157',
+  },
+};
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/conseil-vidange.webp" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Tous les combien de kilomètres faut-il faire la vidange ?', acceptedAnswer: { '@type': 'Answer', text: 'Souvent 10 000 à 15 000 km selon le constructeur, mais 5 000 à 7 500 km ou tous les six mois est plus prudent sous le climat et la circulation de Dakar. Cela dépend du moteur et de l’usage.' } },
+        { '@type': 'Question', name: 'Huile minérale, semi-synthèse ou synthèse : laquelle choisir ?', acceptedAnswer: { '@type': 'Answer', text: 'Cela dépend du moteur et des préconisations du constructeur. Une huile inadaptée use le moteur. Indiquez votre modèle pour un conseil adapté.' } },
+        { '@type': 'Question', name: 'Faut-il changer les filtres à chaque vidange ?', acceptedAnswer: { '@type': 'Answer', text: 'Le filtre à huile oui ; le filtre à air mérite une surveillance rapprochée à cause de la poussière mais pas forcément un remplacement systématique.' } },
+        { '@type': 'Question', name: 'Combien coûte une vidange ?', acceptedAnswer: { '@type': 'Answer', text: 'Le prix dépend du modèle et du type d’huile. Indiquez votre voiture et son kilométrage sur WhatsApp pour un tarif clair avant intervention.' } }
+      ]
+    })} />
+  </head>
+  <body>
+    <header class="article-header">
+      <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
+        <img src="/images/logo-atelier-faye-auto.png" alt="Atelier Faye Auto" />
+      </a>
+      <a class="nav-cta-article" href={whatsappUrl}>Parler au garage</a>
+    </header>
+    <main class="article-shell">
+      <nav class="breadcrumb" aria-label="Fil d’ariane">
+        <a href="/">Accueil</a> <span>›</span> <a href="/#conseils">Conseils</a> <span>›</span> Vidange
+      </nav>
+      <article class="article-body">
+        <p class="article-kicker">Conseils auto · Entretien</p>
+        <h1>Quand faire sa vidange à Dakar ?</h1>
+        <img class="article-photo" src="/images/conseil-vidange.webp" alt="Huile moteur neuve versée lors d’une vidange — Atelier Faye Auto, Dakar" width="1664" height="936" loading="eager" />
+        <p class="article-lead">
+          La vidange, c’est le geste d’entretien le plus simple — et le plus important pour la longévité de
+          votre moteur. Mais l’intervalle « du manuel » ne dit pas tout, surtout sous le climat de Dakar.
+        </p>
+
+        <h2>Ce que dit le constructeur… et ce que dit la réalité</h2>
+        <p>
+          Les constructeurs annoncent souvent 10 000 à 15 000 km entre deux vidanges. Ces chiffres valent
+          pour un usage idéal : longs trajets, routes propres, climat tempéré. À Dakar, on en est loin — et
+          l’huile se dégrade plus vite.
+        </p>
+
+        <h2>Pourquoi l’intervalle est plus court ici</h2>
+        <ul>
+          <li>La poussière, qui s’infiltre et encrasse l’huile et les filtres.</li>
+          <li>La chaleur, qui fait travailler l’huile à plus haute température.</li>
+          <li>Les embouteillages et trajets courts : le moteur tourne sans jamais atteindre son régime idéal.</li>
+        </ul>
+        <p>
+          Dans ces conditions dites « sévères », un intervalle de 5 000 à 7 500 km, ou tous les 6 mois, est
+          souvent plus prudent. Le bon réglage dépend de votre moteur et de votre usage — demandez-nous conseil.
+        </p>
+
+        <h2>Les signes qu’il est temps</h2>
+        <ul>
+          <li>L’huile sur la jauge est noire et épaisse (neuve, elle est ambrée et fluide).</li>
+          <li>Le niveau a baissé.</li>
+          <li>Le voyant d’huile ou d’entretien s’allume.</li>
+          <li>Le moteur est plus bruyant qu’avant.</li>
+        </ul>
+
+        <h2>N’oubliez pas les filtres</h2>
+        <p>
+          Une vidange sans changer le filtre à huile ne sert qu’à moitié. Et à Dakar, le filtre à air mérite
+          une attention particulière : la poussière le sature vite, ce qui augmente la consommation et fatigue
+          le moteur.
+        </p>
+
+        <div class="local-box">
+          <h2>À Dakar, des conditions « sévères »</h2>
+          <p>
+            Entre la poussière ambiante et les arrêts prolongés dans la circulation, votre moteur travaille dans
+            des conditions exigeantes. Espacer un peu moins vos vidanges, c’est quelques milliers de francs qui
+            prolongent la vie de votre moteur de plusieurs années.
+          </p>
+        </div>
+
+        <section class="faq" aria-label="Questions fréquentes">
+          <h2>Questions fréquentes</h2>
+          <details>
+            <summary>Tous les combien de kilomètres faut-il faire la vidange ?</summary>
+            <p>Les constructeurs annoncent souvent 10 000 à 15 000 km, mais sous le climat et la circulation de Dakar, un intervalle de 5 000 à 7 500 km — ou tous les six mois — est plus prudent. Le bon réglage dépend de votre moteur et de votre usage.</p>
+          </details>
+          <details>
+            <summary>Huile minérale, semi-synthèse ou 100 % synthèse : laquelle choisir ?</summary>
+            <p>Cela dépend de votre moteur et des préconisations du constructeur. Une huile inadaptée peut user le moteur prématurément. Dites-nous le modèle de votre voiture et on vous conseille la bonne.</p>
+          </details>
+          <details>
+            <summary>Faut-il changer les filtres à chaque vidange ?</summary>
+            <p>Le filtre à huile, oui : une vidange sans lui ne sert qu’à moitié. Le filtre à air mérite une surveillance rapprochée à cause de la poussière, mais ne se change pas forcément à chaque fois.</p>
+          </details>
+          <details>
+            <summary>Combien coûte une vidange ?</summary>
+            <p>Le prix dépend du modèle et du type d’huile choisi. Indiquez-nous votre voiture et son kilométrage sur WhatsApp : on vous donne un tarif clair, sans surprise, avant d’intervenir.</p>
+          </details>
+        </section>
+
+        <div class="article-cta">
+          <h2>Vidange à faire ? Parlons-en</h2>
+          <p>
+            Dites-nous le modèle de votre voiture et son kilométrage sur WhatsApp : on vous indique quand
+            passer et ce que ça coûte, sans surprise. L’Atelier Faye Auto vous accueille à Dakar.
+          </p>
+          <a class="whatsapp-button" href={whatsappUrl}>Demander ma vidange sur WhatsApp</a>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

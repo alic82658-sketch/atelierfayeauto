@@ -1,0 +1,149 @@
+---
+import '../../styles/global.css';
+
+const whatsappNumber = '221774797157';
+const whatsappText = encodeURIComponent(
+  'Bonjour Atelier Faye Auto, mon voyant moteur est allumé. Je vous envoie une photo de mon tableau de bord pour avoir votre avis.'
+);
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+
+const title = 'Voyant moteur allumé : que faire ? | Atelier Faye Auto, Dakar';
+const description =
+  'Votre voyant moteur s’allume à Dakar ? Ce que signifie chaque couleur, les gestes à éviter et quand consulter. Atelier Faye Auto, Dakar.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Voyant moteur allumé : que faire avant de paniquer ?',
+  description,
+  inLanguage: 'fr',
+  author: { '@type': 'Organization', name: 'Atelier Faye Auto' },
+  publisher: {
+    '@type': 'AutoRepair',
+    name: 'Atelier Faye Auto',
+    address: { '@type': 'PostalAddress', addressLocality: 'Dakar', addressCountry: 'SN' },
+    areaServed: 'Dakar',
+    telephone: '+221774797157',
+  },
+};
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/hero-diagnostic.webp" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Puis-je rouler avec le voyant moteur allumé ?', acceptedAnswer: { '@type': 'Answer', text: 'Orange et fixe : roulez prudemment jusqu’au garage sans tarder. Clignotant ou rouge : arrêtez-vous dès que possible, continuer peut endommager le moteur.' } },
+        { '@type': 'Question', name: 'Le voyant s’est éteint tout seul, dois-je vérifier ?', acceptedAnswer: { '@type': 'Answer', text: 'Oui. Le défaut est souvent intermittent et reviendra. Un diagnostic lit le code mémorisé même voyant éteint.' } },
+        { '@type': 'Question', name: 'Combien de temps prend un diagnostic électronique ?', acceptedAnswer: { '@type': 'Answer', text: 'La lecture des codes prend quelques minutes ; l’analyse complète dépend de la panne. On vous explique tout avant d’intervenir.' } },
+        { '@type': 'Question', name: 'Combien coûte un diagnostic ?', acceptedAnswer: { '@type': 'Answer', text: 'Le tarif dépend du véhicule et du problème. Envoyez une photo sur WhatsApp pour une première orientation et un devis clair.' } }
+      ]
+    })} />
+  </head>
+
+  <body>
+    <header class="article-header">
+      <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
+        <img src="/images/logo-atelier-faye-auto.png" alt="Atelier Faye Auto" />
+      </a>
+      <a class="nav-cta-article" href={whatsappUrl}>Parler au garage</a>
+    </header>
+
+    <main class="article-shell">
+      <nav class="breadcrumb" aria-label="Fil d’ariane">
+        <a href="/">Accueil</a> <span>›</span> <a href="/#conseils">Conseils</a> <span>›</span> Voyant moteur
+      </nav>
+
+      <article class="article-body">
+        <p class="article-kicker">Conseils auto · Diagnostic</p>
+        <h1>Voyant moteur allumé : que faire avant de paniquer ?</h1>
+        <img class="article-photo" src="/images/conseil-voyant-moteur.webp" alt="Voyant moteur orange allumé sur le tableau de bord — Atelier Faye Auto, Dakar" width="1664" height="936" loading="eager" />
+        <p class="article-lead">
+          Un voyant qui s’allume au tableau de bord, c’est toujours un petit pincement au cœur. La bonne
+          nouvelle : dans la majorité des cas, ce n’est pas grave. La mauvaise : l’ignorer peut transformer
+          une réparation simple en facture salée. Voici comment réagir, calmement et au bon moment.
+        </p>
+
+        <h2>La couleur du voyant change tout</h2>
+        <p>Avant tout, regardez la couleur — c’est elle qui indique le niveau d’urgence :</p>
+        <ul>
+          <li><strong>Vert ou bleu :</strong> une simple information (feux, régulateur…). Rien à craindre.</li>
+          <li><strong>Orange ou jaune :</strong> un élément à faire vérifier prochainement. Vous pouvez rouler, mais prenez rendez-vous.</li>
+          <li><strong>Rouge :</strong> alerte sérieuse. Arrêtez-vous dès que possible, en sécurité.</li>
+        </ul>
+
+        <h2>Voyant orange : les causes les plus fréquentes</h2>
+        <p>
+          Le plus courant est le voyant moteur, en forme de bloc moteur. À Dakar, il s’allume souvent pour
+          des raisons assez banales : un capteur encrassé par la poussière, un carburant de qualité variable,
+          une sonde à oxygène ou des bougies fatiguées — parfois, simplement, un bouchon de réservoir mal vissé.
+          Seul un diagnostic électronique permet de lire le code défaut exact en quelques minutes.
+        </p>
+
+        <h2>Voyant rouge : les bons réflexes</h2>
+        <ol>
+          <li>Ne paniquez pas, mais cherchez un endroit sûr pour vous arrêter.</li>
+          <li>Coupez le moteur si le voyant concerne la température ou la pression d’huile — continuer peut le détruire.</li>
+          <li>Vérifiez les niveaux une fois le moteur refroidi.</li>
+          <li>Appelez le garage avant de reprendre la route.</li>
+        </ol>
+
+        <h2>Ce qu’il ne faut surtout pas faire</h2>
+        <ul>
+          <li>Rouler des semaines avec un voyant orange « parce que la voiture roule encore ».</li>
+          <li>Débrancher la batterie pour « éteindre » le voyant : le problème revient.</li>
+          <li>Continuer à rouler avec un voyant rouge de température ou d’huile.</li>
+        </ul>
+
+        <div class="local-box">
+          <h2>À Dakar, le contexte compte</h2>
+          <p>
+            Entre la chaleur, la poussière en suspension et les embouteillages, les moteurs sont davantage
+            sollicités qu’ailleurs. Les capteurs s’encrassent plus vite et les températures grimpent dans les
+            bouchons. Un voyant qui s’allume ici mérite donc une attention particulière, surtout en saison
+            chaude et pendant l’hivernage.
+          </p>
+        </div>
+
+        <section class="faq" aria-label="Questions fréquentes">
+          <h2>Questions fréquentes</h2>
+          <details>
+            <summary>Puis-je rouler avec le voyant moteur allumé ?</summary>
+            <p>S'il est orange et fixe, vous pouvez rouler prudemment jusqu'au garage, mais ne tardez pas. S'il clignote ou s'il est rouge, arrêtez-vous dès que possible : continuer peut endommager le moteur.</p>
+          </details>
+          <details>
+            <summary>Le voyant s'est éteint tout seul, dois-je quand même vérifier ?</summary>
+            <p>Oui. Un voyant qui s'éteint ne veut pas dire que le problème a disparu — souvent, le défaut est intermittent et reviendra. Un diagnostic permet de lire le code mémorisé même voyant éteint.</p>
+          </details>
+          <details>
+            <summary>Combien de temps prend un diagnostic électronique ?</summary>
+            <p>La lecture des codes défauts ne prend que quelques minutes. L'analyse complète, pour identifier la cause exacte, dépend de la panne — on vous explique tout avant d'intervenir.</p>
+          </details>
+          <details>
+            <summary>Combien coûte un diagnostic ?</summary>
+            <p>Le tarif dépend du véhicule et de la nature du problème. Envoyez-nous une photo de votre tableau de bord sur WhatsApp : on vous donne une première orientation et un devis clair avant toute intervention.</p>
+          </details>
+        </section>
+
+        <div class="article-cta">
+          <h2>Un doute ? Envoyez-nous une photo</h2>
+          <p>
+            Prenez votre tableau de bord en photo et envoyez-la-nous sur WhatsApp. On vous dit tout de suite
+            si c’est à surveiller ou s’il faut passer. L’Atelier Faye Auto vous accueille à Dakar.
+          </p>
+          <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma photo sur WhatsApp</a>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
