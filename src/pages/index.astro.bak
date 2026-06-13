@@ -94,23 +94,12 @@ const tips = [
     <main class="page-shell">
       <section class="hero-app">
         <div class="hero-text">
-          <h1>Un voyant, un bruit ou une panne&nbsp;?</h1>
+          <h1>Votre voiture a un problème&nbsp;?</h1>
           <p>
             Envoyez une photo ou une vidéo sur WhatsApp.
             Atelier Faye Auto vous répond avec une première orientation claire.
           </p>
-          <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
-        </div>
-        <div class="hero-diagnostic-panel" aria-label="Diagnostic rapide">
-          <div class="panel-icon" set:html={icons.engine}></div>
-          <p class="panel-label">Diagnostic rapide</p>
-          <strong>Montrez ce que vous voyez</strong>
-          <ul>
-            <li><span class="mini-status watch"></span> Voyant allumé</li>
-            <li><span class="mini-status watch"></span> Bruit étrange</li>
-            <li><span class="mini-status urgent"></span> Ne démarre pas</li>
-          </ul>
-          <small>Photo ou vidéo sur WhatsApp</small>
+          <a class="whatsapp-button" href={whatsappUrl}>Parler au garage sur WhatsApp</a>
         </div>
 
         <div class="hero-visual">
@@ -121,8 +110,8 @@ const tips = [
 
       <section class="section-block">
         <div class="section-title">
-          <h2 id="problemes">Quel est votre problème&nbsp;?</h2>
-          <p>Choisissez ce qui correspond le mieux à votre panne. Chaque choix prépare un message WhatsApp.</p>
+          <h2 id="problemes">Quel est le problème&nbsp;?</h2>
+          <p>Choisissez ce que vous remarquez</p>
         </div>
 
         <div class="problem-grid-large">
@@ -149,7 +138,7 @@ const tips = [
         <img src="/images/preuve-technique-moteur.webp" alt="Intervention mécanique à l’atelier" />
         <div>
           <h2>Envoyez une photo ou une vidéo</h2>
-          <p>Montrez le voyant, le bruit, la fuite ou la pièce concernée. Cela aide le garage à vous orienter plus clairement.</p>
+          <p>Cela nous aide à comprendre la panne plus rapidement.</p>
         </div>
         <a href={whatsappUrl} class="round-arrow">→</a>
       </section>
@@ -276,6 +265,15 @@ const tips = [
         <a href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
       </section>
     </main>
+
+    <nav class="bottom-nav" aria-label="Navigation mobile">
+      <a href="#"><span set:html={icons.home}></span>Accueil</a>
+      <a href="#"><span set:html={icons.wrench}></span>Services</a>
+      <a href={whatsappUrl}><span set:html={icons.calendar}></span>Rendez-vous</a>
+      <a href="#"><span set:html={icons.file}></span>Conseils</a>
+      <a href={whatsappUrl}><span set:html={icons.phone}></span>Contact</a>
+    </nav>
+
     <a class="floating-photo" href={whatsappUrl}>Ma panne en photo</a>
   </body>
 </html>

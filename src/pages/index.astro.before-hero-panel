@@ -101,17 +101,6 @@ const tips = [
           </p>
           <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
         </div>
-        <div class="hero-diagnostic-panel" aria-label="Diagnostic rapide">
-          <div class="panel-icon" set:html={icons.engine}></div>
-          <p class="panel-label">Diagnostic rapide</p>
-          <strong>Montrez ce que vous voyez</strong>
-          <ul>
-            <li><span class="mini-status watch"></span> Voyant allumé</li>
-            <li><span class="mini-status watch"></span> Bruit étrange</li>
-            <li><span class="mini-status urgent"></span> Ne démarre pas</li>
-          </ul>
-          <small>Photo ou vidéo sur WhatsApp</small>
-        </div>
 
         <div class="hero-visual">
           <img src="/images/hero-diagnostic.webp" alt="Diagnostic automobile avec valise Bosch" loading="eager" />
@@ -121,8 +110,8 @@ const tips = [
 
       <section class="section-block">
         <div class="section-title">
-          <h2 id="problemes">Quel est votre problème&nbsp;?</h2>
-          <p>Choisissez ce qui correspond le mieux à votre panne. Chaque choix prépare un message WhatsApp.</p>
+          <h2 id="problemes">Quel est le problème&nbsp;?</h2>
+          <p>Chaque choix prépare un message WhatsApp adapté.</p>
         </div>
 
         <div class="problem-grid-large">
@@ -276,6 +265,15 @@ const tips = [
         <a href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
       </section>
     </main>
+
+    <nav class="bottom-nav" aria-label="Navigation mobile">
+      <a href="#"><span set:html={icons.home}></span>Accueil</a>
+      <a href="#"><span set:html={icons.wrench}></span>Services</a>
+      <a href={whatsappUrl}><span set:html={icons.calendar}></span>Rendez-vous</a>
+      <a href="#"><span set:html={icons.file}></span>Conseils</a>
+      <a href={whatsappUrl}><span set:html={icons.phone}></span>Contact</a>
+    </nav>
+
     <a class="floating-photo" href={whatsappUrl}>Ma panne en photo</a>
   </body>
 </html>

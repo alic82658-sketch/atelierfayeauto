@@ -101,6 +101,7 @@ const tips = [
           </p>
           <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
         </div>
+
         <div class="hero-diagnostic-panel" aria-label="Diagnostic rapide">
           <div class="panel-icon" set:html={icons.engine}></div>
           <p class="panel-label">Diagnostic rapide</p>
@@ -276,6 +277,15 @@ const tips = [
         <a href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
       </section>
     </main>
+
+    <nav class="bottom-nav" aria-label="Navigation mobile">
+      <a href="#"><span set:html={icons.home}></span>Accueil</a>
+      <a href="#"><span set:html={icons.wrench}></span>Services</a>
+      <a href={whatsappUrl}><span set:html={icons.calendar}></span>Rendez-vous</a>
+      <a href="#"><span set:html={icons.file}></span>Conseils</a>
+      <a href={whatsappUrl}><span set:html={icons.phone}></span>Contact</a>
+    </nav>
+
     <a class="floating-photo" href={whatsappUrl}>Ma panne en photo</a>
   </body>
 </html>
