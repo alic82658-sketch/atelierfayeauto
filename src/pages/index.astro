@@ -1,0 +1,269 @@
+---
+import '../styles/global.css';
+
+const whatsappNumber = '221771234567';
+
+const whatsappText = encodeURIComponent(
+  'Bonjour Atelier Faye Auto, j’ai une panne sur mon véhicule. Je souhaite envoyer une photo ou une vidéo pour avoir une première orientation.'
+);
+
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+
+const icons = {
+  engine: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 25h9v-6h10v6h5l5 6h6v15h-7l-4 6H19l-5-7H8V30h7l3-5Z"/><path d="M27 14h11"/><path d="M7 36H3"/><path d="M54 36h7"/><path class="accent" d="m32 31-5 9h7l-3 8 9-12h-7l4-5h-5Z"/></svg>`,
+  carQuestion: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M13 39h38l-4-12c-.8-2.4-2.6-4-5-4H22c-2.4 0-4.2 1.6-5 4l-4 12Z"/><path d="M15 39v9h7v-5h20v5h7v-9"/><path d="M20 37h4"/><path d="M40 37h4"/><circle class="accent-stroke" cx="49" cy="22" r="9"/><path class="accent-stroke" d="M47 19a3 3 0 1 1 4 3c-2 1-2 2-2 3"/><path class="accent-stroke" d="M49 29h.1"/></svg>`,
+  ear: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M24 49c0-8 12-8 12-20 0-7-5-12-12-12S12 22 12 29"/><path d="M18 36c0-8 10-6 10-15"/><path d="M38 18c5 4 8 9 8 16"/><path d="M46 14c7 6 11 13 11 23"/></svg>`,
+  brake: `<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="14"/><circle cx="32" cy="32" r="5"/><path d="M32 7v8M32 49v8M7 32h8M49 32h8M14 14l6 6M44 44l6 6M50 14l-6 6M20 44l-6 6"/><path class="accent-stroke" d="M39 25a10 10 0 0 1 2 10"/></svg>`,
+  snow: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8v48M13 20l38 24M51 20 13 44"/><path d="m24 12 8 8 8-8M24 52l8-8 8 8M13 30l11-3-3-11M43 48l-3-11 11-3M51 30l-11-3 3-11M21 48l3-11-11-3"/></svg>`,
+  oil: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 37h23l8-9 11 10-6 7H20l-8-8Z"/><path d="M24 27h13"/><path d="M46 44c5 1 7 4 7 8"/><path class="accent-stroke" d="M54 50c0 4-5 4-5 0 0-3 2.5-6 2.5-6S54 47 54 50Z"/></svg>`,
+  camera: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 22h10l4-6h12l4 6h10v27H12V22Z"/><circle cx="32" cy="36" r="9"/><path class="accent-stroke" d="M47 27h.1"/></svg>`,
+  shield: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 7 52 15v15c0 14-8 23-20 28-12-5-20-14-20-28V15l20-8Z"/><path class="accent-stroke" d="m22 32 7 7 14-16"/></svg>`,
+  clock: `<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22"/><path d="M32 18v15l10 6"/><path class="accent-stroke" d="M18 12 12 18M46 12l6 6"/></svg>`,
+  mechanic: `<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="18" r="8"/><path d="M18 56V43c0-8 6-13 14-13s14 5 14 13v13"/><path class="accent-stroke" d="M43 11l8-8 4 4-8 8"/></svg>`,
+  droplet: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 7s17 20 17 34c0 10-7 17-17 17s-17-7-17-17C15 27 32 7 32 7Z"/></svg>`,
+  battery: `<svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="22" width="42" height="24" rx="4"/><path d="M52 29h5v10h-5"/><path class="accent-stroke" d="M24 29v10M19 34h10M39 34h8"/></svg>`,
+  tire: `<svg viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="32" rx="14" ry="23"/><ellipse cx="32" cy="32" rx="7" ry="16"/><path d="M32 10v44M22 17c7 4 13 4 20 0M22 47c7-4 13-4 20 0"/></svg>`,
+  home: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 32 32 12l22 20"/><path d="M17 30v24h30V30"/></svg>`,
+  wrench: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M43 8a14 14 0 0 0-14 18L9 46l9 9 20-20A14 14 0 0 0 56 21l-9 9-8-8 9-9c-2-3-3-5-5-5Z"/></svg>`,
+  calendar: `<svg viewBox="0 0 64 64" aria-hidden="true"><rect x="12" y="14" width="40" height="38" rx="4"/><path d="M12 24h40M22 9v10M42 9v10"/><path class="accent-stroke" d="m23 39 6 6 13-14"/></svg>`,
+  file: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 8h20l10 10v38H18V8Z"/><path d="M38 8v12h10M24 31h18M24 40h18"/></svg>`,
+  phone: `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M22 10 15 17c1 17 15 31 32 32l7-7-10-10-6 5c-6-3-10-7-13-13l5-6-8-8Z"/></svg>`,
+};
+
+const problems = [
+  { label: 'Voyant allumé', sub: 'Un voyant apparaît au tableau de bord', icon: 'engine', status: 'watch' },
+  { label: 'Ne démarre pas', sub: 'Batterie, démarreur ou autre panne', icon: 'carQuestion', status: 'urgent' },
+  { label: 'Bruit étrange', sub: 'Au démarrage, au freinage ou en roulant', icon: 'ear', status: 'watch' },
+  { label: 'Problème de freinage', sub: 'Grincement, vibration ou pédale molle', icon: 'brake', status: 'urgent' },
+  { label: 'Climatisation faible', sub: 'La clim ne refroidit plus correctement', icon: 'snow', status: 'ok' },
+  { label: 'Fuite d’huile ou liquide', sub: 'Une trace au sol ou sous le moteur', icon: 'oil', status: 'watch' },
+];
+
+const maintenance = [
+  { label: 'Vidange', icon: 'droplet', status: 'ok' },
+  { label: 'Freins', icon: 'brake', status: 'watch' },
+  { label: 'Batterie', icon: 'battery', status: 'watch' },
+  { label: 'Pneus', icon: 'tire', status: 'ok' },
+  { label: 'Climatisation', icon: 'snow', status: 'ok' },
+];
+
+const services = [
+  ['Diagnostic automobile', 'Lecture des défauts, contrôle des voyants et recherche de panne.'],
+  ['Entretien courant', 'Vidange, filtres, niveaux et contrôles essentiels.'],
+  ['Réparation mécanique', 'Intervention selon le diagnostic et l’état du véhicule.'],
+  ['Freinage', 'Contrôle des plaquettes, disques et éléments de sécurité.'],
+  ['Batterie et démarrage', 'Contrôle de la batterie, alternateur et démarreur.'],
+  ['Climatisation', 'Vérification, recherche de panne et entretien du système.'],
+];
+
+const tips = [
+  ['Voyant moteur allumé : que faire ?', 'Un voyant ne veut pas toujours dire panne grave, mais il ne faut pas l’ignorer.'],
+  ['Ma voiture ne démarre pas', 'Les premières vérifications simples avant d’appeler un mécanicien.'],
+  ['Quand faire sa vidange ?', 'L’intervalle idéal dépend de l’usage et du moteur.'],
+];
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atelier Faye Auto — Diagnostic, entretien et réparation à Dakar</title>
+    <meta
+      name="description"
+      content="Atelier Faye Auto, garage familial à Dakar. Envoyez une photo ou vidéo de votre panne sur WhatsApp pour une première orientation claire."
+    />
+  </head>
+
+  <body>
+    <header class="app-header">
+      <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
+        <img src="/images/logo-atelier-faye-auto.png" alt="Atelier Faye Auto" />
+      </a>
+      <button class="hamburger" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero-app">
+        <div class="hero-text">
+          <h1>Votre voiture a un problème&nbsp;?</h1>
+          <p>
+            Envoyez une photo ou une vidéo sur WhatsApp.
+            Atelier Faye Auto vous répond avec une première orientation claire.
+          </p>
+          <a class="whatsapp-button" href={whatsappUrl}>Parler au garage sur WhatsApp</a>
+        </div>
+
+        <div class="hero-visual">
+          <img src="/images/hero-diagnostic.webp" alt="Diagnostic automobile avec valise Bosch" loading="eager" />
+          <div class="hero-check">✓</div>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-title">
+          <h2>Quel est le problème&nbsp;?</h2>
+          <p>Choisissez ce que vous remarquez</p>
+        </div>
+
+        <div class="problem-grid-large">
+          {problems.map((problem) => (
+            <a
+              class="problem-tile"
+              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+                `Bonjour Atelier Faye Auto, mon problème est : ${problem.label}. Je souhaite envoyer une photo ou une vidéo.`
+              )}`}
+            >
+              <span class={`mini-status ${problem.status}`}></span>
+              <span class="tile-icon" set:html={icons[problem.icon]} />
+              <strong>{problem.label}</strong>
+              <small>{problem.sub}</small>
+            </a>
+          ))}
+        </div>
+
+        <a class="see-all" href={whatsappUrl}>Voir tous les problèmes <span>⌄</span></a>
+      </section>
+
+      <section class="send-photo-card">
+        <div class="photo-icon" set:html={icons.camera}></div>
+        <img src="/images/preuve-technique-moteur.webp" alt="Intervention mécanique à l’atelier" />
+        <div>
+          <h2>Envoyez une photo ou une vidéo</h2>
+          <p>Cela nous aide à comprendre la panne plus rapidement.</p>
+        </div>
+        <a href={whatsappUrl} class="round-arrow">→</a>
+      </section>
+
+      <section class="trust-strip">
+        <article>
+          <span set:html={icons.shield}></span>
+          <strong>Devis clair</strong>
+          <small>avant réparation</small>
+        </article>
+        <article>
+          <span set:html={icons.clock}></span>
+          <strong>Réponse rapide</strong>
+          <small>sur WhatsApp</small>
+        </article>
+        <article>
+          <span set:html={icons.mechanic}></span>
+          <strong>Mécaniciens</strong>
+          <small>expérimentés</small>
+        </article>
+      </section>
+
+      <section class="section-block">
+        <div class="section-title">
+          <h2>Votre entretien est-il à jour&nbsp;?</h2>
+          <p>Un entretien régulier évite les pannes coûteuses.</p>
+        </div>
+
+        <div class="maintenance-row">
+          {maintenance.map((item) => (
+            <article class="maintenance-item">
+              <span class="maintenance-icon" set:html={icons[item.icon]}></span>
+              <strong>{item.label}</strong>
+              <span class={`small-badge ${item.status}`}>
+                {item.status === 'ok' ? '✓' : '!'}
+              </span>
+            </article>
+          ))}
+        </div>
+
+        <a class="outline-button" href={whatsappUrl}>
+          <span set:html={icons.calendar}></span>
+          Vérifier tout l’entretien
+        </a>
+      </section>
+
+      <section class="follow-card">
+        <div class="follow-progress">
+          <article>
+            <span>01</span>
+            <strong>Avant</strong>
+            <p>On vérifie et on explique.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>Pendant</strong>
+            <p>Rien n’avance sans votre accord.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>Après</strong>
+            <p>Vous savez quoi surveiller.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="mechanic-card">
+        <img src="/images/profil-mecanicien.webp" alt="Diagnostic réalisé par Atelier Faye Auto" />
+        <div>
+          <p class="label">Garage familial à Dakar</p>
+          <h2>La famille Faye, un atelier de confiance.</h2>
+          <p>
+            Un mécanicien expérimenté, un service familial et un suivi clair :
+            on vérifie, on explique, on répare, puis on vous aide à prévoir la suite.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-title">
+          <h2>Nos services</h2>
+          <p>Diagnostic, entretien et réparation.</p>
+        </div>
+
+        <div class="technical-list">
+          {services.map(([title, text]) => (
+            <article>
+              <span class="mini-status ok"></span>
+              <strong>{title}</strong>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-title inline-title">
+          <div>
+            <h2>Conseils auto</h2>
+            <p>Pour comprendre les pannes courantes.</p>
+          </div>
+          <a href="#">Voir tout →</a>
+        </div>
+
+        <div class="tips-grid">
+          {tips.map(([title, text]) => (
+            <article>
+              <h3>{title}</h3>
+              <p>{text}</p>
+              <small>3 min de lecture</small>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="final-whatsapp">
+        <div>
+          <h2>Une panne&nbsp;? Parlons-en maintenant.</h2>
+          <p>Envoyez une photo ou une vidéo et recevez une réponse pendant les horaires d’ouverture.</p>
+        </div>
+        <a href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navigation mobile">
+      <a href="#"><span set:html={icons.home}></span>Accueil</a>
+      <a href="#"><span set:html={icons.wrench}></span>Services</a>
+      <a href={whatsappUrl}><span set:html={icons.calendar}></span>Rendez-vous</a>
+      <a href="#"><span set:html={icons.file}></span>Conseils</a>
+      <a href={whatsappUrl}><span set:html={icons.phone}></span>Contact</a>
+    </nav>
+
+    <a class="floating-photo" href={whatsappUrl}>Ma panne en photo</a>
+  </body>
+</html>
