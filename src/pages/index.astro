@@ -79,6 +79,13 @@ const tips = [
       <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
         <img src="/images/logo-atelier-faye-auto.png" alt="Atelier Faye Auto" />
       </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#problemes">Problèmes</a>
+        <a href="#entretien">Entretien</a>
+        <a href="#services">Services</a>
+        <a href="#conseils">Conseils</a>
+      </nav>
+      <a class="nav-cta" href={whatsappUrl}>Parler au garage</a>
       <button class="hamburger" aria-label="Ouvrir le menu">
         <span></span><span></span><span></span>
       </button>
@@ -103,7 +110,7 @@ const tips = [
 
       <section class="section-block">
         <div class="section-title">
-          <h2>Quel est le problème&nbsp;?</h2>
+          <h2 id="problemes">Quel est le problème&nbsp;?</h2>
           <p>Choisissez ce que vous remarquez</p>
         </div>
 
@@ -156,7 +163,7 @@ const tips = [
 
       <section class="section-block">
         <div class="section-title">
-          <h2>Votre entretien est-il à jour&nbsp;?</h2>
+          <h2 id="entretien">Votre entretien est-il à jour&nbsp;?</h2>
           <p>Un entretien régulier évite les pannes coûteuses.</p>
         </div>
 
@@ -202,17 +209,17 @@ const tips = [
         <img src="/images/profil-mecanicien.webp" alt="Diagnostic réalisé par Atelier Faye Auto" />
         <div>
           <p class="label">Garage familial à Dakar</p>
-          <h2>La famille Faye, un atelier de confiance.</h2>
+          <h2>La mécanique pour passion, le client pour priorité.</h2>
           <p>
-            Un mécanicien expérimenté, un service familial et un suivi clair :
-            on vérifie, on explique, on répare, puis on vous aide à prévoir la suite.
+            Chez les Faye, chaque voiture est traitée comme la nôtre. On diagnostique,
+            on vous explique en clair, on répare — et on vous aide à anticiper la suite.
           </p>
         </div>
       </section>
 
       <section class="section-block">
         <div class="section-title">
-          <h2>Nos services</h2>
+          <h2 id="services">Nos services</h2>
           <p>Diagnostic, entretien et réparation.</p>
         </div>
 
@@ -230,7 +237,7 @@ const tips = [
       <section class="section-block">
         <div class="section-title inline-title">
           <div>
-            <h2>Conseils auto</h2>
+            <h2 id="conseils">Conseils auto</h2>
             <p>Pour comprendre les pannes courantes.</p>
           </div>
           <a href="#">Voir tout →</a>

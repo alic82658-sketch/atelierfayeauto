@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -1251,3 +1252,82 @@ body {
 .hero-check::after {
   content: "Diagnostic électronique";
 }
+
+/* === LOGO : fondu dans le header === */
+.logo-link img {
+  mix-blend-mode: multiply;
+}
+
+/* === TYPOGRAPHIE === */
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3,
+.hero-text h1,
+.section-title h2 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* === HEADER PREMIUM : logo + menu + CTA === */
+.app-header {
+  display: flex !important;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-link img {
+  width: auto !important;
+  height: 46px !important;
+  max-height: none !important;
+  mix-blend-mode: normal;
+}
+
+.hamburger { margin-left: auto; }
+
+.main-nav,
+.nav-cta { display: none; }
+
+@media (min-width: 900px) {
+  .app-header {
+    height: auto;
+    min-height: 80px;
+    padding: 14px 30px;
+  }
+
+  .logo-link img { height: 64px !important; }
+
+  .main-nav {
+    display: flex;
+    gap: 30px;
+    margin-left: 38px;
+  }
+
+  .main-nav a {
+    color: var(--petrol);
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  .main-nav a:hover { color: var(--mint); }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto;
+    padding: 12px 24px;
+    border-radius: 10px;
+    background: var(--petrol);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .nav-cta:hover { opacity: 0.92; }
+
+  .hamburger { display: none !important; }
+}
+
+h2[id] { scroll-margin-top: 90px; }
