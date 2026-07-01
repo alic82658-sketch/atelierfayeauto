@@ -9,11 +9,11 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
 
 const title = 'Ma voiture ne démarre pas : que vérifier ? | Atelier Faye Auto, Dakar';
 const description =
-  'Votre voiture ne démarre pas à Dakar ? 5 vérifications simples avant d’appeler un mécanicien, et les causes les plus fréquentes. Atelier Faye Auto, Dakar.';
+  'Votre voiture ne démarre pas à Dakar ? Les vérifications simples à faire avant d’appeler un mécanicien, et les causes les plus fréquentes. Atelier Faye Auto, Dakar.';
 
 const schema = {
   '@context': 'https://schema.org', '@type': 'Article',
-  headline: 'Ma voiture ne démarre pas : 5 vérifications avant d’appeler',
+  headline: 'Ma voiture ne démarre pas : que vérifier avant d’appeler',
   description, inLanguage: 'fr',
   author: { '@type': 'Organization', name: 'Atelier Faye Auto' },
   publisher: {
@@ -55,7 +55,7 @@ const schema = {
     </header>
     <main class="article-shell">
       <nav class="breadcrumb" aria-label="Fil d’ariane">
-        <a href="/">Accueil</a> <span>›</span> <a href="/#conseils">Conseils</a> <span>›</span> Démarrage
+        <a href="/">Accueil</a> <span>›</span> <a href="/conseils">Conseils</a> <span>›</span> Démarrage
       </nav>
       <article class="article-body">
         <p class="article-kicker">Conseils auto · Démarrage</p>
@@ -128,6 +128,7 @@ const schema = {
             dit déjà beaucoup. L’Atelier Faye Auto vous accueille à Dakar.
           </p>
           <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
+          <a class="article-back-link" href="/conseils">Voir les autres conseils auto →</a>
         </div>
       </article>
     </main>

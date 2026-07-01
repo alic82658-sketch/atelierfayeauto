@@ -1,0 +1,135 @@
+---
+import '../../styles/global.css';
+
+const whatsappNumber = '221774797157';
+
+const whatsappText = encodeURIComponent(
+  "Bonjour Atelier Faye Auto, j'ai une question sur l'entretien ou une panne de mon véhicule. Je souhaite envoyer une photo ou une vidéo."
+);
+
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+
+const title = 'Conseils auto utiles | Atelier Faye Auto, Dakar';
+
+const description =
+  "Conseils auto d'Atelier Faye Auto à Dakar : comprendre un voyant, une panne au démarrage, une vidange ou un entretien avant de contacter le garage.";
+
+const tips = [
+  {
+    slug: 'voyant-moteur-allume',
+    img: '/images/conseil-voyant-moteur.webp',
+    title: 'Voyant moteur allumé : que faire ?',
+    text: 'Comprendre ce que peut signaler un voyant moteur et savoir quand éviter de continuer à rouler.',
+    read: 'Guide pratique',
+    tag: 'Voyant',
+  },
+  {
+    slug: 'voiture-ne-demarre-pas',
+    img: '/images/conseil-demarrage.webp',
+    title: 'Ma voiture ne démarre pas',
+    text: 'Les premières vérifications simples avant d’appeler un mécanicien ou d’envoyer une vidéo.',
+    read: 'Lecture courte',
+    tag: 'Démarrage',
+  },
+  {
+    slug: 'quand-faire-vidange-dakar',
+    img: '/images/conseil-vidange.webp',
+    title: 'Quand faire sa vidange à Dakar ?',
+    text: 'Comprendre l’importance de la vidange selon l’usage du véhicule, la chaleur et les trajets quotidiens.',
+    read: 'Entretien',
+    tag: 'Vidange',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: title,
+  description,
+  inLanguage: 'fr',
+  publisher: {
+    '@type': 'AutoRepair',
+    name: 'Atelier Faye Auto',
+    areaServed: 'Dakar',
+    telephone: '+221774797157',
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: tips.map((tip, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: tip.title,
+      url: `/conseils/${tip.slug}`,
+    })),
+  },
+};
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+
+  <body>
+    <header class="article-header">
+      <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
+        <img src="/images/logo-atelier-faye-auto.png" alt="Atelier Faye Auto" />
+      </a>
+      <a class="nav-cta-article" href={whatsappUrl}>Nous contacter sur WhatsApp</a>
+    </header>
+
+    <main class="advice-shell">
+      <nav class="breadcrumb" aria-label="Fil d’ariane">
+        <a href="/">Accueil</a> <span>›</span> Conseils
+      </nav>
+
+      <section class="advice-hero">
+        <p class="article-kicker">Atelier Faye Auto · Conseils utiles</p>
+        <h1>Comprendre votre voiture avant de passer au garage.</h1>
+        <p>
+          Voyant allumé, démarrage difficile, bruit étrange ou entretien à prévoir :
+          ces conseils vous aident à vérifier les bons points sans prendre de risque.
+          Si vous avez un doute, envoyez une photo ou une vidéo sur WhatsApp.
+        </p>
+        <a class="whatsapp-button" href={whatsappUrl}>Envoyer une photo ou une vidéo</a>
+      </section>
+
+      <section class="section-block">
+        <div class="section-title">
+          <h2>Tous les conseils auto</h2>
+          <p>Des articles simples, utiles et liés aux problèmes réels que les automobilistes rencontrent.</p>
+        </div>
+
+        <div class="tips-grid">
+          {tips.map((tip) => (
+            <a class="tip-card" href={`/conseils/${tip.slug}`}>
+              <img class="tip-thumb" src={tip.img} alt={tip.title} loading="lazy" />
+              <div class="tip-card-body">
+                <small class="tip-tag">{tip.tag}</small>
+                <h3>{tip.title}</h3>
+                <p>{tip.text}</p>
+                <small>{tip.read} →</small>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="article-cta">
+        <h2>Vous ne trouvez pas votre problème ?</h2>
+        <p>
+          Décrivez ce que vous voyez, envoyez une photo ou une courte vidéo.
+          Atelier Faye Auto vous répond avec une première orientation claire pendant les horaires d’ouverture.
+        </p>
+        <a class="whatsapp-button" href={whatsappUrl}>Demander un avis sur WhatsApp</a>
+      </section>
+    </main>
+  </body>
+</html>

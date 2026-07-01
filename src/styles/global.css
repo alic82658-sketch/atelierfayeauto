@@ -1396,3 +1396,79 @@ p {
   .location-map, .location-map iframe{ min-height:260px; }
   .location-info .whatsapp-button{ align-self:stretch; text-align:center; }
 }
+
+/* === PAGE CONSEILS : HUB LARGE === */
+
+.advice-shell {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 48px 0 90px;
+}
+
+.advice-hero {
+  max-width: 760px;
+  margin-bottom: 42px;
+}
+
+.advice-hero h1 {
+  color: var(--petrol);
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.advice-hero p {
+  max-width: 680px;
+  margin: 18px 0 24px;
+  color: rgba(28, 42, 48, 0.74);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.advice-shell .tips-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.advice-shell .tip-card {
+  min-height: 100%;
+}
+
+.advice-shell .tip-thumb {
+  aspect-ratio: 16 / 10;
+}
+
+.tip-tag {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: var(--mint);
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.advice-shell .article-cta {
+  margin-top: 48px;
+  max-width: 760px;
+}
+
+@media (max-width: 900px) {
+  .advice-shell {
+    width: 100%;
+    padding: 26px 14px 90px;
+  }
+
+  .advice-shell .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .advice-hero h1 {
+    font-size: 38px;
+  }
+
+  .advice-hero p {
+    font-size: 16px;
+  }
+}
+
