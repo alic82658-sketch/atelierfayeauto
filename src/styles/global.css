@@ -1472,3 +1472,38 @@ p {
   }
 }
 
+
+/* --- Fix logo mobile --- */
+@media (max-width: 900px) {
+  .logo-link img { width: 180px; max-height: 64px; }
+}
+
+/* --- Menu mobile ouvert --- */
+@media (max-width: 900px) {
+  .app-header.nav-open{
+    flex-wrap: wrap;
+    height: auto;
+    padding-bottom: 12px;
+  }
+  .app-header.nav-open .main-nav{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    order: 3;
+    border-top: 1px solid rgba(138,148,155,0.2);
+    padding-top: 8px;
+  }
+  .app-header.nav-open .main-nav a{
+    padding: 12px 4px;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(138,148,155,0.12);
+  }
+  .app-header.nav-open .nav-cta{
+    display: inline-flex;
+    order: 4;
+    margin: 12px 0 0;
+    width: 100%;
+    justify-content: center;
+  }
+}

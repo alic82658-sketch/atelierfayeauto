@@ -309,5 +309,13 @@ const tips = [
       </section>
     </main>
     <a class="floating-photo" href={whatsappUrl}>Ma panne en photo</a>
+    <script>
+      const btn = document.querySelector('.hamburger');
+      const nav = document.querySelector('.main-nav');
+      const cta = document.querySelector('.nav-cta');
+      btn.addEventListener('click', () => {
+        document.querySelector('.app-header').classList.toggle('nav-open');
+      });
+    </script>
   </body>
 </html>
