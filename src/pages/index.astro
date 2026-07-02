@@ -313,6 +313,10 @@ const tips = [
       const btn = document.querySelector('.hamburger');
       const nav = document.querySelector('.main-nav');
       const cta = document.querySelector('.nav-cta');
+      const header = document.querySelector('.app-header');
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 10);
+      });
       btn.addEventListener('click', () => {
         document.querySelector('.app-header').classList.toggle('nav-open');
       });

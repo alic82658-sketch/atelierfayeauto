@@ -1507,3 +1507,59 @@ p {
     justify-content: center;
   }
 }
+
+/* --- Premium header --- */
+.app-header{
+  transition: box-shadow .28s ease, background .28s ease, padding .28s ease;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,253,248,0.92);
+  backdrop-filter: saturate(1.1) blur(8px);
+}
+.app-header.scrolled{
+  box-shadow: 0 6px 24px rgba(28,42,48,0.10);
+  background: rgba(255,253,248,0.97);
+}
+.main-nav a{
+  position: relative;
+  transition: color .2s ease;
+}
+.main-nav a::after{
+  content:"";
+  position:absolute;
+  left:0; bottom:-4px;
+  width:0; height:2px;
+  background: var(--petrol);
+  transition: width .25s ease;
+}
+.main-nav a:hover{ color: var(--petrol); }
+.main-nav a:hover::after{ width:100%; }
+
+@media (max-width: 900px){
+  .logo-link img{ width: 200px; max-height: 72px; }
+  .app-header .main-nav,
+  .app-header .nav-cta{ transition: opacity .25s ease; }
+  .app-header.nav-open{
+    box-shadow: 0 12px 34px rgba(28,42,48,0.14);
+  }
+  .app-header.nav-open .main-nav a{
+    text-align: left;
+    font-weight: 600;
+    color: var(--petrol);
+  }
+  .hamburger{
+    transition: background .2s ease, border-color .2s ease;
+  }
+  .hamburger:hover{ border-color: var(--petrol); }
+}
+
+
+/* --- Logo mobile sobre --- */
+@media (max-width: 900px){
+  .app-header .logo-link img{
+    width: 165px !important;
+    max-height: 58px !important;
+    transform: none !important;
+  }
+}
