@@ -1563,3 +1563,38 @@ p {
     transform: none !important;
   }
 }
+
+/* --- Logo symbole + wordmark --- */
+.logo-link{
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+}
+.logo-symbol{
+  width: auto !important;
+  height: 46px !important;
+  transform: none !important;
+  max-height: none !important;
+}
+.logo-wordmark{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.32rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+.logo-wordmark strong{ color: var(--petrol); font-weight: 700; }
+.logo-wordmark em{ color: #4aa585; font-style: normal; font-weight: 700; }
+
+@media (max-width: 900px){
+  .logo-symbol{ height: 40px !important; }
+  .logo-wordmark{ font-size: 1.1rem; }
+}
+
+/* --- Espace logo hamburger mobile --- */
+@media (max-width: 900px){
+  .app-header .logo-wordmark{ font-size: 0.98rem; }
+  .app-header .hamburger{ margin-left: 14px; flex-shrink: 0; }
+  .app-header .logo-link{ flex-shrink: 1; min-width: 0; }
+}
