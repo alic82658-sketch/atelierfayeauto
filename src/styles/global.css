@@ -1664,3 +1664,21 @@ p {
   .article-body h2{ font-size: 1.32rem; margin: 34px 0 14px; }
   .article-photo{ border-radius: 14px; margin-bottom: 22px; }
 }
+
+/* --- Fix header mobile bugs --- */
+@media (max-width: 900px){
+  /* Symbole AF seul sur mobile, texte masqué (règle le débordement) */
+  .app-header.nav-open .logo-wordmark{ display: none !important; }
+  /* Header article: bouton plus compact pour tenir avec le logo */
+  .article-header{ padding: 0 16px; gap: 0.6rem; }
+  .article-header .nav-cta-article{ padding: 0.5rem 0.85rem; font-size: 0.9rem; }
+  /* Hamburger reste en haut à droite même menu ouvert */
+  .app-header.nav-open{ align-items: flex-start; }
+  .app-header.nav-open .hamburger{ order: 0; margin-left: auto; }
+  .app-header.nav-open .logo-link{ order: -1; }
+}
+
+/* --- Nom logo articles mobile (bouton retiré, place libre) --- */
+@media (max-width: 900px){
+  .article-header .logo-wordmark{ display: inline !important; font-size: 0.98rem; }
+}
