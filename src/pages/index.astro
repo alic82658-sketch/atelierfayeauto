@@ -72,6 +72,30 @@ const tips = [
       name="description"
       content="Atelier Faye Auto, garage familial à Dakar. Envoyez une photo ou vidéo de votre panne sur WhatsApp pour une première orientation claire."
     />
+
+    <!-- Open Graph (partage WhatsApp / Facebook) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Atelier Faye Auto | Garage à Dakar" />
+    <meta property="og:description" content="Envoyez une photo ou vidéo de votre panne sur WhatsApp. Diagnostic, entretien et réparation à Dakar." />
+    <meta property="og:image" content="https://atelierfayeauto.pages.dev/images/logo-atelier-faye-auto.png" />
+    <meta property="og:url" content="https://atelierfayeauto.pages.dev/" />
+    <meta property="og:locale" content="fr_FR" />
+    <link rel="canonical" href="https://atelierfayeauto.pages.dev/" />
+
+    <!-- Donnees structurees LocalBusiness (SEO local) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'AutoRepair',
+      name: 'Atelier Faye Auto',
+      description: 'Garage automobile familial a Dakar : diagnostic, entretien et reparation.',
+      image: 'https://atelierfayeauto.pages.dev/images/logo-atelier-faye-auto.png',
+      url: 'https://atelierfayeauto.pages.dev/',
+      telephone: '+221774797157',
+      address: { '@type': 'PostalAddress', addressLocality: 'Dakar', addressRegion: 'Colobane', addressCountry: 'SN' },
+      geo: { '@type': 'GeoCoordinates', latitude: 14.699232, longitude: -17.449360 },
+      openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '08:30', closes: '21:00' },
+      areaServed: 'Dakar'
+    })} />
   </head>
 
   <body>
