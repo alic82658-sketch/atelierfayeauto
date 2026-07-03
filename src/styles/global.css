@@ -1717,3 +1717,61 @@ p {
   background: #eafaf3;
   border-color: var(--petrol);
 }
+
+/* --- Polissage articles v2 (FAQ + boutons + titre) --- */
+
+/* Titre plus imposant */
+.article-body h1{
+  font-size: clamp(2rem, 4.5vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.4rem;
+}
+
+/* Boutons navigation mieux intégrés */
+.article-nav{ margin: 0 0 22px; }
+
+/* FAQ stylée comme le reste de l'article */
+.faq{ margin-top: 8px; }
+.faq details{
+  background: #f6faf8;
+  border: 1px solid rgba(47,191,143,0.28);
+  border-radius: 14px;
+  margin: 0 0 12px;
+  padding: 0;
+  overflow: hidden;
+  transition: border-color .2s ease;
+}
+.faq details[open]{
+  border-color: var(--petrol);
+}
+.faq summary{
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 48px 16px 20px;
+  font-weight: 600;
+  color: var(--petrol);
+  position: relative;
+  line-height: 1.4;
+}
+.faq summary::-webkit-details-marker{ display: none; }
+.faq summary::after{
+  content: "+";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--petrol);
+  transition: transform .2s ease;
+}
+.faq details[open] summary::after{
+  content: "−";
+}
+.faq details p{
+  margin: 0;
+  padding: 0 20px 18px;
+  line-height: 1.65;
+  color: #37474d;
+}
