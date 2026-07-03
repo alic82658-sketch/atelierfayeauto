@@ -1682,3 +1682,38 @@ p {
 @media (max-width: 900px){
   .article-header .logo-wordmark{ display: inline !important; font-size: 0.98rem; }
 }
+
+/* --- Breadcrumb plus visible (navigation articles) --- */
+.breadcrumb a{
+  color: var(--petrol);
+  font-weight: 600;
+  text-decoration: none;
+}
+.breadcrumb a:hover{
+  text-decoration: underline;
+}
+
+/* --- Boutons navigation article --- */
+.article-nav{
+  display: flex;
+  gap: 10px;
+  margin: 4px 0 18px;
+  flex-wrap: wrap;
+}
+.article-nav-btn{
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #f6faf8;
+  border: 1px solid rgba(47,191,143,0.4);
+  color: var(--petrol);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: background .2s ease, border-color .2s ease;
+}
+.article-nav-btn:hover{
+  background: #eafaf3;
+  border-color: var(--petrol);
+}

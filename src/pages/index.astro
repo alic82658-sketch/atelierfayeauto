@@ -318,6 +318,12 @@ const tips = [
       window.addEventListener('scroll', () => {
         header.classList.toggle('scrolled', window.scrollY > 10);
       });
+      const navLinks = document.querySelectorAll('.main-nav a');
+      navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          header.classList.remove('nav-open');
+        });
+      });
       btn.addEventListener('click', () => {
         document.querySelector('.app-header').classList.toggle('nav-open');
       });
