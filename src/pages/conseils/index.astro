@@ -15,6 +15,7 @@ const description =
   "Conseils auto d'Atelier Faye Auto à Dakar : comprendre un voyant, une panne au démarrage, une vidange ou un entretien avant de contacter le garage.";
 
 const tips = [
+  { slug: 'voyant-fap-perte-puissance-dakar', img: '/images/conseil-fap.webp', title: 'Voyant FAP, perte de puissance : que faire ?', text: 'Fréquent sur les diesels d’occasion importés d’Europe. Pourquoi le filtre s’encrasse à Dakar.', read: '5 min' },
   {
     slug: 'voyant-moteur-allume',
     img: '/images/conseil-voyant-moteur.webp',
@@ -115,7 +116,7 @@ const schema = {
                 <small class="tip-tag">{tip.tag}</small>
                 <h3>{tip.title}</h3>
                 <p>{tip.text}</p>
-                <small>{tip.read} →</small>
+                <small>Lire →</small>
               </div>
             </a>
           ))}

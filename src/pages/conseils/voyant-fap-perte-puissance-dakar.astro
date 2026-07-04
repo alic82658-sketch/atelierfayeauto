@@ -1,0 +1,124 @@
+---
+import '../../styles/global.css';
+const whatsappNumber = '221774797157';
+const whatsappText = encodeURIComponent(
+  'Bonjour Atelier Faye Auto, ma voiture diesel perd de la puissance et le voyant FAP est allumé. Je vous envoie une photo du tableau de bord pour avoir votre avis.'
+);
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+const title = 'Voyant FAP et perte de puissance : que faire à Dakar ? | Atelier Faye Auto';
+const description =
+  'Votre diesel d’occasion perd de la puissance à Dakar, voyant FAP allumé ? Pourquoi le filtre à particules s’encrasse ici, les signes à surveiller et les bons réflexes. Atelier Faye Auto, Dakar.';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Voyant FAP et perte de puissance : le mal des diesels d’occasion à Dakar',
+  description,
+  inLanguage: 'fr',
+  author: { '@type': 'Organization', name: 'Atelier Faye Auto' },
+  publisher: {
+    '@type': 'AutoRepair',
+    name: 'Atelier Faye Auto',
+    address: { '@type': 'PostalAddress', addressLocality: 'Dakar', addressCountry: 'SN' },
+    areaServed: 'Dakar',
+    telephone: '+221774797157',
+  },
+};
+---
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/conseil-fap.webp" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Puis-je continuer à rouler avec le voyant FAP allumé ?', acceptedAnswer: { '@type': 'Answer', text: 'Sur de courtes distances, oui, mais ce n’est pas une solution. Rouler longtemps avec un FAP encrassé peut endommager le moteur et coûter bien plus cher. Mieux vaut faire un diagnostic rapidement.' } },
+        { '@type': 'Question', name: 'Est-ce grave ?', acceptedAnswer: { '@type': 'Answer', text: 'Pris à temps, un FAP encrassé se traite souvent sans remplacement. Ignoré trop longtemps, il peut se boucher complètement et entraîner des réparations lourdes. L’état exact se vérifie au diagnostic.' } },
+        { '@type': 'Question', name: 'Faut-il supprimer le FAP ?', acceptedAnswer: { '@type': 'Answer', text: 'La suppression pure et simple n’est ni une bonne idée ni une solution durable : elle est illégale dans de nombreux pays et augmente la pollution. Il existe des solutions propres pour nettoyer ou régénérer le filtre. On vous conseille selon votre cas.' } },
+        { '@type': 'Question', name: 'Comment éviter que ça revienne ?', acceptedAnswer: { '@type': 'Answer', text: 'Rouler régulièrement à vitesse soutenue aide le FAP à se nettoyer seul. Un entretien suivi et un carburant de qualité limitent aussi l’encrassement. On vous explique les bons gestes selon votre usage à Dakar.' } },
+      ],
+    })} />
+  </head>
+  <body>
+    <header class="article-header">
+      <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
+        <img class="logo-symbol" src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" />
+        <span class="logo-wordmark"><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+      </a>
+    </header>
+    <main class="article-shell">
+      <div class="article-nav">
+        <a href="/" class="article-nav-btn">← Accueil</a>
+        <a href="/conseils" class="article-nav-btn">Tous les conseils</a>
+      </div>
+      <nav class="breadcrumb" aria-label="Fil d’ariane">
+        <a href="/">Accueil</a> <span>›</span> <a href="/conseils">Conseils</a> <span>›</span> FAP
+      </nav>
+      <article class="article-body">
+        <p class="article-kicker">Conseils auto · Diesel</p>
+        <h1>Voyant FAP et perte de puissance : que faire à Dakar ?</h1>
+        <img class="article-photo" src="/images/conseil-fap.webp" alt="Filtre à particules diesel encrassé de suie, posé sur un établi d’atelier — Atelier Faye Auto, Dakar" width="1664" height="936" loading="eager" />
+        <p class="article-lead">
+          Beaucoup de voitures diesel importées d’Europe finissent par perdre de la puissance à Dakar, souvent avec un voyant FAP ou moteur allumé. Bonne nouvelle : dans la plupart des cas, c’est une histoire de filtre encrassé, et ça se traite. Voici pourquoi ça arrive et quoi faire.
+        </p>
+        <h2>Le FAP, c’est quoi au juste ?</h2>
+        <p>Le FAP (filtre à particules), ou DPF en anglais, équipe la plupart des diesels récents. Son rôle : piéger les fines suies produites par le moteur pour réduire la pollution. Mais ce filtre se remplit petit à petit. Pour se vider, il a besoin de chauffer très fort et de brûler ces suies : c’est la régénération. Et cette régénération ne se fait bien que si la voiture roule assez vite et assez longtemps.</p>
+        <h2>Pourquoi il pose problème à Dakar</h2>
+        <p>C’est là tout le souci. Ces voitures ont été conçues pour l’autoroute européenne, où elles roulaient régulièrement à vitesse soutenue. À Dakar, le quotidien est différent :</p>
+        <ul>
+          <li><strong>Trajets courts</strong> en ville : le moteur n’a pas le temps de monter en température.</li>
+          <li><strong>Embouteillages</strong> fréquents : la voiture avance au ralenti, jamais assez vite pour lancer la régénération.</li>
+          <li><strong>Chaleur et poussière</strong> : le moteur est davantage sollicité et les filtres s’encrassent plus vite.</li>
+        </ul>
+        <p>Résultat : le FAP ne se nettoie jamais complètement, les suies s’accumulent, et il finit par se boucher.</p>
+        <h2>Les signes qui doivent alerter</h2>
+        <ul>
+          <li>Le <strong>voyant FAP</strong> (ou le voyant moteur) s’allume au tableau de bord.</li>
+          <li>Une <strong>perte de puissance</strong> nette : la voiture passe parfois en « mode dégradé » pour se protéger.</li>
+          <li>Une <strong>surconsommation</strong> de carburant.</li>
+          <li>De la <strong>fumée noire</strong> à l’échappement, parfois une odeur inhabituelle.</li>
+        </ul>
+        <h2>Les erreurs à éviter</h2>
+        <ul>
+          <li>Continuer à rouler des semaines en ignorant le voyant : le filtre se bouche davantage et la facture grimpe.</li>
+          <li>Faire supprimer le FAP « à la sauvage » : c’est illégal dans beaucoup de pays, polluant, et ça ne règle pas le fond du problème.</li>
+          <li>Débrancher la batterie en espérant « effacer » le voyant : le défaut revient.</li>
+        </ul>
+        <h2>Ce qu’on peut faire à l’atelier</h2>
+        <p>La première étape est toujours un diagnostic électronique : il permet de lire l’état réel du filtre et de confirmer que le problème vient bien du FAP, et pas d’autre chose. Selon le niveau d’encrassement, plusieurs solutions propres existent, de la régénération forcée au nettoyage du filtre. On vous explique clairement ce qui est possible dans votre cas, avant toute intervention.</p>
+        <h2>À Dakar, mieux vaut anticiper</h2>
+        <p>Si vous roulez surtout en ville et dans les bouchons, pensez de temps en temps à faire un trajet plus long à vitesse soutenue : cela aide le FAP à se nettoyer seul. Et au moindre signe (voyant, perte de puissance), un diagnostic rapide évite que le problème s’aggrave.</p>
+        <section class="faq" aria-label="Questions fréquentes">
+          <h2>Questions fréquentes</h2>
+          <details>
+            <summary>Puis-je continuer à rouler avec le voyant FAP allumé ?</summary>
+            <p>Sur de courtes distances, oui, mais ce n’est pas une solution. Rouler longtemps avec un FAP encrassé peut endommager le moteur et coûter bien plus cher. Mieux vaut faire un diagnostic rapidement.</p>
+          </details>
+          <details>
+            <summary>Est-ce grave ?</summary>
+            <p>Pris à temps, un FAP encrassé se traite souvent sans remplacement. Ignoré trop longtemps, il peut se boucher complètement et entraîner des réparations lourdes. L’état exact se vérifie au diagnostic.</p>
+          </details>
+          <details>
+            <summary>Faut-il supprimer le FAP ?</summary>
+            <p>La suppression pure et simple n’est ni une bonne idée ni une solution durable : elle est illégale dans de nombreux pays et augmente la pollution. Il existe des solutions propres pour nettoyer ou régénérer le filtre. On vous conseille selon votre cas.</p>
+          </details>
+          <details>
+            <summary>Comment éviter que ça revienne ?</summary>
+            <p>Rouler régulièrement à vitesse soutenue aide le FAP à se nettoyer seul. Un entretien suivi et un carburant de qualité limitent aussi l’encrassement. On vous explique les bons gestes selon votre usage à Dakar.</p>
+          </details>
+        </section>
+        <h2>Un doute ? Envoyez-nous une photo</h2>
+        <p>Prenez votre tableau de bord en photo et envoyez-la-nous sur WhatsApp. On vous dit tout de suite si c’est le FAP ou autre chose, et ce qu’on peut faire. L’Atelier Faye Auto vous accueille à Dakar.</p>
+        <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
+        <a class="article-back-link" href="/conseils">Voir les autres conseils auto →</a>
+      </article>
+    </main>
+  </body>
+</html>
