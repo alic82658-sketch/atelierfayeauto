@@ -1797,3 +1797,15 @@ p {
 }
 .back-to-top.visible{ display: grid; }
 .back-to-top:hover{ transform: scale(1.1); }
+
+/* --- Fix back-to-top mobile (au-dessus du bouton flottant) --- */
+@media (max-width: 900px){
+  .back-to-top{
+    bottom: 84px;
+    left: auto;
+    right: 16px;
+    width: 42px;
+    height: 42px;
+    z-index: 95;
+  }
+}
