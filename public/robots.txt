@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://atelierfayeauto.com/sitemap-index.xml
