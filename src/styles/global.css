@@ -1775,3 +1775,25 @@ p {
   line-height: 1.65;
   color: #37474d;
 }
+
+/* --- Bouton retour en haut --- */
+.back-to-top{
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  width: 46px;
+  height: 46px;
+  display: none;
+  place-items: center;
+  background: var(--petrol);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(28,42,48,0.18);
+  z-index: 90;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.back-to-top.visible{ display: grid; }
+.back-to-top:hover{ transform: scale(1.1); }

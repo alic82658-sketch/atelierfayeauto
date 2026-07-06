@@ -334,6 +334,7 @@ const tips = [
         <a href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
       </section>
     </main>
+    <button class="back-to-top" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
     <a class="floating-photo" href={whatsappUrl}>Ma panne en photo</a>
     <script>
       const btn = document.querySelector('.hamburger');
@@ -348,6 +349,10 @@ const tips = [
         link.addEventListener('click', () => {
           header.classList.remove('nav-open');
         });
+      });
+      const topBtn = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', () => {
+        topBtn.classList.toggle('visible', window.scrollY > 400);
       });
       btn.addEventListener('click', () => {
         document.querySelector('.app-header').classList.toggle('nav-open');

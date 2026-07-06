@@ -120,5 +120,12 @@ const schema = {
         <a class="article-back-link" href="/conseils">Voir les autres conseils auto →</a>
       </article>
     </main>
+    <button class="back-to-top" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <script>
+      const topBtn = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', () => {
+        topBtn.classList.toggle('visible', window.scrollY > 400);
+      });
+    </script>
   </body>
 </html>
