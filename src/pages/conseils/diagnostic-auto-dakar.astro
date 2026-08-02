@@ -1,0 +1,237 @@
+---
+import '../../styles/global.css';
+
+const whatsappNumber = '221774797157';
+const whatsappText = encodeURIComponent(
+  'Bonjour Atelier Faye Auto, je souhaite un diagnostic. Je vous envoie une photo (ou une courte vidéo) de mon problème pour avoir votre avis.'
+);
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+
+const title = 'Diagnostic auto à Dakar : comprendre avant de réparer | Atelier Faye Auto';
+const description =
+  'Voyant allumé, bruit, fuite ? Avant de changer une pièce, faites un vrai diagnostic auto à Dakar. Envoyez une photo ou une vidéo sur WhatsApp à Atelier Faye Auto.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Diagnostic auto à Dakar : pourquoi il ne faut pas réparer sans comprendre la panne',
+  description,
+  inLanguage: 'fr',
+  author: { '@type': 'Organization', name: 'Atelier Faye Auto' },
+  publisher: {
+    '@type': 'AutoRepair',
+    name: 'Atelier Faye Auto',
+    address: { '@type': 'PostalAddress', addressLocality: 'Dakar', addressCountry: 'SN' },
+    areaServed: 'Dakar',
+    telephone: '+221774797157',
+  },
+};
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/diagnostic-auto-moteur-dakar.webp" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Que faut-il envoyer sur WhatsApp pour un premier avis ?', acceptedAnswer: { '@type': 'Answer', text: 'Une photo nette du tableau de bord si un voyant est allumé, une courte vidéo si le problème est un bruit ou un comportement anormal, et une image de la zone concernée (sous la voiture en cas de fuite). Plus c’est clair, plus la première orientation est précise.' } },
+        { '@type': 'Question', name: 'Le diagnostic à distance remplace-t-il le passage au garage ?', acceptedAnswer: { '@type': 'Answer', text: 'Non. Une photo ou une vidéo permet d’orienter et de savoir si la voiture doit être contrôlée rapidement, mais elle ne remplace pas une vérification complète sur place. Le diagnostic final se fait toujours au garage.' } },
+        { '@type': 'Question', name: 'Combien de temps prend un diagnostic ?', acceptedAnswer: { '@type': 'Answer', text: 'Cela dépend du symptôme. Une vérification simple peut être rapide, une panne moins évidente demande davantage de contrôles avant de conclure. L’important est d’identifier la vraie cause avant toute intervention.' } },
+        { '@type': 'Question', name: 'Que se passe-t-il après le diagnostic ?', acceptedAnswer: { '@type': 'Answer', text: 'Le garage vous explique ce qui a été vérifié, ce qui a été constaté, ce qui est urgent et ce qui peut attendre. L’intervention n’a lieu qu’avec votre accord.' } }
+      ]
+    })} />
+  </head>
+
+  <body>
+    <header class="article-header">
+      <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
+        <img class="logo-symbol" src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" />
+        <span class="logo-wordmark"><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+      </a>
+    </header>
+
+    <main class="article-shell">
+      <div class="article-nav">
+        <a href="/" class="article-nav-btn">← Accueil</a>
+        <a href="/conseils" class="article-nav-btn">Tous les conseils</a>
+      </div>
+      <nav class="breadcrumb" aria-label="Fil d’ariane">
+        <a href="/">Accueil</a> <span>›</span> <a href="/#conseils">Conseils</a> <span>›</span> Diagnostic
+      </nav>
+
+      <article class="article-body">
+        <p class="article-kicker">Conseils auto · Diagnostic</p>
+        <h1>Diagnostic auto à Dakar : pourquoi il ne faut pas réparer sans comprendre la panne</h1>
+        <img class="article-photo" src="/images/diagnostic-auto-moteur-dakar.webp" alt="Valise de diagnostic électronique branchée sur une voiture au garage, Atelier Faye Auto, Dakar" width="1672" height="941" loading="eager" />
+        <p class="article-lead">
+          Quand une voiture tombe en panne, le premier réflexe est souvent de réparer vite. Pourtant, une
+          réparation faite trop rapidement, sans vrai diagnostic, peut coûter plus cher que la panne
+          elle-même. Avant de changer une pièce, le plus important est de comprendre d’où vient réellement
+          le problème.
+        </p>
+
+        <h2>Une panne peut cacher plusieurs causes</h2>
+        <p>
+          Une voiture est un ensemble de pièces liées entre elles, et un même symptôme peut venir de causes
+          différentes. Par exemple, une <a href="/conseils/voiture-ne-demarre-pas">voiture qui ne démarre pas</a>
+          peut être liée à la batterie, au démarreur, à l’alternateur, au carburant, à un capteur ou à un
+          problème électrique. Un <a href="/conseils/voyant-moteur-allume">voyant moteur allumé</a> peut signaler
+          une anomalie simple comme un souci plus sérieux. Un bruit au freinage peut venir des plaquettes, des
+          disques, d’un élément mal fixé ou d’une usure avancée.
+        </p>
+        <p>
+          C’est pour cela qu’un bon diagnostic auto est essentiel : il évite les suppositions, les changements
+          de pièces inutiles et les mauvaises surprises.
+        </p>
+
+        <h2>Réparer sans diagnostic peut coûter plus cher</h2>
+        <p>
+          Changer une pièce sans comprendre l’origine de la panne peut donner l’impression d’avancer, mais ce
+          n’est pas toujours la bonne solution. Le risque est simple : le client paie une réparation, la panne
+          revient, puis une autre pièce est proposée. À la fin, la voiture reste immobilisée plus longtemps, le
+          budget augmente et la confiance disparaît.
+        </p>
+        <p>
+          Un garage sérieux doit pouvoir expliquer ce qu’il a vérifié, ce qu’il a constaté, ce qui est urgent et
+          ce qui peut attendre. Le client n’a pas besoin de connaître toute la mécanique, mais il doit comprendre
+          pourquoi une intervention est nécessaire.
+        </p>
+
+        <h2>Le rôle du diagnostic chez Atelier Faye Auto</h2>
+        <p>
+          Chez Atelier Faye Auto, l’approche est claire : on vérifie, on explique, puis on intervient avec
+          l’accord du client. Un bon garage ne se limite pas à remplacer des pièces : il conseille, il accompagne
+          et il aide à éviter que la même panne revienne, avant, pendant et après l’intervention.
+        </p>
+        <p>
+          Cette méthode prend tout son sens lorsqu’il s’agit d’une panne qui touche le moteur, le freinage, la
+          batterie, la climatisation ou l’<a href="/conseils/quand-faire-vidange-dakar">entretien courant</a>.
+          Vous pouvez retrouver l’ensemble de nos <a href="/#services">services</a> sur la page d’accueil.
+        </p>
+        <p>Un diagnostic clair permet aussi de distinguer trois niveaux de priorité :</p>
+        <ul>
+          <li><strong>À traiter rapidement :</strong> ce qui touche la sécurité ou le moteur.</li>
+          <li><strong>À surveiller :</strong> ce qui n’est pas urgent mais peut évoluer.</li>
+          <li><strong>À prévoir :</strong> ce qui peut attendre le prochain entretien.</li>
+        </ul>
+
+        <h2>Pourquoi envoyer une photo ou une vidéo sur WhatsApp ?</h2>
+        <p>
+          Aujourd’hui, beaucoup de problèmes peuvent être mieux orientés avec une première photo ou une courte
+          vidéo. Un voyant allumé, une fuite sous la voiture, un bruit au démarrage, une fumée inhabituelle ou une
+          pièce abîmée donnent déjà une indication au garage.
+        </p>
+        <p>
+          Cela ne remplace pas un diagnostic complet sur place, mais cela aide à mieux comprendre la situation
+          avant le déplacement. Le garage peut vous dire quoi observer, quoi éviter, et si le véhicule doit être
+          contrôlé rapidement.
+        </p>
+
+        <div class="local-box">
+          <h2>À Dakar, montrer vaut mieux qu’expliquer</h2>
+          <p>
+            Entre les trajets, la circulation et les emplois du temps chargés, passer au garage pour un simple
+            avis n’est pas toujours évident. Envoyer une image de ce que vous voyez ou entendez fait gagner du
+            temps : au lieu de décrire vaguement le problème, vous le montrez directement, et vous savez tout de
+            suite si la voiture doit être contrôlée sans attendre.
+          </p>
+        </div>
+
+        <h2>Les signes qui doivent vous alerter</h2>
+        <p>
+          Certains signes ne doivent pas être ignorés. Un voyant rouge, une perte de freinage, une fumée
+          importante, une forte odeur de carburant, une fuite visible, une surchauffe moteur ou un bruit
+          métallique doivent être pris au sérieux. Dans ces cas, mieux vaut éviter de continuer à rouler sans
+          avis professionnel.
+        </p>
+        <p>D’autres signes semblent moins urgents, mais méritent quand même une vérification :</p>
+        <ul>
+          <li>démarrage difficile ou batterie qui faiblit ;</li>
+          <li>climatisation moins efficace ;</li>
+          <li>consommation inhabituelle ou <a href="/conseils/voyant-fap-perte-puissance-dakar">perte de puissance</a> ;</li>
+          <li>vibrations, bruit léger ou voyant orange.</li>
+        </ul>
+        <p>Plus le problème est identifié tôt, plus il est souvent simple à corriger.</p>
+
+        <section class="faq" aria-label="Questions fréquentes">
+          <h2>Questions fréquentes</h2>
+          <details>
+            <summary>Que faut-il envoyer sur WhatsApp pour un premier avis ?</summary>
+            <p>Une photo nette du tableau de bord si un voyant est allumé, une courte vidéo si le problème est un bruit ou un comportement anormal, et si possible une image de la zone concernée (sous la voiture en cas de fuite, par exemple). Plus ce que vous montrez est clair, plus la première orientation est précise.</p>
+          </details>
+          <details>
+            <summary>Le diagnostic à distance remplace-t-il le passage au garage ?</summary>
+            <p>Non. Une photo ou une vidéo permet d’orienter et de savoir si la voiture doit être contrôlée rapidement, mais elle ne remplace pas une vérification complète sur place. Le diagnostic final se fait toujours au garage.</p>
+          </details>
+          <details>
+            <summary>Combien de temps prend un diagnostic ?</summary>
+            <p>Cela dépend du symptôme. Une vérification simple peut être rapide, tandis qu’une panne moins évidente demande davantage de contrôles avant de conclure. L’important n’est pas d’aller vite, mais d’identifier la vraie cause avant toute intervention.</p>
+          </details>
+          <details>
+            <summary>Que se passe-t-il après le diagnostic ?</summary>
+            <p>Le garage vous explique ce qui a été vérifié, ce qui a été constaté, ce qui est urgent et ce qui peut attendre. L’intervention n’a lieu qu’avec votre accord, en toute clarté.</p>
+          </details>
+        </section>
+
+        <div class="article-cta">
+          <h2>Un doute sur votre voiture ? Montrez-nous</h2>
+          <p>
+            Prenez en photo (ou en vidéo) le voyant, la fuite ou la pièce concernée et envoyez-nous le tout sur
+            WhatsApp. On vous donne une première orientation claire, et on vous dit s’il faut passer. L’Atelier
+            Faye Auto vous accueille à Dakar.
+          </p>
+          <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma photo sur WhatsApp</a>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col footer-brand">
+          <div class="footer-logo">
+            <img src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" />
+            <span><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+          </div>
+          <p>Diagnostic, entretien et réparation automobile à Dakar.</p>
+          <p class="footer-addr">Colobane, Dakar, à proximité de la mosquée Massalikoul Djinane.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href={whatsappUrl}>Nous écrire sur WhatsApp</a></li>
+            <li>Ouvert tous les jours</li>
+            <li>8h30 – 21h</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="/#problemes">Problèmes</a></li>
+            <li><a href="/#entretien">Entretien</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/conseils">Conseils</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Atelier Faye Auto</span>
+        <span>Site réalisé par <a href="https://teranga-web-digital.com/" target="_blank" rel="noopener">Teranga Web Digital</a></span>
+      </div>
+    </footer>
+    <button class="back-to-top" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <script>
+      const topBtn = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', () => {
+        topBtn.classList.toggle('visible', window.scrollY > 400);
+      });
+    </script>
+  </body>
+</html>
