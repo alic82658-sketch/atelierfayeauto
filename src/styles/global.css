@@ -1373,11 +1373,49 @@ p {
   border-color:transparent transparent var(--mint-soft) transparent;
 }
 .review-author{
-  font-size:.85rem;
-  font-weight:600;
-  color:var(--petrol);
+  display:flex;
+  align-items:center;
+  gap:10px;
   padding-left:6px;
 }
+.review-avatar{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:var(--petrol);
+  color:var(--mint);
+  font-weight:700;
+  font-size:1rem;
+  flex-shrink:0;
+}
+.review-meta{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.review-meta strong{
+  font-size:.9rem;
+  color:var(--petrol);
+}
+.review-stars{
+  color:var(--orange);
+  font-size:.85rem;
+  letter-spacing:2px;
+  line-height:1;
+}
+.reviews-rating{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin:26px 0 14px;
+  font-size:.95rem;
+  color:var(--text);
+}
+.reviews-rating .review-stars{ font-size:1rem; }
 @media (max-width:760px){
   .reviews-grid{ grid-template-columns:1fr; }
 }
