@@ -11,6 +11,9 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
 
 const title = 'Conseils auto utiles | Atelier Faye Auto, Dakar';
 
+const pageUrl = 'https://atelierfayeauto.com/conseils/';
+const ogImage = 'https://atelierfayeauto.com/images/logo-atelier-faye-auto.png';
+
 const description =
   "Conseils auto d'Atelier Faye Auto à Dakar : comprendre un voyant, une panne au démarrage, une vidange ou un entretien avant de contacter le garage.";
 
@@ -68,7 +71,7 @@ const schema = {
       '@type': 'ListItem',
       position: index + 1,
       name: tip.title,
-      url: `/conseils/${tip.slug}`,
+      url: `https://atelierfayeauto.com/conseils/${tip.slug}/`,
     })),
   },
 };
@@ -83,6 +86,10 @@ const schema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <link rel="canonical" href={pageUrl} />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
 

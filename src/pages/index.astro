@@ -80,24 +80,27 @@ const tips = [
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Atelier Faye Auto | Garage à Dakar" />
     <meta property="og:description" content="Envoyez une photo ou vidéo de votre panne sur WhatsApp. Diagnostic, entretien et réparation à Dakar." />
-    <meta property="og:image" content="https://atelierfayeauto.pages.dev/images/logo-atelier-faye-auto.png" />
-    <meta property="og:url" content="https://atelierfayeauto.pages.dev/" />
+    <meta property="og:image" content="https://atelierfayeauto.com/images/logo-atelier-faye-auto.png" />
+    <meta property="og:url" content="https://atelierfayeauto.com/" />
     <meta property="og:locale" content="fr_FR" />
-    <link rel="canonical" href="https://atelierfayeauto.pages.dev/" />
+    <link rel="canonical" href="https://atelierfayeauto.com/" />
 
     <!-- Donnees structurees LocalBusiness (SEO local) -->
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'AutoRepair',
+      '@id': 'https://atelierfayeauto.com/#garage',
       name: 'Atelier Faye Auto',
-      description: 'Garage automobile familial a Dakar : diagnostic, entretien et reparation.',
-      image: 'https://atelierfayeauto.pages.dev/images/logo-atelier-faye-auto.png',
-      url: 'https://atelierfayeauto.pages.dev/',
+      description: 'Garage automobile familial à Dakar : diagnostic, entretien et réparation.',
+      image: 'https://atelierfayeauto.com/images/logo-atelier-faye-auto.png',
+      url: 'https://atelierfayeauto.com/',
       telephone: '+221774797157',
-      address: { '@type': 'PostalAddress', addressLocality: 'Dakar', addressRegion: 'Colobane', addressCountry: 'SN' },
+      priceRange: '$$',
+      address: { '@type': 'PostalAddress', streetAddress: 'Colobane, à proximité de la mosquée Massalikoul Djinane', addressLocality: 'Dakar', addressCountry: 'SN' },
       geo: { '@type': 'GeoCoordinates', latitude: 14.699232, longitude: -17.449360 },
-      openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '08:30', closes: '21:00' },
-      areaServed: 'Dakar'
+      openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '08:30', closes: '21:00' }],
+      areaServed: 'Dakar',
+      sameAs: ['https://www.google.com/maps/place/?q=place_id:ChIJHS1GYP9zwQ4R_xjycBOerA0']
     })} />
   </head>
 
@@ -282,6 +285,36 @@ const tips = [
             </article>
           ))}
         </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-title">
+          <h2 id="avis">Ils nous ont fait confiance</h2>
+          <p>Des retours de clients du garage, comme ils nous les envoient sur WhatsApp.</p>
+        </div>
+
+        <!-- TODO (Malcom) : coller ici 3 vrais avis clients.
+             Pour chaque avis : remplacer le texte de la bulle par l'avis exact,
+             et mettre le prénom du client dans la ligne .review-author.
+             Ne rien publier tant que les 3 avis réels ne sont pas collés. -->
+        <div class="reviews-grid">
+          <figure class="review-bubble">
+            <blockquote></blockquote>
+            <figcaption class="review-author"></figcaption>
+          </figure>
+          <figure class="review-bubble">
+            <blockquote></blockquote>
+            <figcaption class="review-author"></figcaption>
+          </figure>
+          <figure class="review-bubble">
+            <blockquote></blockquote>
+            <figcaption class="review-author"></figcaption>
+          </figure>
+        </div>
+
+        <a class="outline-button" href="https://www.google.com/maps/place/?q=place_id:ChIJHS1GYP9zwQ4R_xjycBOerA0" target="_blank" rel="noopener">
+          Voir nos avis Google
+        </a>
       </section>
 
       <section class="section-block">

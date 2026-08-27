@@ -11,20 +11,28 @@ const title = 'Diagnostic auto à Dakar : comprendre avant de réparer | Atelier
 const description =
   'Voyant allumé, bruit, fuite ? Avant de changer une pièce, faites un vrai diagnostic auto à Dakar. Envoyez une photo ou une vidéo sur WhatsApp à Atelier Faye Auto.';
 
+const pageUrl = 'https://atelierfayeauto.com/conseils/diagnostic-auto-dakar/';
+const ogImage = 'https://atelierfayeauto.com/images/diagnostic-auto-moteur-dakar.webp';
+const datePublished = '2026-08-02';
+const dateModified = '2026-08-27';
+const datePublishedLabel = '2 août 2026';
+
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Diagnostic auto à Dakar : pourquoi il ne faut pas réparer sans comprendre la panne',
+  '@type': 'BlogPosting',
+  headline: title,
   description,
   inLanguage: 'fr',
-  author: { '@type': 'Organization', name: 'Atelier Faye Auto' },
+  image: ogImage,
+  author: { '@type': 'Person', name: 'Matta Faye' },
   publisher: {
-    '@type': 'AutoRepair',
+    '@type': 'Organization',
     name: 'Atelier Faye Auto',
-    address: { '@type': 'PostalAddress', addressLocality: 'Dakar', addressCountry: 'SN' },
-    areaServed: 'Dakar',
-    telephone: '+221774797157',
+    logo: { '@type': 'ImageObject', url: 'https://atelierfayeauto.com/images/logo-atelier-faye-auto.png' },
   },
+  mainEntityOfPage: pageUrl,
+  datePublished,
+  dateModified,
 };
 ---
 
@@ -37,16 +45,19 @@ const schema = {
     <meta property="og:type" content="article" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/diagnostic-auto-moteur-dakar.webp" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <link rel="canonical" href={pageUrl} />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
       mainEntity: [
-        { '@type': 'Question', name: 'Que faut-il envoyer sur WhatsApp pour un premier avis ?', acceptedAnswer: { '@type': 'Answer', text: 'Une photo nette du tableau de bord si un voyant est allumé, une courte vidéo si le problème est un bruit ou un comportement anormal, et une image de la zone concernée (sous la voiture en cas de fuite). Plus c’est clair, plus la première orientation est précise.' } },
+        { '@type': 'Question', name: 'Que faut-il envoyer sur WhatsApp pour un premier avis ?', acceptedAnswer: { '@type': 'Answer', text: 'Une photo nette du tableau de bord si un voyant est allumé, une courte vidéo si le problème est un bruit ou un comportement anormal, et si possible une image de la zone concernée (sous la voiture en cas de fuite, par exemple). Plus ce que vous montrez est clair, plus la première orientation est précise.' } },
         { '@type': 'Question', name: 'Le diagnostic à distance remplace-t-il le passage au garage ?', acceptedAnswer: { '@type': 'Answer', text: 'Non. Une photo ou une vidéo permet d’orienter et de savoir si la voiture doit être contrôlée rapidement, mais elle ne remplace pas une vérification complète sur place. Le diagnostic final se fait toujours au garage.' } },
-        { '@type': 'Question', name: 'Combien de temps prend un diagnostic ?', acceptedAnswer: { '@type': 'Answer', text: 'Cela dépend du symptôme. Une vérification simple peut être rapide, une panne moins évidente demande davantage de contrôles avant de conclure. L’important est d’identifier la vraie cause avant toute intervention.' } },
-        { '@type': 'Question', name: 'Que se passe-t-il après le diagnostic ?', acceptedAnswer: { '@type': 'Answer', text: 'Le garage vous explique ce qui a été vérifié, ce qui a été constaté, ce qui est urgent et ce qui peut attendre. L’intervention n’a lieu qu’avec votre accord.' } }
+        { '@type': 'Question', name: 'Combien de temps prend un diagnostic ?', acceptedAnswer: { '@type': 'Answer', text: 'Cela dépend du symptôme. Une vérification simple peut être rapide, tandis qu’une panne moins évidente demande davantage de contrôles avant de conclure. L’important n’est pas d’aller vite, mais d’identifier la vraie cause avant toute intervention.' } },
+        { '@type': 'Question', name: 'Que se passe-t-il après le diagnostic ?', acceptedAnswer: { '@type': 'Answer', text: 'Le garage vous explique ce qui a été vérifié, ce qui a été constaté, ce qui est urgent et ce qui peut attendre. L’intervention n’a lieu qu’avec votre accord, en toute clarté.' } }
       ]
     })} />
   </head>
@@ -65,12 +76,13 @@ const schema = {
         <a href="/conseils" class="article-nav-btn">Tous les conseils</a>
       </div>
       <nav class="breadcrumb" aria-label="Fil d’ariane">
-        <a href="/">Accueil</a> <span>›</span> <a href="/#conseils">Conseils</a> <span>›</span> Diagnostic
+        <a href="/">Accueil</a> <span>›</span> <a href="/conseils">Conseils</a> <span>›</span> Diagnostic
       </nav>
 
       <article class="article-body">
         <p class="article-kicker">Conseils auto · Diagnostic</p>
         <h1>Diagnostic auto à Dakar : pourquoi il ne faut pas réparer sans comprendre la panne</h1>
+        <p class="article-byline">Par <strong>Matta Faye</strong>, Atelier Faye Auto · Publié le {datePublishedLabel}</p>
         <img class="article-photo" src="/images/diagnostic-auto-moteur-dakar.webp" alt="Valise de diagnostic électronique branchée sur une voiture au garage, Atelier Faye Auto, Dakar" width="1672" height="941" loading="eager" />
         <p class="article-lead">
           Quand une voiture tombe en panne, le premier réflexe est souvent de réparer vite. Pourtant, une
@@ -186,8 +198,8 @@ const schema = {
           <h2>Un doute sur votre voiture ? Montrez-nous</h2>
           <p>
             Prenez en photo (ou en vidéo) le voyant, la fuite ou la pièce concernée et envoyez-nous le tout sur
-            WhatsApp. On vous donne une première orientation claire, et on vous dit s’il faut passer. L’Atelier
-            Faye Auto vous accueille à Dakar.
+            WhatsApp. On vous donne une première orientation claire, et on vous dit s’il faut passer.
+            Atelier Faye Auto vous accueille à Dakar.
           </p>
           <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma photo sur WhatsApp</a>
         </div>

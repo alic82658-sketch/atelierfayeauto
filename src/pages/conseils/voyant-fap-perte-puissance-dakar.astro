@@ -8,20 +8,27 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
 const title = 'Voyant FAP et perte de puissance : que faire à Dakar ? | Atelier Faye Auto';
 const description =
   'Votre diesel d’occasion perd de la puissance à Dakar, voyant FAP allumé ? Pourquoi le filtre à particules s’encrasse ici, les signes à surveiller et les bons réflexes. Atelier Faye Auto, Dakar.';
+const pageUrl = 'https://atelierfayeauto.com/conseils/voyant-fap-perte-puissance-dakar/';
+const ogImage = 'https://atelierfayeauto.com/images/conseil-fap.webp';
+const datePublished = '2026-07-04';
+const dateModified = '2026-08-27';
+const datePublishedLabel = '4 juillet 2026';
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Voyant FAP et perte de puissance : le mal des diesels d’occasion à Dakar',
+  '@type': 'BlogPosting',
+  headline: title,
   description,
   inLanguage: 'fr',
-  author: { '@type': 'Organization', name: 'Atelier Faye Auto' },
+  image: ogImage,
+  author: { '@type': 'Person', name: 'Matta Faye' },
   publisher: {
-    '@type': 'AutoRepair',
+    '@type': 'Organization',
     name: 'Atelier Faye Auto',
-    address: { '@type': 'PostalAddress', addressLocality: 'Dakar', addressCountry: 'SN' },
-    areaServed: 'Dakar',
-    telephone: '+221774797157',
+    logo: { '@type': 'ImageObject', url: 'https://atelierfayeauto.com/images/logo-atelier-faye-auto.png' },
   },
+  mainEntityOfPage: pageUrl,
+  datePublished,
+  dateModified,
 };
 ---
 <html lang="fr">
@@ -33,7 +40,10 @@ const schema = {
     <meta property="og:type" content="article" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/conseil-fap.webp" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <link rel="canonical" href={pageUrl} />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
@@ -64,6 +74,7 @@ const schema = {
       <article class="article-body">
         <p class="article-kicker">Conseils auto · Diesel</p>
         <h1>Voyant FAP et perte de puissance : que faire à Dakar ?</h1>
+        <p class="article-byline">Par <strong>Matta Faye</strong>, Atelier Faye Auto · Publié le {datePublishedLabel}</p>
         <img class="article-photo" src="/images/conseil-fap.webp" alt="Filtre à particules diesel encrassé de suie, posé sur un établi d’atelier — Atelier Faye Auto, Dakar" width="1664" height="936" loading="eager" />
         <p class="article-lead">
           Beaucoup de voitures diesel importées d’Europe finissent par perdre de la puissance à Dakar, souvent avec un voyant FAP ou moteur allumé. Bonne nouvelle : dans la plupart des cas, c’est une histoire de filtre encrassé, et ça se traite. Voici pourquoi ça arrive et quoi faire.
@@ -115,7 +126,7 @@ const schema = {
           </details>
         </section>
         <h2>Un doute ? Envoyez-nous une photo</h2>
-        <p>Prenez votre tableau de bord en photo et envoyez-la-nous sur WhatsApp. On vous dit tout de suite si c’est le FAP ou autre chose, et ce qu’on peut faire. L’Atelier Faye Auto vous accueille à Dakar.</p>
+        <p>Prenez votre tableau de bord en photo et envoyez-la-nous sur WhatsApp. On vous dit tout de suite si c’est le FAP ou autre chose, et ce qu’on peut faire. Atelier Faye Auto vous accueille à Dakar.</p>
         <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
         <a class="article-back-link" href="/conseils">Voir les autres conseils auto →</a>
       </article>

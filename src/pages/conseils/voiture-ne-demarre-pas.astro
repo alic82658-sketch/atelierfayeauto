@@ -11,16 +11,25 @@ const title = 'Ma voiture ne démarre pas : que vérifier ? | Atelier Faye Auto,
 const description =
   'Votre voiture ne démarre pas à Dakar ? Les vérifications simples à faire avant d’appeler un mécanicien, et les causes les plus fréquentes. Atelier Faye Auto, Dakar.';
 
+const pageUrl = 'https://atelierfayeauto.com/conseils/voiture-ne-demarre-pas/';
+const ogImage = 'https://atelierfayeauto.com/images/conseil-demarrage.webp';
+const datePublished = '2026-06-13';
+const dateModified = '2026-08-27';
+const datePublishedLabel = '13 juin 2026';
+
 const schema = {
-  '@context': 'https://schema.org', '@type': 'Article',
-  headline: 'Ma voiture ne démarre pas : que vérifier avant d’appeler',
+  '@context': 'https://schema.org', '@type': 'BlogPosting',
+  headline: title,
   description, inLanguage: 'fr',
-  author: { '@type': 'Organization', name: 'Atelier Faye Auto' },
+  image: ogImage,
+  author: { '@type': 'Person', name: 'Matta Faye' },
   publisher: {
-    '@type': 'AutoRepair', name: 'Atelier Faye Auto',
-    address: { '@type': 'PostalAddress', addressLocality: 'Dakar', addressCountry: 'SN' },
-    areaServed: 'Dakar', telephone: '+221774797157',
+    '@type': 'Organization', name: 'Atelier Faye Auto',
+    logo: { '@type': 'ImageObject', url: 'https://atelierfayeauto.com/images/logo-atelier-faye-auto.png' },
   },
+  mainEntityOfPage: pageUrl,
+  datePublished,
+  dateModified,
 };
 ---
 
@@ -33,16 +42,19 @@ const schema = {
     <meta property="og:type" content="article" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/conseil-demarrage.webp" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <link rel="canonical" href={pageUrl} />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
       mainEntity: [
-        { '@type': 'Question', name: 'Comment savoir si le problème vient de la batterie ou du démarreur ?', acceptedAnswer: { '@type': 'Answer', text: 'Un cliquetis rapide indique souvent une batterie faible ; un seul clac sec puis rien oriente vers le démarreur. Un test sur place tranche en quelques minutes.' } },
-        { '@type': 'Question', name: 'Ma voiture redémarre avec des câbles puis se décharge encore, pourquoi ?', acceptedAnswer: { '@type': 'Answer', text: 'C’est le signe classique d’un alternateur qui ne recharge plus la batterie en roulant. À faire contrôler rapidement.' } },
-        { '@type': 'Question', name: 'Combien de temps dure une batterie sous le climat de Dakar ?', acceptedAnswer: { '@type': 'Answer', text: 'La chaleur accélère l’usure : une batterie prévue pour quatre à cinq ans peut n’en tenir que deux ou trois, surtout en trajets courts. Un test régulier évite la panne.' } },
-        { '@type': 'Question', name: 'Que faire si ma voiture refuse de démarrer ?', acceptedAnswer: { '@type': 'Answer', text: 'Enregistrez le bruit au démarrage et envoyez la vidéo sur WhatsApp : le son nous oriente déjà beaucoup, et on vous dit quoi vérifier.' } }
+        { '@type': 'Question', name: 'Comment savoir si le problème vient de la batterie ou du démarreur ?', acceptedAnswer: { '@type': 'Answer', text: 'Un « clic-clic-clic » rapide quand vous tournez la clé indique le plus souvent une batterie trop faible. Un seul « clac » sec, puis plus rien, oriente plutôt vers le démarreur. Dans le doute, un test sur place tranche en quelques minutes.' } },
+        { '@type': 'Question', name: 'Ma voiture redémarre avec des câbles puis se décharge encore, pourquoi ?', acceptedAnswer: { '@type': 'Answer', text: 'C’est le signe classique d’un alternateur qui ne recharge plus la batterie pendant que vous roulez. La batterie se vide alors à chaque trajet, même neuve. Mieux vaut faire contrôler l’alternateur rapidement.' } },
+        { '@type': 'Question', name: 'Combien de temps dure une batterie sous le climat de Dakar ?', acceptedAnswer: { '@type': 'Answer', text: 'La chaleur accélère l’usure : une batterie annoncée pour quatre ou cinq ans peut n’en tenir que deux ou trois ici, surtout avec des trajets courts. Un test régulier évite la panne du matin.' } },
+        { '@type': 'Question', name: 'Que faire concrètement si ma voiture refuse de démarrer ?', acceptedAnswer: { '@type': 'Answer', text: 'Enregistrez le bruit au moment où vous tournez la clé et envoyez-nous la vidéo sur WhatsApp : le son nous oriente déjà beaucoup. On vous dit alors quoi vérifier ou s’il faut passer à l’atelier.' } }
       ]
     })} />
   </head>
@@ -64,6 +76,7 @@ const schema = {
       <article class="article-body">
         <p class="article-kicker">Conseils auto · Démarrage</p>
         <h1>Ma voiture ne démarre pas : que vérifier avant d’appeler ?</h1>
+        <p class="article-byline">Par <strong>Matta Faye</strong>, Atelier Faye Auto · Publié le {datePublishedLabel}</p>
         <img class="article-photo" src="/images/conseil-demarrage.webp" alt="Clé sur le contact d’une voiture qui ne démarre pas, Atelier Faye Auto, Dakar" width="1664" height="936" loading="eager" />
         <p class="article-lead">
           Rien de plus stressant que de tourner la clé… et rien. Avant d’imaginer le pire, sachez que la
@@ -132,7 +145,7 @@ const schema = {
           <h2>Bloqué ? Envoyez-nous une vidéo</h2>
           <p>
             Enregistrez le bruit quand vous tournez la clé et envoyez-le-nous sur WhatsApp : le son nous en
-            dit déjà beaucoup. L’Atelier Faye Auto vous accueille à Dakar.
+            dit déjà beaucoup. Atelier Faye Auto vous accueille à Dakar.
           </p>
           <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
           <a class="article-back-link" href="/conseils">Voir les autres conseils auto →</a>

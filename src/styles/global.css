@@ -1336,6 +1336,51 @@ p {
 .breadcrumb a:hover{ color:var(--petrol); text-decoration:underline; }
 .breadcrumb span{ margin:0 .15rem; opacity:.6; }
 .article-kicker{ font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; color:var(--petrol); font-weight:600; margin:0 0 1.5rem; }
+.article-byline{ font-size:.9rem; color:var(--steel); margin:0 0 1.2rem; }
+.article-byline strong{ color:var(--petrol); font-weight:600; }
+
+/* --- Avis clients (bulles style WhatsApp) --- */
+.reviews-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:22px;
+  margin-top:24px;
+}
+.review-bubble{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.review-bubble blockquote{
+  position:relative;
+  margin:0;
+  padding:16px 18px;
+  background:var(--mint-soft);
+  border-radius:16px 16px 16px 4px;
+  box-shadow:0 10px 26px rgba(28,42,48,0.08);
+  font-size:.95rem;
+  line-height:1.55;
+  min-height:96px;
+}
+.review-bubble blockquote::before{
+  content:'';
+  position:absolute;
+  left:-8px;
+  bottom:0;
+  border-width:0 0 12px 10px;
+  border-style:solid;
+  border-color:transparent transparent var(--mint-soft) transparent;
+}
+.review-author{
+  font-size:.85rem;
+  font-weight:600;
+  color:var(--petrol);
+  padding-left:6px;
+}
+@media (max-width:760px){
+  .reviews-grid{ grid-template-columns:1fr; }
+}
 
 /* --- Renforcement carte envoi photo (bloc marquant) --- */
 .send-photo-card{
