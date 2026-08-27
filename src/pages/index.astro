@@ -83,7 +83,16 @@ const tips = [
     <meta property="og:image" content="https://atelierfayeauto.com/images/logo-atelier-faye-auto.png" />
     <meta property="og:url" content="https://atelierfayeauto.com/" />
     <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Atelier Faye Auto" />
     <link rel="canonical" href="https://atelierfayeauto.com/" />
+
+    <!-- Nom de site pour Google -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Atelier Faye Auto',
+      url: 'https://atelierfayeauto.com/'
+    })} />
 
     <!-- Donnees structurees LocalBusiness (SEO local) -->
     <script type="application/ld+json" set:html={JSON.stringify({
