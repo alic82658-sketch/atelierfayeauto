@@ -11,20 +11,28 @@ const title = 'Voyant moteur allumé : que faire ? | Atelier Faye Auto, Dakar';
 const description =
   'Votre voyant moteur s’allume à Dakar ? Ce que signifie chaque couleur, les gestes à éviter et quand consulter. Atelier Faye Auto, Dakar.';
 
+const pageUrl = 'https://atelierfayeauto.com/conseils/voyant-moteur-allume/';
+const ogImage = 'https://atelierfayeauto.com/images/hero-diagnostic.webp';
+const datePublished = '2026-06-13';
+const dateModified = '2026-08-27';
+const datePublishedLabel = '13 juin 2026';
+
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Voyant moteur allumé : que faire avant de paniquer ?',
+  '@type': 'BlogPosting',
+  headline: title,
   description,
   inLanguage: 'fr',
-  author: { '@type': 'Organization', name: 'Atelier Faye Auto' },
+  image: ogImage,
+  author: { '@type': 'Person', name: 'Matta Faye' },
   publisher: {
-    '@type': 'AutoRepair',
+    '@type': 'Organization',
     name: 'Atelier Faye Auto',
-    address: { '@type': 'PostalAddress', addressLocality: 'Dakar', addressCountry: 'SN' },
-    areaServed: 'Dakar',
-    telephone: '+221774797157',
+    logo: { '@type': 'ImageObject', url: 'https://atelierfayeauto.com/images/logo-atelier-faye-auto.png' },
   },
+  mainEntityOfPage: pageUrl,
+  datePublished,
+  dateModified,
 };
 ---
 
@@ -37,16 +45,19 @@ const schema = {
     <meta property="og:type" content="article" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/hero-diagnostic.webp" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <link rel="canonical" href={pageUrl} />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
       mainEntity: [
-        { '@type': 'Question', name: 'Puis-je rouler avec le voyant moteur allumé ?', acceptedAnswer: { '@type': 'Answer', text: 'Orange et fixe : roulez prudemment jusqu’au garage sans tarder. Clignotant ou rouge : arrêtez-vous dès que possible, continuer peut endommager le moteur.' } },
-        { '@type': 'Question', name: 'Le voyant s’est éteint tout seul, dois-je vérifier ?', acceptedAnswer: { '@type': 'Answer', text: 'Oui. Le défaut est souvent intermittent et reviendra. Un diagnostic lit le code mémorisé même voyant éteint.' } },
-        { '@type': 'Question', name: 'Combien de temps prend un diagnostic électronique ?', acceptedAnswer: { '@type': 'Answer', text: 'La lecture des codes prend quelques minutes ; l’analyse complète dépend de la panne. On vous explique tout avant d’intervenir.' } },
-        { '@type': 'Question', name: 'Combien coûte un diagnostic ?', acceptedAnswer: { '@type': 'Answer', text: 'Le tarif dépend du véhicule et du problème. Envoyez une photo sur WhatsApp pour une première orientation et un devis clair.' } }
+        { '@type': 'Question', name: 'Puis-je rouler avec le voyant moteur allumé ?', acceptedAnswer: { '@type': 'Answer', text: "S'il est orange et fixe, vous pouvez rouler prudemment jusqu'au garage, mais ne tardez pas. S'il clignote ou s'il est rouge, arrêtez-vous dès que possible : continuer peut endommager le moteur." } },
+        { '@type': 'Question', name: "Le voyant s'est éteint tout seul, dois-je quand même vérifier ?", acceptedAnswer: { '@type': 'Answer', text: "Oui. Un voyant qui s'éteint ne veut pas dire que le problème a disparu : souvent, le défaut est intermittent et reviendra. Un diagnostic permet de lire le code mémorisé même voyant éteint." } },
+        { '@type': 'Question', name: 'Combien de temps prend un diagnostic électronique ?', acceptedAnswer: { '@type': 'Answer', text: "La lecture des codes défauts ne prend que quelques minutes. L'analyse complète, pour identifier la cause exacte, dépend de la panne. On vous explique tout avant d'intervenir." } },
+        { '@type': 'Question', name: 'Combien coûte un diagnostic ?', acceptedAnswer: { '@type': 'Answer', text: "Le tarif dépend du véhicule et de la nature du problème. Envoyez-nous une photo de votre tableau de bord sur WhatsApp : on vous donne une première orientation et un devis clair avant toute intervention." } }
       ]
     })} />
   </head>
@@ -65,12 +76,13 @@ const schema = {
         <a href="/conseils" class="article-nav-btn">Tous les conseils</a>
       </div>
       <nav class="breadcrumb" aria-label="Fil d’ariane">
-        <a href="/">Accueil</a> <span>›</span> <a href="/#conseils">Conseils</a> <span>›</span> Voyant moteur
+        <a href="/">Accueil</a> <span>›</span> <a href="/conseils">Conseils</a> <span>›</span> Voyant moteur
       </nav>
 
       <article class="article-body">
         <p class="article-kicker">Conseils auto · Diagnostic</p>
         <h1>Voyant moteur allumé : que faire avant de paniquer ?</h1>
+        <p class="article-byline">Par <strong>Matta Faye</strong>, Atelier Faye Auto · Publié le {datePublishedLabel}</p>
         <img class="article-photo" src="/images/conseil-voyant-moteur.webp" alt="Voyant moteur orange allumé sur le tableau de bord, Atelier Faye Auto, Dakar" width="1664" height="936" loading="eager" />
         <p class="article-lead">
           Un voyant qui s’allume au tableau de bord, c’est toujours un petit pincement au cœur. La bonne
@@ -143,7 +155,7 @@ const schema = {
           <h2>Un doute ? Envoyez-nous une photo</h2>
           <p>
             Prenez votre tableau de bord en photo et envoyez-la-nous sur WhatsApp. On vous dit tout de suite
-            si c’est à surveiller ou s’il faut passer. L’Atelier Faye Auto vous accueille à Dakar.
+            si c’est à surveiller ou s’il faut passer. Atelier Faye Auto vous accueille à Dakar.
           </p>
           <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma photo sur WhatsApp</a>
         </div>

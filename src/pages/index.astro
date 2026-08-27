@@ -80,24 +80,27 @@ const tips = [
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Atelier Faye Auto | Garage à Dakar" />
     <meta property="og:description" content="Envoyez une photo ou vidéo de votre panne sur WhatsApp. Diagnostic, entretien et réparation à Dakar." />
-    <meta property="og:image" content="https://atelierfayeauto.pages.dev/images/logo-atelier-faye-auto.png" />
-    <meta property="og:url" content="https://atelierfayeauto.pages.dev/" />
+    <meta property="og:image" content="https://atelierfayeauto.com/images/logo-atelier-faye-auto.png" />
+    <meta property="og:url" content="https://atelierfayeauto.com/" />
     <meta property="og:locale" content="fr_FR" />
-    <link rel="canonical" href="https://atelierfayeauto.pages.dev/" />
+    <link rel="canonical" href="https://atelierfayeauto.com/" />
 
     <!-- Donnees structurees LocalBusiness (SEO local) -->
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'AutoRepair',
+      '@id': 'https://atelierfayeauto.com/#garage',
       name: 'Atelier Faye Auto',
-      description: 'Garage automobile familial a Dakar : diagnostic, entretien et reparation.',
-      image: 'https://atelierfayeauto.pages.dev/images/logo-atelier-faye-auto.png',
-      url: 'https://atelierfayeauto.pages.dev/',
+      description: 'Garage automobile familial à Dakar : diagnostic, entretien et réparation.',
+      image: 'https://atelierfayeauto.com/images/logo-atelier-faye-auto.png',
+      url: 'https://atelierfayeauto.com/',
       telephone: '+221774797157',
-      address: { '@type': 'PostalAddress', addressLocality: 'Dakar', addressRegion: 'Colobane', addressCountry: 'SN' },
+      priceRange: '$$',
+      address: { '@type': 'PostalAddress', streetAddress: 'Colobane, à proximité de la mosquée Massalikoul Djinane', addressLocality: 'Dakar', addressCountry: 'SN' },
       geo: { '@type': 'GeoCoordinates', latitude: 14.699232, longitude: -17.449360 },
-      openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '08:30', closes: '21:00' },
-      areaServed: 'Dakar'
+      openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '08:30', closes: '21:00' }],
+      areaServed: 'Dakar',
+      sameAs: ['https://www.google.com/maps/place/?q=place_id:ChIJHS1GYP9zwQ4R_xjycBOerA0']
     })} />
   </head>
 
@@ -282,6 +285,32 @@ const tips = [
             </article>
           ))}
         </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-title">
+          <h2 id="avis">Ils nous ont fait confiance</h2>
+          <p>Des retours de clients du garage, comme ils nous les envoient sur WhatsApp.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <figure class="review-bubble">
+            <blockquote>Ma femme était partie à Colobane il y a quelques années et avait demandé dans un magasin si quelqu’un connaissait un mécanicien qui craignait Dieu. C’est comme ça que nous avons connu cet atelier, avec M. Faye, qui a su réparer ce que plusieurs mécaniciens n’avaient pas réussi à réparer après nous avoir fait dépenser de grosses sommes d’argent. Recommande les yeux fermés.</blockquote>
+            <figcaption class="review-author">Lumumba</figcaption>
+          </figure>
+          <figure class="review-bubble">
+            <blockquote>Vraiment je remercie Monsieur Faye, c'est un technicien très expérimenté. Je me rappelle un jour que j'avais un problème très sérieux de ma voiture qui avait un problème électrique au démarrage, mais avec ce Monsieur j'étais très satisfait de son travail. Désormais je lui confie tous les entretiens de ma voiture.</blockquote>
+            <figcaption class="review-author">Amadou Dieme</figcaption>
+          </figure>
+          <figure class="review-bubble">
+            <blockquote>Prise en charge rapide et service impeccable ! Mon véhicule a été diagnostiqué et réparé dans la même journée. L'accueil est chaleureux et le travail est soigné. Pas de mauvaise surprise au moment de la facture. C’est tellement rare et précieux de trouver un mécanicien de confiance de nos jours. Je recommande les yeux fermés !</blockquote>
+            <figcaption class="review-author">Cheikh Sidya Laye Badji</figcaption>
+          </figure>
+        </div>
+
+        <a class="outline-button" href="https://www.google.com/maps/place/?q=place_id:ChIJHS1GYP9zwQ4R_xjycBOerA0" target="_blank" rel="noopener">
+          Voir nos avis Google
+        </a>
       </section>
 
       <section class="section-block">

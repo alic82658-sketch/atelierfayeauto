@@ -11,16 +11,25 @@ const title = 'Quand faire sa vidange à Dakar ? | Atelier Faye Auto, Dakar';
 const description =
   'À quelle fréquence faire sa vidange à Dakar ? Pourquoi les conditions locales raccourcissent l’intervalle, et les signes à surveiller. Atelier Faye Auto, Dakar.';
 
+const pageUrl = 'https://atelierfayeauto.com/conseils/quand-faire-vidange-dakar/';
+const ogImage = 'https://atelierfayeauto.com/images/conseil-vidange.webp';
+const datePublished = '2026-06-13';
+const dateModified = '2026-08-27';
+const datePublishedLabel = '13 juin 2026';
+
 const schema = {
-  '@context': 'https://schema.org', '@type': 'Article',
-  headline: 'Quand faire sa vidange à Dakar ?',
+  '@context': 'https://schema.org', '@type': 'BlogPosting',
+  headline: title,
   description, inLanguage: 'fr',
-  author: { '@type': 'Organization', name: 'Atelier Faye Auto' },
+  image: ogImage,
+  author: { '@type': 'Person', name: 'Matta Faye' },
   publisher: {
-    '@type': 'AutoRepair', name: 'Atelier Faye Auto',
-    address: { '@type': 'PostalAddress', addressLocality: 'Dakar', addressCountry: 'SN' },
-    areaServed: 'Dakar', telephone: '+221774797157',
+    '@type': 'Organization', name: 'Atelier Faye Auto',
+    logo: { '@type': 'ImageObject', url: 'https://atelierfayeauto.com/images/logo-atelier-faye-auto.png' },
   },
+  mainEntityOfPage: pageUrl,
+  datePublished,
+  dateModified,
 };
 ---
 
@@ -33,16 +42,19 @@ const schema = {
     <meta property="og:type" content="article" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/conseil-vidange.webp" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <link rel="canonical" href={pageUrl} />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
       mainEntity: [
-        { '@type': 'Question', name: 'Tous les combien de kilomètres faut-il faire la vidange ?', acceptedAnswer: { '@type': 'Answer', text: 'Souvent 10 000 à 15 000 km selon le constructeur, mais 5 000 à 7 500 km ou tous les six mois est plus prudent sous le climat et la circulation de Dakar. Cela dépend du moteur et de l’usage.' } },
-        { '@type': 'Question', name: 'Huile minérale, semi-synthèse ou synthèse : laquelle choisir ?', acceptedAnswer: { '@type': 'Answer', text: 'Cela dépend du moteur et des préconisations du constructeur. Une huile inadaptée use le moteur. Indiquez votre modèle pour un conseil adapté.' } },
-        { '@type': 'Question', name: 'Faut-il changer les filtres à chaque vidange ?', acceptedAnswer: { '@type': 'Answer', text: 'Le filtre à huile oui ; le filtre à air mérite une surveillance rapprochée à cause de la poussière mais pas forcément un remplacement systématique.' } },
-        { '@type': 'Question', name: 'Combien coûte une vidange ?', acceptedAnswer: { '@type': 'Answer', text: 'Le prix dépend du modèle et du type d’huile. Indiquez votre voiture et son kilométrage sur WhatsApp pour un tarif clair avant intervention.' } }
+        { '@type': 'Question', name: 'Tous les combien de kilomètres faut-il faire la vidange ?', acceptedAnswer: { '@type': 'Answer', text: 'Les constructeurs annoncent souvent 10 000 à 15 000 km, mais sous le climat et la circulation de Dakar, un intervalle de 5 000 à 7 500 km, ou tous les six mois, est plus prudent. Le bon réglage dépend de votre moteur et de votre usage.' } },
+        { '@type': 'Question', name: 'Huile minérale, semi-synthèse ou 100 % synthèse : laquelle choisir ?', acceptedAnswer: { '@type': 'Answer', text: 'Cela dépend de votre moteur et des préconisations du constructeur. Une huile inadaptée peut user le moteur prématurément. Dites-nous le modèle de votre voiture et on vous conseille la bonne.' } },
+        { '@type': 'Question', name: 'Faut-il changer les filtres à chaque vidange ?', acceptedAnswer: { '@type': 'Answer', text: 'Le filtre à huile, oui : une vidange sans lui ne sert qu’à moitié. Le filtre à air mérite une surveillance rapprochée à cause de la poussière, mais ne se change pas forcément à chaque fois.' } },
+        { '@type': 'Question', name: 'Combien coûte une vidange ?', acceptedAnswer: { '@type': 'Answer', text: 'Le prix dépend du modèle et du type d’huile choisi. Indiquez-nous votre voiture et son kilométrage sur WhatsApp : on vous donne un tarif clair, sans surprise, avant d’intervenir.' } }
       ]
     })} />
   </head>
@@ -59,11 +71,12 @@ const schema = {
         <a href="/conseils" class="article-nav-btn">Tous les conseils</a>
       </div>
       <nav class="breadcrumb" aria-label="Fil d’ariane">
-        <a href="/">Accueil</a> <span>›</span> <a href="/#conseils">Conseils</a> <span>›</span> Vidange
+        <a href="/">Accueil</a> <span>›</span> <a href="/conseils">Conseils</a> <span>›</span> Vidange
       </nav>
       <article class="article-body">
         <p class="article-kicker">Conseils auto · Entretien</p>
         <h1>Quand faire sa vidange à Dakar ?</h1>
+        <p class="article-byline">Par <strong>Matta Faye</strong>, Atelier Faye Auto · Publié le {datePublishedLabel}</p>
         <img class="article-photo" src="/images/conseil-vidange.webp" alt="Huile moteur neuve versée lors d’une vidange, Atelier Faye Auto, Dakar" width="1664" height="936" loading="eager" />
         <p class="article-lead">
           La vidange, c’est le geste d’entretien le plus simple, et le plus important pour la longévité de
@@ -139,7 +152,7 @@ const schema = {
           <h2>Vidange à faire ? Parlons-en</h2>
           <p>
             Dites-nous le modèle de votre voiture et son kilométrage sur WhatsApp : on vous indique quand
-            passer et ce que ça coûte, sans surprise. L’Atelier Faye Auto vous accueille à Dakar.
+            passer et ce que ça coûte, sans surprise. Atelier Faye Auto vous accueille à Dakar.
           </p>
           <a class="whatsapp-button" href={whatsappUrl}>Demander ma vidange sur WhatsApp</a>
         </div>
