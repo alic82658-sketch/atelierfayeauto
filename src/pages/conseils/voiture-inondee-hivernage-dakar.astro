@@ -1,0 +1,257 @@
+---
+import '../../styles/global.css';
+
+const whatsappNumber = '221774797157';
+const whatsappText = encodeURIComponent(
+  'Bonjour Atelier Faye Auto, ma voiture est passée dans l’eau. Je vous envoie une photo ou une courte vidéo pour avoir votre avis avant de redémarrer.'
+);
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+
+const title = 'Voiture passée dans l’eau à Dakar : que faire pendant l’hivernage ? | Atelier Faye Auto';
+const description =
+  'Votre voiture a roulé dans l’eau ou a calé dans une zone inondée à Dakar ? Ne redémarrez pas. Les bons réflexes, ce qu’il faut vérifier et comment on remet un moteur en route à l’atelier.';
+
+const pageUrl = 'https://atelierfayeauto.com/conseils/voiture-inondee-hivernage-dakar/';
+const ogImage = 'https://atelierfayeauto.com/images/voiture-inondee-hivernage-dakar.webp';
+const datePublished = '2026-09-26';
+const dateModified = '2026-09-26';
+const datePublishedLabel = '26 septembre 2026';
+
+const faq = [
+  {
+    q: 'Ma voiture a calé dans l’eau, puis-je essayer de la redémarrer ?',
+    a: 'Non. Si le moteur a calé en traversant l’eau, il y a de fortes chances qu’il en ait aspiré. Tenter de redémarrer peut tordre des pièces internes du moteur et transformer une intervention de quelques heures en remplacement de moteur. Poussez ou faites remorquer la voiture hors de l’eau, coupez le contact et demandez conseil avant toute tentative.',
+  },
+  {
+    q: 'Comment savoir si l’eau est entrée dans le moteur ?',
+    a: 'Plusieurs signes doivent alerter : le moteur a calé net pendant la traversée, le filtre à air est mouillé, ou l’huile a pris un aspect laiteux, couleur café au lait, sur la jauge. Dans tous ces cas, le moteur doit être contrôlé avant de redémarrer.',
+  },
+  {
+    q: 'Faut-il forcément changer le moteur après une inondation ?',
+    a: 'Pas forcément. Quand le moteur n’est pas bloqué, on peut souvent le remettre en route après avoir chassé l’eau, vidangé l’huile et changé les filtres. C’est justement pour éviter un remplacement inutile qu’il ne faut pas redémarrer soi-même. En revanche, si des pièces internes ont été endommagées, une réparation plus lourde peut être nécessaire : seul un contrôle permet de le dire.',
+  },
+  {
+    q: 'Ma voiture a redémarré après avoir roulé dans l’eau, dois-je quand même la faire contrôler ?',
+    a: 'Oui, c’est plus prudent. L’eau peut s’infiltrer dans l’huile, les freins, les connecteurs électriques ou l’habitacle sans provoquer de panne immédiate. Les problèmes apparaissent parfois plusieurs jours ou semaines plus tard : voyants, faux contacts, freinage moins efficace, odeur d’humidité.',
+  },
+  {
+    q: 'Que dois-je faire vis-à-vis de mon assurance ?',
+    a: 'Prévenez votre assureur le plus vite possible et prenez des photos de la voiture et du niveau de l’eau. Les délais de déclaration sont courts et les garanties varient d’un contrat à l’autre : vérifiez ce que prévoit le vôtre avant d’engager des réparations.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org', '@type': 'BlogPosting',
+  headline: title,
+  description, inLanguage: 'fr',
+  image: ogImage,
+  author: { '@type': 'Person', name: 'Matta Faye' },
+  publisher: {
+    '@type': 'Organization', name: 'Atelier Faye Auto',
+    logo: { '@type': 'ImageObject', url: 'https://atelierfayeauto.com/images/logo-atelier-faye-auto.png' },
+  },
+  mainEntityOfPage: pageUrl,
+  datePublished,
+  dateModified,
+};
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Atelier Faye Auto" />
+    <link rel="canonical" href={pageUrl} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    })} />
+  </head>
+  <body>
+    <header class="article-header">
+      <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
+        <img class="logo-symbol" src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" />
+        <span class="logo-wordmark"><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+      </a>
+    </header>
+    <main class="article-shell">
+      <div class="article-nav">
+        <a href="/" class="article-nav-btn">← Accueil</a>
+        <a href="/conseils/" class="article-nav-btn">Tous les conseils</a>
+      </div>
+      <nav class="breadcrumb" aria-label="Fil d’ariane">
+        <a href="/">Accueil</a> <span>›</span> <a href="/conseils/">Conseils</a> <span>›</span> Hivernage
+      </nav>
+      <article class="article-body">
+        <p class="article-kicker">Conseils auto · Hivernage</p>
+        <h1>Voiture passée dans l’eau pendant l’hivernage : que faire, que vérifier ?</h1>
+        <p class="article-byline">Par <strong>Matta Faye</strong>, Atelier Faye Auto · Publié le {datePublishedLabel}</p>
+        <img class="article-photo" src="/images/voiture-inondee-hivernage-dakar.webp" alt="Voiture dans une rue inondée pendant l’hivernage, Atelier Faye Auto, Dakar" width="1664" height="936" loading="eager" />
+        <p class="article-lead">
+          Une averse, une rue qui se transforme en rivière, et la voiture qui cale au milieu. Pendant
+          l’hivernage, c’est le scénario que beaucoup d’automobilistes redoutent à Dakar. Le réflexe le plus
+          important tient en une phrase : ne redémarrez pas. Voici pourquoi, et ce qu’il faut faire ensuite.
+        </p>
+
+        <h2>Jusqu’où l’eau est-elle montée ?</h2>
+        <p>
+          Tout dépend de la hauteur d’eau. Si elle n’a touché que le bas des roues, le risque est surtout pour
+          les freins et le dessous de caisse : quelques freinages doux à la sortie suffisent souvent à les
+          sécher. Si l’eau a atteint le plancher, elle a pu mouiller la moquette, les connecteurs et les
+          boîtiers électroniques placés sous les sièges. Si elle est montée au niveau du capot, ou si le moteur
+          a calé pendant la traversée, il faut partir du principe que le moteur a aspiré de l’eau.
+        </p>
+
+        <h2>Pourquoi il ne faut surtout pas redémarrer</h2>
+        <p>
+          Un moteur aspire de l’air pour fonctionner. Quand l’entrée d’air passe sous l’eau, c’est de l’eau qu’il
+          avale. Or l’eau ne se comprime pas : au lieu de l’air qu’il devrait écraser, le piston bute sur un
+          liquide. Le moteur se bloque d’un coup, et si l’on insiste au démarreur, on risque de tordre des pièces
+          internes. C’est souvent la tentative de redémarrage, plus que l’eau elle-même, qui fait passer d’une
+          intervention de quelques heures à un moteur à remplacer.
+        </p>
+        <p>
+          Le bon réflexe est donc simple : coupez le contact, sortez la voiture de l’eau en la poussant ou en la
+          faisant remorquer, et demandez un avis avant toute tentative. Prenez aussi quelques photos, utiles
+          pour votre assurance comme pour le mécanicien.
+        </p>
+
+        <h2>Ce que vous pouvez regarder vous-même, moteur coupé</h2>
+        <p>
+          Sans rien démonter, trois contrôles donnent déjà une bonne idée de la situation. Tirez la jauge
+          d’huile : une huile claire et au bon niveau est bon signe, une huile laiteuse, couleur café au lait,
+          ou un niveau qui a monté indiquent que l’eau s’y est mélangée. Ouvrez ensuite le boîtier du filtre à
+          air si vous savez le faire : un filtre mouillé confirme que l’eau est arrivée jusqu’à l’admission.
+          Enfin, touchez la moquette et regardez sous les tapis : un habitacle trempé doit être séché
+          rapidement, sinon l’humidité s’installe et attaque l’électricité.
+        </p>
+        <p>
+          Si la voiture refuse de démarrer après avoir simplement été garée sous la pluie, sans avoir roulé
+          dans l’eau, la cause est souvent ailleurs : consultez notre article
+          <a href="/conseils/voiture-ne-demarre-pas/">ma voiture ne démarre pas</a>.
+        </p>
+
+        <div class="local-box">
+          <h2>Mon expérience : un moteur bloqué à Mbour</h2>
+          <p>
+            « Cela m’est déjà arrivé avec un véhicule immobilisé à Mbour. Il avait traversé une grande quantité
+            d’eau : le moteur en a aspiré et s’est bloqué. Le client m’a appelé vers 20 heures. Comme c’était un
+            client fidèle, je me suis rendu immédiatement sur place.
+          </p>
+          <p>
+            Dans ce genre de situation, il faut vraiment de l’expérience. Je ne vous le cache pas : certains
+            mécaniciens vont jusqu’à remplacer le moteur. À mon arrivée, je vérifie d’abord si le moteur est
+            réellement bloqué. Pour cela, j’essaie de tourner à la clé la vis de 22 qui maintient la poulie du
+            moteur. Si elle ne tourne pas, le moteur est bloqué.
+          </p>
+          <p>
+            Si le moteur peut être débloqué, il faut vidanger l’huile, remplacer les filtres, puis retirer tous
+            les injecteurs. On fait ensuite tourner le moteur au démarreur : l’eau ressort alors par les orifices
+            des injecteurs. Après cela, on remonte les injecteurs, on purge le circuit, puis on essaie de démarrer
+            le véhicule. »
+          </p>
+          <p>
+            Cette méthode demande de l’outillage et de l’expérience : elle n’est pas à tenter seul au bord de la
+            route. Mais elle montre qu’un moteur noyé n’est pas forcément un moteur perdu, à condition de ne pas
+            avoir forcé le démarrage avant.
+          </p>
+        </div>
+
+        <h2>Les dégâts qui apparaissent plus tard</h2>
+        <p>
+          Une voiture qui redémarre après être passée dans l’eau n’est pas pour autant tirée d’affaire. L’eau
+          peut rester dans l’huile de la boîte de vitesses ou du pont, s’infiltrer dans les connecteurs
+          électriques et provoquer des faux contacts quelques semaines plus tard, ou laisser dans les freins un
+          dépôt de sable et de boue qui accélère l’usure. Des voyants qui s’allument sans raison apparente, une
+          odeur d’humidité persistante ou un freinage qui change après l’hivernage méritent un
+          <a href="/conseils/diagnostic-auto-dakar/">diagnostic</a> pour trouver la vraie cause.
+        </p>
+
+        <div class="local-box">
+          <h2>À Dakar, l’hivernage change la donne</h2>
+          <p>
+            À chaque forte pluie, certains grands axes et quartiers de Dakar se retrouvent sous l’eau en
+            quelques minutes, et il est difficile d’estimer la profondeur d’une flaque au volant. Cette eau
+            n’est pas propre : elle charrie du sable et de la boue qui s’incrustent dans les freins et les
+            connecteurs. Pendant la saison, le plus sûr reste de contourner les zones inondées quand c’est
+            possible, et de ne jamais s’engager dans une eau dont on ne voit pas le fond.
+          </p>
+        </div>
+
+        <section class="faq" aria-label="Questions fréquentes">
+          <h2>Questions fréquentes</h2>
+          {faq.map((item) => (
+            <details>
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </section>
+
+        <div class="article-cta">
+          <h2>Votre voiture a pris l’eau ? Montrez-nous avant de redémarrer</h2>
+          <p>
+            Envoyez-nous sur WhatsApp une photo de la voiture, de la jauge d’huile et, si possible, de la hauteur
+            d’eau atteinte. On vous dit quoi faire avant de tourner la clé. Atelier Faye Auto vous accueille à Dakar.
+          </p>
+          <a class="whatsapp-button" href={whatsappUrl}>Envoyer une photo sur WhatsApp</a>
+          <a class="article-back-link" href="/conseils/">Voir les autres conseils auto →</a>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col footer-brand">
+          <div class="footer-logo">
+            <img src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" />
+            <span><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+          </div>
+          <p>Diagnostic, entretien et réparation automobile à Dakar.</p>
+          <p class="footer-addr">Colobane, Dakar, à proximité de la mosquée Massalikoul Djinane.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href={whatsappUrl}>Nous écrire sur WhatsApp</a></li>
+            <li>Ouvert tous les jours</li>
+            <li>8h30 – 21h</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="/#problemes">Problèmes</a></li>
+            <li><a href="/#entretien">Entretien</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/conseils/">Conseils</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Atelier Faye Auto</span>
+        <span>Site réalisé par <a href="https://teranga-web-digital.com/" target="_blank" rel="noopener">Teranga Web Digital</a></span>
+      </div>
+    </footer>
+    <button class="back-to-top" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <script>
+      const topBtn = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', () => {
+        topBtn.classList.toggle('visible', window.scrollY > 400);
+      });
+    </script>
+  </body>
+</html>
