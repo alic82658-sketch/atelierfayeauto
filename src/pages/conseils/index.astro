@@ -12,12 +12,20 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
 const title = 'Conseils auto utiles | Atelier Faye Auto, Dakar';
 
 const pageUrl = 'https://atelierfayeauto.com/conseils/';
-const ogImage = 'https://atelierfayeauto.com/images/logo-atelier-faye-auto.png';
+const ogImage = 'https://atelierfayeauto.com/images/hero-matta.webp';
 
 const description =
   "Conseils auto d'Atelier Faye Auto à Dakar : comprendre un voyant, une panne au démarrage, une vidange ou un entretien avant de contacter le garage.";
 
 const tips = [
+  {
+    slug: 'voiture-inondee-hivernage-dakar',
+    img: '/images/voiture-inondee-hivernage-dakar.webp',
+    title: 'Voiture passée dans l’eau : que faire ?',
+    text: 'Pendant l’hivernage, le bon réflexe avant de redémarrer, et ce qu’il faut vérifier.',
+    read: 'Hivernage',
+    tag: 'Hivernage',
+  },
   {
     slug: 'diagnostic-auto-dakar',
     img: '/images/diagnostic-auto-moteur-dakar.webp',
@@ -126,7 +134,7 @@ const schema = {
 
         <div class="tips-grid">
           {tips.map((tip) => (
-            <a class="tip-card" href={`/conseils/${tip.slug}`}>
+            <a class="tip-card" href={`/conseils/${tip.slug}/`}>
               <img class="tip-thumb" src={tip.img} alt={tip.title} loading="lazy" />
               <div class="tip-card-body">
                 <small class="tip-tag">{tip.tag}</small>
@@ -172,7 +180,7 @@ const schema = {
             <li><a href="/#problemes">Problèmes</a></li>
             <li><a href="/#entretien">Entretien</a></li>
             <li><a href="/#services">Services</a></li>
-            <li><a href="/conseils">Conseils</a></li>
+            <li><a href="/conseils/">Conseils</a></li>
           </ul>
         </div>
       </div>
