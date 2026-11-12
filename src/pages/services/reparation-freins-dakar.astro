@@ -1,0 +1,261 @@
+---
+import '../../styles/global.css';
+import { garage, servicePages, telUrl, whatsappUrl as buildWhatsappUrl, servicePageGraph } from '../../data/garage.js';
+
+const service = servicePages.find((item) => item.slug === 'reparation-freins-dakar');
+const otherServices = servicePages.filter((item) => item.slug !== service.slug);
+
+const whatsappUrl = buildWhatsappUrl(
+  'Bonjour Atelier Faye Auto, j’ai un problème de freinage sur ma voiture. Voici le modèle et ce que je constate (vidéo du bruit jointe) :'
+);
+
+const title = 'Réparation des freins à Dakar | Atelier Faye Auto';
+const description =
+  'Grincement, pédale molle, vibrations au freinage ? Atelier Faye Auto contrôle plaquettes, disques et éléments de sécurité à Dakar. Devis clair avant réparation.';
+
+const pageUrl = service.url;
+// Pas encore de photo d'atelier pour ce service : on garde l'image du garage pour le partage.
+const ogImage = garage.image;
+const datePublished = '2026-11-12';
+const dateModified = '2026-11-12';
+const dateModifiedLabel = '12 novembre 2026';
+
+const faq = [
+  {
+    question: 'Quand faut-il changer les plaquettes de frein ?',
+    answer:
+      'Il n’existe pas de kilométrage unique : l’usure dépend de la voiture et de la conduite, et les freinages répétés dans les embouteillages l’accélèrent. Les signes à surveiller sont un grincement aigu au freinage, un voyant de frein et une distance d’arrêt qui s’allonge. Un contrôle à chaque entretien évite d’attendre le bruit.',
+  },
+  {
+    question: 'Peut-on rouler avec des freins qui grincent ?',
+    answer:
+      'Un grincement aigu est souvent le témoin d’usure des plaquettes : vous pouvez rejoindre le garage, sans tarder. Un bruit de métal contre métal, une pédale molle ou un voyant de frein rouge demandent de s’arrêter et de faire contrôler la voiture avant de reprendre la route.',
+  },
+  {
+    question: 'Faut-il changer les disques en même temps que les plaquettes ?',
+    answer:
+      'Pas systématiquement. Les disques se contrôlent : épaisseur, rayures, déformation. S’ils sont en bon état, seules les plaquettes sont remplacées. Monter des plaquettes neuves sur un disque abîmé les use plus vite et freine moins bien.',
+  },
+  {
+    question: 'Ma pédale de frein est molle, est-ce grave ?',
+    answer:
+      'Oui, c’est un signe à traiter sans attendre. Une pédale molle ou qui s’enfonce indique souvent de l’air dans le circuit ou une fuite de liquide de frein. Évitez de rouler et faites contrôler le véhicule.',
+  },
+  {
+    question: 'Combien coûte un changement de plaquettes de frein à Dakar ?',
+    answer:
+      'Le prix dépend du modèle de la voiture et des pièces. Écrivez à Atelier Faye Auto sur WhatsApp avec le modèle et l’année : vous recevez un devis clair avant toute intervention.',
+  },
+];
+
+const schema = servicePageGraph({ service, title, description, image: ogImage, datePublished, dateModified, faq });
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Atelier Faye Auto" />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+
+  <body>
+    <header class="article-header">
+      <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
+        <img class="logo-symbol" src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" width="450" height="202" />
+        <span class="logo-wordmark"><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+      </a>
+    </header>
+
+    <main class="article-shell service-page">
+      <div class="article-nav">
+        <a href="/" class="article-nav-btn">← Accueil</a>
+        <a href="/#services" class="article-nav-btn">Tous les services</a>
+      </div>
+      <nav class="breadcrumb" aria-label="Fil d’ariane">
+        <a href="/">Accueil</a> <span>›</span> <a href="/#services">Services</a> <span>›</span> Réparation des freins
+      </nav>
+
+      <article class="article-body">
+        <p class="article-kicker">Services · Freinage</p>
+        <h1>Réparation des freins à Dakar : plaquettes, disques et contrôle de sécurité</h1>
+        <p class="article-byline">Par <strong>Matta Faye</strong>, mécanicien principal, Atelier Faye Auto · Mis à jour le {dateModifiedLabel}</p>
+        {/* Photo principale à ajouter : vraie photo d'atelier, paysage 16:9, WebP, sans visage (voir questions pour Matta). */}
+        <p class="article-lead">
+          Les freins sont le premier organe de sécurité de votre voiture. Un grincement, une pédale qui
+          s’enfonce, un volant qui vibre au freinage : ces signes ne passent pas tout seuls. À l’atelier, nous
+          contrôlons les plaquettes, les disques et les éléments de sécurité, et nous vous expliquons ce qui est
+          usé avant de remplacer quoi que ce soit.
+        </p>
+
+        <div class="service-summary">
+          <p class="service-summary-title">L’essentiel</p>
+          <p>
+            Atelier Faye Auto contrôle et répare le freinage des véhicules légers à Dakar : plaquettes, disques
+            et éléments de sécurité. Un voyant de frein rouge, une pédale molle ou un bruit de métal contre
+            métal demandent un contrôle sans attendre. Envoyez une vidéo du bruit sur WhatsApp au
+            {garage.phoneDisplay}, ou appelez. L’atelier se trouve à Colobane et il est ouvert tous les jours de
+            8h30 à 21h. Vous recevez un devis clair avant toute réparation.
+          </p>
+        </div>
+
+        <h2>Les signes d’un freinage à faire contrôler</h2>
+        <p>
+          Le bruit vient en premier. Un grincement aigu quand vous freinez est souvent le témoin d’usure des
+          plaquettes : une petite pièce de métal prévue pour vous avertir avant qu’il ne soit trop tard. Si le
+          bruit devient un frottement de métal contre métal, la garniture est usée jusqu’au support, et c’est le
+          disque qui s’abîme à chaque freinage.
+        </p>
+        <p>
+          La pédale parle aussi. Molle, ou qui s’enfonce plus loin que d’habitude, elle signale souvent de l’air
+          dans le circuit ou une fuite de liquide de frein. Si elle vibre sous le pied, ou si le volant tremble
+          quand vous ralentissez, les disques sont probablement déformés.
+        </p>
+        <p>
+          Restent les signes que l’on remarque moins vite : une voiture qui tire d’un côté au freinage, une
+          distance d’arrêt qui s’allonge, un frein à main qui ne retient plus dans une pente, ou un voyant de
+          frein allumé au tableau de bord. À Dakar, les embouteillages multiplient les freinages, et les
+          plaquettes s’usent plus vite qu’on ne le pense.
+        </p>
+
+        <h2>Comment se passe l’intervention sur les freins</h2>
+        <ol>
+          <li>
+            <strong>Vous décrivez ce que vous constatez.</strong> Une vidéo du bruit sur WhatsApp, ou un appel.
+            Nous vous disons si la voiture peut rouler jusqu’à l’atelier.
+          </li>
+          <li>
+            <strong>Nous contrôlons le freinage.</strong> Épaisseur des plaquettes, état des disques, étriers,
+            flexibles, niveau et état du liquide de frein.
+          </li>
+          <li>
+            <strong>Nous vous expliquons.</strong> Ce qui est usé, ce qui peut encore tenir, et un devis clair
+            pour ce qui doit être remplacé.
+          </li>
+          <li>
+            <strong>Vous décidez.</strong> Les pièces usées sont remplacées avec votre accord.
+          </li>
+          <li>
+            <strong>Nous vérifions le résultat.</strong> Le freinage est contrôlé après l’intervention, et nous
+            vous disons quoi surveiller.
+          </li>
+        </ol>
+        <p>
+          Les freins font aussi partie des points regardés à chaque
+          <a href="/services/vidange-entretien-dakar/">vidange et entretien</a>, ce qui permet de prévoir le
+          remplacement au lieu de le subir.
+        </p>
+
+        <div class="service-case">
+          <h2>Ce qu’en dit un client</h2>
+          <p>
+            Dans son avis Google, Daouda D. indique avoir fait appel à l’atelier pour les freins et pour un
+            diagnostic moteur. Il parle d’un travail soigné, de délais respectés et de tarifs très corrects.
+          </p>
+          <p class="service-case-source">
+            Source : avis publié par ce client sur la
+            <a href={garage.mapsUrl} target="_blank" rel="noopener">fiche Google d’Atelier Faye Auto</a>.
+          </p>
+        </div>
+        {/* Cas détaillé (véhicule, symptôme, pièce remplacée) à ajouter dès que Matta en fournit un. On n'en invente pas. */}
+
+        <h2>Le mot de Matta Faye</h2>
+        <p class="matta-word">
+          « Sur les freins, je ne fais pas d’à-peu-près. Si vos plaquettes peuvent encore tenir, je vous le dis.
+          Si le disque est entamé, je vous l’explique aussi, parce que poser des plaquettes neuves sur un disque
+          abîmé, c’est refaire le travail dans peu de temps. »
+        </p>
+        <p class="matta-sign"><strong>Matta Faye</strong>, mécanicien principal d’Atelier Faye Auto</p>
+
+        <section class="faq" aria-label="Questions fréquentes">
+          <h2>Questions fréquentes sur les freins</h2>
+          {faq.map((item) => (
+            <details>
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
+        </section>
+
+        <div class="article-cta">
+          <h2>Un bruit au freinage ? Ne laissez pas traîner</h2>
+          <p>
+            Envoyez une vidéo du bruit sur WhatsApp avec le modèle de votre voiture, ou appelez. Nous vous
+            disons si vous pouvez rouler jusqu’à l’atelier, à Dakar, et quand passer.
+          </p>
+          <div class="cta-row">
+            <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma vidéo sur WhatsApp</a>
+            <a class="call-button" href={telUrl}>Appeler le {garage.phoneDisplay}</a>
+          </div>
+        </div>
+
+        <h2>Nos autres services à Dakar</h2>
+        <div class="article-nav">
+          {otherServices.map((item) => (
+            <a class="article-nav-btn" href={item.path}>{item.name}</a>
+          ))}
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col footer-brand">
+          <div class="footer-logo">
+            <img src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" width="450" height="202" loading="lazy" decoding="async" />
+            <span><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+          </div>
+          <p>Garage auto à Dakar : diagnostic, entretien et réparation.</p>
+          <p class="footer-addr">Colobane, Dakar, à proximité de la mosquée Massalikoul Djinane.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="/services/diagnostic-auto-dakar/">Diagnostic auto</a></li>
+            <li><a href="/services/vidange-entretien-dakar/">Vidange et entretien</a></li>
+            <li><a href="/services/climatisation-auto-dakar/">Climatisation auto</a></li>
+            <li><a href="/services/reparation-freins-dakar/">Réparation des freins</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href={whatsappUrl}>Nous écrire sur WhatsApp</a></li>
+            <li><a href="tel:+221774797157">Appeler le 77 479 71 57</a></li>
+            <li>Ouvert tous les jours, de 8h30 à 21h</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/#services">Tous les services</a></li>
+            <li><a href="/conseils/">Conseils auto</a></li>
+            <li><a href="/#contact">Adresse et itinéraire</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Atelier Faye Auto</span>
+        <span>Site réalisé par <a href="https://teranga-web-digital.com/" target="_blank" rel="noopener">Teranga Web Digital</a></span>
+      </div>
+    </footer>
+    <button class="back-to-top" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <script>
+      const topBtn = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', () => {
+        topBtn.classList.toggle('visible', window.scrollY > 400);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+---
+// Page affichée quand une adresse n'existe pas.
+// Cloudflare Pages la sert avec le code 404 : sans elle, toute adresse inconnue
+// renvoyait la page d'accueil avec un code 200 (fausse page valide pour Google et les IA).
+import '../styles/global.css';
+import { garage, servicePages, telUrl, whatsappUrl as buildWhatsappUrl } from '../data/garage.js';
+
+const whatsappUrl = buildWhatsappUrl(
+  'Bonjour Atelier Faye Auto, j’ai une panne sur mon véhicule. Je souhaite envoyer une photo ou une vidéo pour avoir une première orientation.'
+);
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page introuvable | Atelier Faye Auto</title>
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="Cette page n’existe pas ou a été déplacée. Retrouvez les services et les conseils d’Atelier Faye Auto, garage à Dakar." />
+  </head>
+
+  <body>
+    <header class="article-header">
+      <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
+        <img class="logo-symbol" src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" width="450" height="202" />
+        <span class="logo-wordmark"><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+      </a>
+    </header>
+
+    <main class="article-shell service-page">
+      <div class="article-nav">
+        <a href="/" class="article-nav-btn">← Accueil</a>
+      </div>
+      <article class="article-body">
+        <p class="article-kicker">Erreur 404</p>
+        <h1>Cette page n’existe pas</h1>
+        <p class="article-lead">
+          L’adresse a peut-être changé, ou le lien que vous avez suivi est incomplet. Voici les pages les plus
+          utiles du site.
+        </p>
+
+        <div class="notfound-links">
+          {servicePages.map((item) => (
+            <a class="article-nav-btn" href={item.path}>{item.name}</a>
+          ))}
+          <a class="article-nav-btn" href="/conseils/">Conseils auto</a>
+        </div>
+
+        <div class="article-cta">
+          <h2>Une panne ? Écrivez-nous directement</h2>
+          <p>
+            Envoyez une photo ou une vidéo sur WhatsApp, ou appelez. Atelier Faye Auto est ouvert tous les jours
+            de 8h30 à 21h, à Dakar.
+          </p>
+          <div class="cta-row">
+            <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
+            <a class="call-button" href={telUrl}>Appeler le {garage.phoneDisplay}</a>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

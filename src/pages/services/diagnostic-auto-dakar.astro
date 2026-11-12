@@ -1,0 +1,274 @@
+---
+import '../../styles/global.css';
+import { garage, servicePages, telUrl, whatsappUrl as buildWhatsappUrl, servicePageGraph } from '../../data/garage.js';
+
+const service = servicePages.find((item) => item.slug === 'diagnostic-auto-dakar');
+const otherServices = servicePages.filter((item) => item.slug !== service.slug);
+
+const whatsappUrl = buildWhatsappUrl(
+  'Bonjour Atelier Faye Auto, je souhaite un diagnostic. Voici le modèle de ma voiture et le problème constaté (photo ou vidéo jointe) :'
+);
+
+const title = 'Diagnostic auto à Dakar : recherche de panne | Atelier Faye Auto';
+const description =
+  'Voyant allumé, bruit, perte de puissance ? Atelier Faye Auto recherche la panne à la valise et sur le véhicule, à Dakar. Envoyez une photo sur WhatsApp ou appelez.';
+
+const pageUrl = service.url;
+const ogImage = 'https://atelierfayeauto.com/images/service-diagnostic-valise.webp';
+const datePublished = '2026-11-12';
+const dateModified = '2026-11-12';
+const dateModifiedLabel = '12 novembre 2026';
+
+const faq = [
+  {
+    question: 'Combien coûte un diagnostic auto à Dakar ?',
+    answer:
+      'Le prix dépend du véhicule et du temps de recherche nécessaire. Écrivez-nous sur WhatsApp avec le modèle, l’année et le symptôme : Atelier Faye Auto vous annonce le tarif avant votre déplacement, puis un devis clair avant toute réparation.',
+  },
+  {
+    question: 'Combien de temps dure un diagnostic ?',
+    answer:
+      'Cela dépend du symptôme. Une lecture de défauts sur un voyant allumé est rapide. Une panne qui n’apparaît que par moments demande davantage de contrôles avant de conclure. L’important est d’identifier la vraie cause avant toute intervention.',
+  },
+  {
+    question: 'Puis-je envoyer une photo ou une vidéo avant de venir ?',
+    answer:
+      'Oui, c’est même le plus simple. Une photo nette du tableau de bord si un voyant est allumé, une courte vidéo si le problème est un bruit, et une image de la zone concernée en cas de fuite. Vous recevez une première orientation et vous savez si la voiture peut rouler jusqu’à l’atelier.',
+  },
+  {
+    question: 'La valise de diagnostic suffit-elle à trouver la panne ?',
+    answer:
+      'Non. La valise lit les codes enregistrés par le calculateur, et un code indique une zone, pas toujours la pièce en cause. Le diagnostic se termine donc sur le véhicule, par un contrôle visuel et manuel de ce que la valise désigne.',
+  },
+  {
+    question: 'Faites-vous un diagnostic avant l’achat d’une voiture d’occasion ?',
+    answer:
+      'Oui, des clients nous confient ce contrôle avant d’acheter : moteur, bruits, organes et carrosserie. Écrivez-nous avec le modèle ou l’annonce pour convenir d’un moment.',
+  },
+  {
+    question: 'Quelles voitures prenez-vous en charge ?',
+    answer:
+      'L’atelier est spécialisé dans les véhicules légers. Dans leurs avis Google, nos clients citent notamment des Toyota, Mazda, Chevrolet, Ford, Volkswagen et Samsung QM6.',
+  },
+];
+
+const schema = servicePageGraph({ service, title, description, image: ogImage, datePublished, dateModified, faq });
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Atelier Faye Auto" />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+
+  <body>
+    <header class="article-header">
+      <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
+        <img class="logo-symbol" src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" width="450" height="202" />
+        <span class="logo-wordmark"><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+      </a>
+    </header>
+
+    <main class="article-shell service-page">
+      <div class="article-nav">
+        <a href="/" class="article-nav-btn">← Accueil</a>
+        <a href="/#services" class="article-nav-btn">Tous les services</a>
+      </div>
+      <nav class="breadcrumb" aria-label="Fil d’ariane">
+        <a href="/">Accueil</a> <span>›</span> <a href="/#services">Services</a> <span>›</span> Diagnostic auto
+      </nav>
+
+      <article class="article-body">
+        <p class="article-kicker">Services · Diagnostic</p>
+        <h1>Diagnostic auto à Dakar : recherche de panne à l’atelier</h1>
+        <p class="article-byline">Par <strong>Matta Faye</strong>, mécanicien principal, Atelier Faye Auto · Mis à jour le {dateModifiedLabel}</p>
+        <img class="article-photo" src="/images/service-diagnostic-valise.webp" alt="Valise de diagnostic tenue en main à bord d’un véhicule, Atelier Faye Auto, Dakar" width="1200" height="675" loading="eager" fetchpriority="high" />
+        <p class="article-lead">
+          Un voyant qui s’allume, un bruit nouveau, une voiture qui perd de la puissance : avant de changer une
+          pièce, il faut savoir laquelle est en cause. Le diagnostic sert à cela. À l’atelier, nous cherchons
+          d’abord la cause, nous vous l’expliquons, et rien n’est réparé sans votre accord.
+        </p>
+
+        <div class="service-summary">
+          <p class="service-summary-title">L’essentiel</p>
+          <p>
+            Atelier Faye Auto réalise le diagnostic des véhicules légers à Dakar : lecture des défauts à la
+            valise, contrôle des voyants et recherche de panne. Vous pouvez commencer par envoyer une photo ou
+            une vidéo sur WhatsApp au {garage.phoneDisplay} pour une première orientation. L’atelier se trouve à
+            Colobane, près de la mosquée Massalikoul Djinane, et il est ouvert tous les jours de 8h30 à 21h.
+            Vous recevez un devis clair avant toute réparation.
+          </p>
+        </div>
+
+        <h2>Quand demander un diagnostic</h2>
+        <p>
+          Le cas le plus courant est le <a href="/conseils/voyant-moteur-allume/">voyant moteur</a> orange qui
+          reste allumé. La voiture roule encore, mais le calculateur a enregistré un défaut, et seule la lecture
+          à la valise dit lequel. Un voyant rouge, lui, demande de s’arrêter dès que possible : il signale un
+          risque pour le moteur ou pour votre sécurité.
+        </p>
+        <p>
+          Viennent ensuite les pannes sans voyant. Un moteur qui a des ratés, une
+          <a href="/conseils/voyant-fap-perte-puissance-dakar/">perte de puissance</a> en côte, un
+          <a href="/conseils/voiture-ne-demarre-pas/">démarrage difficile</a> le matin, une consommation qui
+          grimpe, une fumée inhabituelle. Et les bruits : un claquement, un sifflement, un grognement quand vous
+          braquez. Dans tous ces cas, plusieurs pièces différentes peuvent donner le même symptôme. C’est pour
+          cela que nous ne commençons jamais par remplacer.
+        </p>
+        <p>
+          Le diagnostic sert aussi avant un achat. Des clients nous demandent de contrôler une voiture
+          d’occasion avant de payer : c’est le meilleur moment pour découvrir une panne.
+        </p>
+
+        <h2>Comment se passe un diagnostic à l’atelier</h2>
+        <ol>
+          <li>
+            <strong>Vous montrez le problème.</strong> Une photo du tableau de bord, une vidéo du bruit ou de la
+            fuite, envoyée sur WhatsApp. Nous vous disons si la voiture peut rouler jusqu’à l’atelier ou s’il
+            vaut mieux ne pas insister.
+          </li>
+          <li>
+            <strong>Nous lisons les défauts.</strong> La valise de diagnostic est branchée sur la prise du
+            véhicule pour lire les codes enregistrés par le calculateur.
+          </li>
+          <li>
+            <strong>Nous contrôlons sur la voiture.</strong> Un code défaut indique une zone, pas toujours la
+            pièce. Nous vérifions donc à la main et à l’œil ce que la valise désigne : connecteurs, durites,
+            fuites, usure.
+          </li>
+          <li>
+            <strong>Nous vous expliquons.</strong> Ce qui a été vérifié, ce qui a été trouvé, ce qui est urgent
+            et ce qui peut attendre, avec un devis clair.
+          </li>
+          <li>
+            <strong>Vous décidez.</strong> Aucune réparation ne commence sans votre accord. Après
+            l’intervention, nous vous disons quoi surveiller.
+          </li>
+        </ol>
+        <p>
+          Pour comprendre pourquoi cette étape évite des dépenses inutiles, lisez notre article
+          <a href="/conseils/diagnostic-auto-dakar/">comprendre la panne avant de réparer</a>.
+        </p>
+
+        <div class="service-case">
+          <h2>Deux cas réels racontés par nos clients</h2>
+          <p>
+            <strong>Une Chevrolet Trax qui avait des ratés.</strong> Dans son avis Google, Bara D. raconte que
+            plusieurs garages avaient déjà remplacé les bobines, les bougies et la pompe à essence, sans
+            résultat. À l’atelier, la voiture a été dépannée en moins de deux heures : le défaut venait de la
+            membrane du cache-culbuteurs, qui a été remplacé.
+          </p>
+          <p>
+            <strong>Une fuite de liquide de refroidissement sur un Toyota RAV4.</strong> Robert N. explique que
+            la pompe à eau et un tube du thermostat avaient été changés ailleurs, et qu’on lui proposait de
+            déposer le radiateur. Le défaut venait du vase d’expansion, dont le clapet ne tenait plus la
+            pression. Une fois le vase remplacé, écrit-il, le problème a disparu.
+          </p>
+          <p class="service-case-source">
+            Source : avis publiés par ces clients sur la
+            <a href={garage.mapsUrl} target="_blank" rel="noopener">fiche Google d’Atelier Faye Auto</a>.
+          </p>
+        </div>
+
+        <h2>Le mot de Matta Faye</h2>
+        <p class="matta-word">
+          « Je ne change pas une pièce pour voir si ça passe. Un code défaut me dit où regarder, il ne remplace
+          pas le contrôle sur la voiture. Tant que la cause n’est pas trouvée, je continue à chercher. Et quand
+          elle est trouvée, je vous l’explique avant de toucher à quoi que ce soit. »
+        </p>
+        <p class="matta-sign"><strong>Matta Faye</strong>, mécanicien principal d’Atelier Faye Auto</p>
+
+        <section class="faq" aria-label="Questions fréquentes">
+          <h2>Questions fréquentes sur le diagnostic auto</h2>
+          {faq.map((item) => (
+            <details>
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
+        </section>
+
+        <div class="article-cta">
+          <h2>Un voyant, un bruit, une panne ? Montrez-nous</h2>
+          <p>
+            Envoyez la photo ou la vidéo sur WhatsApp avec le modèle de votre voiture. Vous recevez une première
+            orientation claire, et nous vous disons s’il faut passer à l’atelier, à Dakar.
+          </p>
+          <div class="cta-row">
+            <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma panne sur WhatsApp</a>
+            <a class="call-button" href={telUrl}>Appeler le {garage.phoneDisplay}</a>
+          </div>
+        </div>
+
+        <h2>Nos autres services à Dakar</h2>
+        <div class="article-nav">
+          {otherServices.map((item) => (
+            <a class="article-nav-btn" href={item.path}>{item.name}</a>
+          ))}
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col footer-brand">
+          <div class="footer-logo">
+            <img src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" width="450" height="202" loading="lazy" decoding="async" />
+            <span><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+          </div>
+          <p>Garage auto à Dakar : diagnostic, entretien et réparation.</p>
+          <p class="footer-addr">Colobane, Dakar, à proximité de la mosquée Massalikoul Djinane.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="/services/diagnostic-auto-dakar/">Diagnostic auto</a></li>
+            <li><a href="/services/vidange-entretien-dakar/">Vidange et entretien</a></li>
+            <li><a href="/services/climatisation-auto-dakar/">Climatisation auto</a></li>
+            <li><a href="/services/reparation-freins-dakar/">Réparation des freins</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href={whatsappUrl}>Nous écrire sur WhatsApp</a></li>
+            <li><a href="tel:+221774797157">Appeler le 77 479 71 57</a></li>
+            <li>Ouvert tous les jours, de 8h30 à 21h</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/#services">Tous les services</a></li>
+            <li><a href="/conseils/">Conseils auto</a></li>
+            <li><a href="/#contact">Adresse et itinéraire</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Atelier Faye Auto</span>
+        <span>Site réalisé par <a href="https://teranga-web-digital.com/" target="_blank" rel="noopener">Teranga Web Digital</a></span>
+      </div>
+    </footer>
+    <button class="back-to-top" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <script>
+      const topBtn = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', () => {
+        topBtn.classList.toggle('visible', window.scrollY > 400);
+      });
+    </script>
+  </body>
+</html>
