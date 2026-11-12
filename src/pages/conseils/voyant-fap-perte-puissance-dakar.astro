@@ -20,9 +20,9 @@ const schema = {
   description,
   inLanguage: 'fr',
   image: ogImage,
-  author: { '@type': 'Person', name: 'Matta Faye' },
+  author: { '@type': 'Person', '@id': 'https://atelierfayeauto.com/#matta-faye', name: 'Matta Faye', jobTitle: 'Mécanicien principal', worksFor: { '@id': 'https://atelierfayeauto.com/#garage' } },
   publisher: {
-    '@type': 'Organization',
+    '@id': 'https://atelierfayeauto.com/#garage', '@type': 'Organization',
     name: 'Atelier Faye Auto',
     logo: { '@type': 'ImageObject', url: 'https://atelierfayeauto.com/images/logo-atelier-faye-auto.png' },
   },
@@ -46,6 +46,15 @@ const schema = {
     <meta property="og:site_name" content="Atelier Faye Auto" />
     <link rel="canonical" href={pageUrl} />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://atelierfayeauto.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Conseils', item: 'https://atelierfayeauto.com/conseils/' },
+        { '@type': 'ListItem', position: 3, name: 'FAP', item: pageUrl },
+      ],
+    })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
@@ -76,7 +85,7 @@ const schema = {
         <p class="article-kicker">Conseils auto · Diesel</p>
         <h1>Voyant FAP et perte de puissance : que faire à Dakar ?</h1>
         <p class="article-byline">Par <strong>Matta Faye</strong>, Atelier Faye Auto · Publié le {datePublishedLabel}</p>
-        <img class="article-photo" src="/images/conseil-fap.webp" alt="Filtre à particules diesel encrassé de suie, posé sur un établi d’atelier — Atelier Faye Auto, Dakar" width="1664" height="936" loading="eager" />
+        <img class="article-photo" src="/images/conseil-fap.webp" alt="Filtre à particules diesel encrassé de suie, posé sur un établi d’atelier, Atelier Faye Auto, Dakar" width="1664" height="936" loading="eager" />
         <p class="article-lead">
           Beaucoup de voitures diesel importées d’Europe finissent par perdre de la puissance à Dakar, souvent avec un voyant FAP ou moteur allumé. Bonne nouvelle : dans la plupart des cas, c’est une histoire de filtre encrassé, et ça se traite. Voici pourquoi ça arrive et quoi faire.
         </p>
@@ -104,7 +113,7 @@ const schema = {
           <li>Débrancher la batterie en espérant « effacer » le voyant : le défaut revient.</li>
         </ul>
         <h2>Ce qu’on peut faire à l’atelier</h2>
-        <p>La première étape est toujours un <a href="/conseils/diagnostic-auto-dakar/">diagnostic électronique</a> : il permet de lire l’état réel du filtre et de confirmer que le problème vient bien du FAP, et pas d’autre chose. Selon le niveau d’encrassement, plusieurs solutions propres existent, de la régénération forcée au nettoyage du filtre. On vous explique clairement ce qui est possible dans votre cas, avant toute intervention.</p>
+        <p>La première étape est toujours un <a href="/services/diagnostic-auto-dakar/">diagnostic électronique</a> : il permet de lire l’état réel du filtre et de confirmer que le problème vient bien du FAP, et pas d’autre chose. Selon le niveau d’encrassement, plusieurs solutions propres existent, de la régénération forcée au nettoyage du filtre. On vous explique clairement ce qui est possible dans votre cas, avant toute intervention.</p>
         <h2>À Dakar, mieux vaut anticiper</h2>
         <p>Si vous roulez surtout en ville et dans les bouchons, pensez de temps en temps à faire un trajet plus long à vitesse soutenue : cela aide le FAP à se nettoyer seul. Et au moindre signe (voyant, perte de puissance), un diagnostic rapide évite que le problème s’aggrave.</p>
         <section class="faq" aria-label="Questions fréquentes">
@@ -136,27 +145,36 @@ const schema = {
       <div class="footer-inner">
         <div class="footer-col footer-brand">
           <div class="footer-logo">
-            <img src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" loading="lazy" decoding="async" />
+            <img src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" width="450" height="202" loading="lazy" decoding="async" />
             <span><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
           </div>
-          <p>Diagnostic, entretien et réparation automobile à Dakar.</p>
+          <p>Garage auto à Dakar : diagnostic, entretien et réparation.</p>
           <p class="footer-addr">Colobane, Dakar, à proximité de la mosquée Massalikoul Djinane.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="/services/diagnostic-auto-dakar/">Diagnostic auto</a></li>
+            <li><a href="/services/vidange-entretien-dakar/">Vidange et entretien</a></li>
+            <li><a href="/services/climatisation-auto-dakar/">Climatisation auto</a></li>
+            <li><a href="/services/reparation-freins-dakar/">Réparation des freins</a></li>
+          </ul>
         </div>
         <div class="footer-col">
           <h3>Contact</h3>
           <ul>
             <li><a href={whatsappUrl}>Nous écrire sur WhatsApp</a></li>
-            <li>Ouvert tous les jours</li>
-            <li>8h30 – 21h</li>
+            <li><a href="tel:+221774797157">Appeler le 77 479 71 57</a></li>
+            <li>Ouvert tous les jours, de 8h30 à 21h</li>
           </ul>
         </div>
         <div class="footer-col">
           <h3>Navigation</h3>
           <ul>
-            <li><a href="/#problemes">Problèmes</a></li>
-            <li><a href="/#entretien">Entretien</a></li>
-            <li><a href="/#services">Services</a></li>
-            <li><a href="/conseils/">Conseils</a></li>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/#services">Tous les services</a></li>
+            <li><a href="/conseils/">Conseils auto</a></li>
+            <li><a href="/#contact">Adresse et itinéraire</a></li>
           </ul>
         </div>
       </div>
