@@ -1977,3 +1977,156 @@ p {
 @media (max-width: 760px){
   .footer-bottom{ padding-bottom: 90px; }
 }
+
+/* === Pages service, bouton d'appel, FAQ d'accueil (nov. 2026) === */
+
+/* Bouton d'appel, à côté du bouton WhatsApp */
+.cta-row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.call-button{
+  display: inline-flex;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
+  border-radius: 14px;
+  border: 2px solid var(--petrol);
+  color: var(--petrol);
+  font-weight: 900;
+  background: transparent;
+}
+.call-button:hover{ background: rgba(20,66,79,0.06); }
+.call-link{
+  display: inline-block;
+  margin-top: 14px;
+  color: rgba(255,255,255,0.86);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--mint);
+  text-underline-offset: 4px;
+}
+.final-actions{
+  display: grid;
+  gap: 10px;
+}
+.final-whatsapp a.call-button{
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.55);
+  color: #fff;
+}
+.location-info .call-button{ align-self: flex-start; }
+@media (max-width: 760px){
+  .cta-row .whatsapp-button,
+  .cta-row .call-button,
+  .location-info .call-button{ width: 100%; min-width: 0; align-self: stretch; }
+}
+
+/* Liens vers les pages service dans la liste « Nos services » */
+.technical-list strong a{
+  text-decoration: underline;
+  text-decoration-color: var(--mint);
+  text-underline-offset: 3px;
+}
+.technical-list .service-more{
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--petrol);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* Encart « L'essentiel » en haut des pages service */
+.service-summary{
+  margin: 0 0 34px;
+  padding: 18px 20px;
+  border: 1px solid rgba(47,191,143,0.35);
+  border-left: 4px solid var(--mint);
+  border-radius: 14px;
+  background: var(--soft);
+}
+.service-summary-title{
+  margin: 0 0 8px !important;
+  color: var(--petrol);
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.service-summary p:last-child{ margin-bottom: 0; }
+
+/* Encart « cas réel » */
+.service-case{
+  margin: 36px 0 0;
+  padding: 4px 22px 18px;
+  border-radius: 16px;
+  background: #f6faf8;
+  border: 1px solid rgba(47,191,143,0.28);
+}
+.article-body .service-case h2{
+  margin-top: 18px;
+  padding-top: 0;
+  border-top: 0;
+}
+.service-case-source{
+  font-size: .9rem;
+  color: var(--steel);
+}
+.service-case-source a{ color: var(--petrol); font-weight: 600; text-decoration: underline; }
+
+/* Le mot du mécanicien */
+.matta-word{
+  margin: 0 0 12px;
+  padding: 4px 0 4px 18px;
+  border-left: 4px solid var(--petrol);
+  font-size: 1.12rem;
+  line-height: 1.65;
+  color: #24353b;
+}
+.matta-sign{
+  font-size: .95rem;
+  color: var(--steel);
+}
+.matta-sign strong{ color: var(--petrol); }
+
+/* Liens dans le texte des pages service */
+.service-page a:not(.whatsapp-button):not(.call-button):not(.article-nav-btn):not(.logo-link){
+  color: var(--petrol);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(47,191,143,0.7);
+  text-underline-offset: 3px;
+}
+.service-page .article-cta{ margin-top: 44px; }
+
+/* FAQ de la page d'accueil */
+.home-faq .faq{ max-width: 860px; }
+
+/* Pied de page : une colonne « Services » en plus sur ordinateur */
+@media (min-width: 761px){
+  .footer-inner{ grid-template-columns: 1.5fr 1fr 1fr 1fr; }
+}
+
+/* Page 404 */
+.notfound-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 28px;
+}
+.location-line a{
+  color: var(--petrol);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+/* Sur mobile, l'accroche a un fond clair : le lien d'appel passe en couleur foncée */
+@media (max-width: 900px){
+  .hero-text .call-link{ color: var(--petrol); margin-top: 16px; }
+}
+@media (min-width: 761px){
+  .location-info .call-button{ min-width: 310px; }
+}

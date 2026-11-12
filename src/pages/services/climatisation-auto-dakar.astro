@@ -1,0 +1,246 @@
+---
+import '../../styles/global.css';
+import { garage, servicePages, telUrl, whatsappUrl as buildWhatsappUrl, servicePageGraph } from '../../data/garage.js';
+
+const service = servicePages.find((item) => item.slug === 'climatisation-auto-dakar');
+const otherServices = servicePages.filter((item) => item.slug !== service.slug);
+
+const whatsappUrl = buildWhatsappUrl(
+  'Bonjour Atelier Faye Auto, la climatisation de ma voiture ne fonctionne plus correctement. Voici le modèle et ce que je constate (vidéo jointe) :'
+);
+
+const title = 'Climatisation auto à Dakar : panne de clim | Atelier Faye Auto';
+const description =
+  'Votre clim ne refroidit plus, sent mauvais ou fait du bruit ? Atelier Faye Auto vérifie le système et cherche la panne, à Dakar. Envoyez une vidéo sur WhatsApp.';
+
+const pageUrl = service.url;
+// Pas encore de photo d'atelier pour ce service : on garde l'image du garage pour le partage.
+const ogImage = garage.image;
+const datePublished = '2026-11-12';
+const dateModified = '2026-11-12';
+const dateModifiedLabel = '12 novembre 2026';
+
+const faq = [
+  {
+    question: 'Pourquoi la climatisation de ma voiture ne refroidit plus ?',
+    answer:
+      'Les causes les plus courantes sont un manque de gaz réfrigérant, souvent lié à une fuite, un compresseur qui ne s’enclenche plus, un condenseur encrassé, un filtre d’habitacle colmaté ou un défaut électrique. Seul un contrôle du système permet de dire laquelle est en cause.',
+  },
+  {
+    question: 'Une recharge de gaz suffit-elle à réparer la clim ?',
+    answer:
+      'Seulement si le circuit est étanche. Le circuit de climatisation est fermé : si le gaz manque, il est souvent parti par une fuite. Recharger sans avoir trouvé cette fuite redonne du froid un temps, puis le problème revient.',
+  },
+  {
+    question: 'Ma climatisation sent mauvais, que faire ?',
+    answer:
+      'Une mauvaise odeur vient le plus souvent du filtre d’habitacle, saturé de poussière, ou de l’humidité qui stagne dans le circuit d’air. Le filtre se contrôle et se remplace si nécessaire. À Dakar, la poussière le sature plus vite.',
+  },
+  {
+    question: 'Puis-je rouler avec une climatisation en panne ?',
+    answer:
+      'La voiture roule sans climatisation. En revanche, si un bruit apparaît quand la clim s’enclenche, coupez-la et faites contrôler : sur beaucoup de voitures, le compresseur est entraîné par la même courroie que d’autres organes du moteur.',
+  },
+  {
+    question: 'Combien coûte une réparation de climatisation à Dakar ?',
+    answer:
+      'Tout dépend de la cause : un filtre d’habitacle et un compresseur n’ont pas le même prix. Atelier Faye Auto contrôle d’abord le système, puis vous remet un devis clair avant toute intervention.',
+  },
+];
+
+const schema = servicePageGraph({ service, title, description, image: ogImage, datePublished, dateModified, faq });
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Atelier Faye Auto" />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+
+  <body>
+    <header class="article-header">
+      <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
+        <img class="logo-symbol" src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" width="450" height="202" />
+        <span class="logo-wordmark"><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+      </a>
+    </header>
+
+    <main class="article-shell service-page">
+      <div class="article-nav">
+        <a href="/" class="article-nav-btn">← Accueil</a>
+        <a href="/#services" class="article-nav-btn">Tous les services</a>
+      </div>
+      <nav class="breadcrumb" aria-label="Fil d’ariane">
+        <a href="/">Accueil</a> <span>›</span> <a href="/#services">Services</a> <span>›</span> Climatisation auto
+      </nav>
+
+      <article class="article-body">
+        <p class="article-kicker">Services · Climatisation</p>
+        <h1>Climatisation auto à Dakar : votre clim ne refroidit plus ?</h1>
+        <p class="article-byline">Par <strong>Matta Faye</strong>, mécanicien principal, Atelier Faye Auto · Mis à jour le {dateModifiedLabel}</p>
+        {/* Photo principale à ajouter : vraie photo d'atelier, paysage 16:9, WebP, sans visage (voir questions pour Matta). */}
+        <p class="article-lead">
+          À Dakar, une climatisation qui ne refroidit plus n’est pas un détail de confort. Quand l’air sort
+          tiède, que le souffle faiblit ou qu’une odeur apparaît, plusieurs causes sont possibles, et elles ne
+          se règlent pas de la même façon. À l’atelier, nous vérifions le système, nous cherchons la panne et
+          nous vous disons clairement ce qu’il faut faire.
+        </p>
+
+        <div class="service-summary">
+          <p class="service-summary-title">L’essentiel</p>
+          <p>
+            Atelier Faye Auto vérifie et entretient la climatisation des véhicules légers à Dakar, et recherche
+            les pannes du système. Envoyez une courte vidéo sur WhatsApp au {garage.phoneDisplay} en décrivant
+            ce que vous constatez : air tiède, bruit, odeur ou clim qui se coupe. L’atelier se trouve à
+            Colobane et il est ouvert tous les jours de 8h30 à 21h. Vous recevez un devis clair avant toute
+            intervention.
+          </p>
+        </div>
+
+        <h2>Les signes d’une climatisation en panne</h2>
+        <p>
+          Le signe le plus fréquent est un air qui sort tiède, ou moins froid qu’avant. Le circuit peut manquer
+          de gaz réfrigérant, ce qui arrive surtout quand il y a une fuite. Le compresseur peut aussi ne plus
+          s’enclencher, ou le condenseur, placé à l’avant de la voiture, être encrassé par la poussière au point
+          de ne plus évacuer la chaleur.
+        </p>
+        <p>
+          Quand c’est le souffle qui faiblit alors que le ventilateur tourne à fond, regardez du côté du filtre
+          d’habitacle. Il retient la poussière avant qu’elle n’entre dans la voiture, et il se colmate vite
+          dans l’air de Dakar. C’est aussi lui qui est souvent en cause quand la clim dégage une mauvaise odeur
+          à l’allumage.
+        </p>
+        <p>
+          Un bruit qui apparaît dès que vous appuyez sur le bouton de la clim oriente plutôt vers le compresseur
+          ou sa courroie. Et une clim qui marche un jour sur deux fait penser à un défaut électrique. Dans ce
+          dernier cas, la recherche se fait comme pour toute autre panne, par un
+          <a href="/services/diagnostic-auto-dakar/">diagnostic</a>.
+        </p>
+
+        <h2>Comment se passe le contrôle de la climatisation</h2>
+        <ol>
+          <li>
+            <strong>Vous décrivez le symptôme.</strong> Une courte vidéo sur WhatsApp, moteur tournant et clim
+            allumée, suffit souvent à orienter la recherche.
+          </li>
+          <li>
+            <strong>Nous vérifions le système.</strong> Enclenchement du compresseur, état de la courroie,
+            propreté du condenseur, fonctionnement du ventilateur, filtre d’habitacle, traces de fuite.
+          </li>
+          <li>
+            <strong>Nous vous expliquons.</strong> Ce qui a été trouvé, ce qu’il faut faire, et ce que cela
+            coûte, avec un devis clair.
+          </li>
+          <li>
+            <strong>Vous décidez.</strong> L’intervention ne commence qu’avec votre accord.
+          </li>
+          <li>
+            <strong>Nous contrôlons le résultat.</strong> Une fois l’intervention faite, nous vérifions que le
+            froid est revenu et nous vous disons quoi surveiller.
+          </li>
+        </ol>
+
+        {/* Cas réel à ajouter ici dès que Matta en fournit un (voir questions pour Matta). On n'en invente pas. */}
+
+        <h2>Le mot de Matta Faye</h2>
+        <p class="matta-word">
+          « Une clim qui ne refroidit plus, ce n’est pas toujours un manque de gaz. Je vérifie d’abord le
+          système. Si le gaz est parti, je cherche par où, sinon le froid ne tient pas et vous payez deux
+          fois. »
+        </p>
+        <p class="matta-sign"><strong>Matta Faye</strong>, mécanicien principal d’Atelier Faye Auto</p>
+
+        <section class="faq" aria-label="Questions fréquentes">
+          <h2>Questions fréquentes sur la climatisation auto</h2>
+          {faq.map((item) => (
+            <details>
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
+        </section>
+
+        <div class="article-cta">
+          <h2>Votre clim ne fait plus de froid ? Montrez-nous</h2>
+          <p>
+            Envoyez une vidéo sur WhatsApp avec le modèle de votre voiture et ce que vous constatez. Nous vous
+            donnons une première orientation et nous vous disons quand passer à l’atelier, à Dakar.
+          </p>
+          <div class="cta-row">
+            <a class="whatsapp-button" href={whatsappUrl}>Envoyer ma vidéo sur WhatsApp</a>
+            <a class="call-button" href={telUrl}>Appeler le {garage.phoneDisplay}</a>
+          </div>
+        </div>
+
+        <h2>Nos autres services à Dakar</h2>
+        <div class="article-nav">
+          {otherServices.map((item) => (
+            <a class="article-nav-btn" href={item.path}>{item.name}</a>
+          ))}
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col footer-brand">
+          <div class="footer-logo">
+            <img src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" width="450" height="202" loading="lazy" decoding="async" />
+            <span><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+          </div>
+          <p>Garage auto à Dakar : diagnostic, entretien et réparation.</p>
+          <p class="footer-addr">Colobane, Dakar, à proximité de la mosquée Massalikoul Djinane.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="/services/diagnostic-auto-dakar/">Diagnostic auto</a></li>
+            <li><a href="/services/vidange-entretien-dakar/">Vidange et entretien</a></li>
+            <li><a href="/services/climatisation-auto-dakar/">Climatisation auto</a></li>
+            <li><a href="/services/reparation-freins-dakar/">Réparation des freins</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href={whatsappUrl}>Nous écrire sur WhatsApp</a></li>
+            <li><a href="tel:+221774797157">Appeler le 77 479 71 57</a></li>
+            <li>Ouvert tous les jours, de 8h30 à 21h</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/#services">Tous les services</a></li>
+            <li><a href="/conseils/">Conseils auto</a></li>
+            <li><a href="/#contact">Adresse et itinéraire</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Atelier Faye Auto</span>
+        <span>Site réalisé par <a href="https://teranga-web-digital.com/" target="_blank" rel="noopener">Teranga Web Digital</a></span>
+      </div>
+    </footer>
+    <button class="back-to-top" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <script>
+      const topBtn = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', () => {
+        topBtn.classList.toggle('visible', window.scrollY > 400);
+      });
+    </script>
+  </body>
+</html>

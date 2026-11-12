@@ -1,0 +1,267 @@
+---
+import '../../styles/global.css';
+import { garage, servicePages, telUrl, whatsappUrl as buildWhatsappUrl, servicePageGraph } from '../../data/garage.js';
+
+const service = servicePages.find((item) => item.slug === 'vidange-entretien-dakar');
+const otherServices = servicePages.filter((item) => item.slug !== service.slug);
+
+const whatsappUrl = buildWhatsappUrl(
+  'Bonjour Atelier Faye Auto, je souhaite faire la vidange ou l’entretien de ma voiture. Voici le modèle, l’année et le kilométrage :'
+);
+
+const title = 'Vidange et entretien auto à Dakar | Atelier Faye Auto';
+const description =
+  'Vidange, filtres, niveaux et contrôles essentiels à Dakar. Indiquez votre modèle et votre kilométrage sur WhatsApp : tarif clair annoncé avant de passer.';
+
+const pageUrl = service.url;
+const ogImage = 'https://atelierfayeauto.com/images/conseil-vidange.webp';
+const datePublished = '2026-11-12';
+const dateModified = '2026-11-12';
+const dateModifiedLabel = '12 novembre 2026';
+
+const faq = [
+  {
+    question: 'Tous les combien de kilomètres faire la vidange à Dakar ?',
+    answer:
+      'Les constructeurs annoncent souvent 10 000 à 15 000 km. Avec la chaleur, la poussière et les embouteillages de Dakar, un intervalle de 5 000 à 7 500 km, ou tous les six mois, est souvent plus prudent. Le bon réglage dépend de votre moteur et de votre usage.',
+  },
+  {
+    question: 'Combien coûte une vidange à Dakar ?',
+    answer:
+      'Le prix dépend du modèle de la voiture et du type d’huile. Indiquez votre voiture et son kilométrage sur WhatsApp : Atelier Faye Auto vous donne un tarif clair avant d’intervenir.',
+  },
+  {
+    question: 'Ma voiture roule peu, dois-je quand même faire la vidange ?',
+    answer:
+      'Oui. L’huile vieillit aussi avec le temps, même quand la voiture roule peu. Les trajets courts et les arrêts dans la circulation la fatiguent sans que le compteur avance beaucoup. Une vidange tous les six mois reste un repère prudent.',
+  },
+  {
+    question: 'Faut-il changer les filtres à chaque vidange ?',
+    answer:
+      'Le filtre à huile, oui : une vidange sans lui ne sert qu’à moitié. Le filtre à air se contrôle à chaque passage, car la poussière le sature vite à Dakar, mais il ne se change pas forcément à chaque fois.',
+  },
+  {
+    question: 'Quelle huile faut-il pour ma voiture ?',
+    answer:
+      'Cela dépend du moteur et des préconisations du constructeur. Une huile inadaptée peut user le moteur plus vite. Donnez-nous le modèle et l’année de votre voiture, nous vous indiquons celle qui convient.',
+  },
+  {
+    question: 'Que contrôlez-vous en plus de la vidange ?',
+    answer:
+      'Les niveaux et les filtres, puis les points suivis à chaque entretien : freins, batterie, pneus et climatisation. Vous repartez en sachant ce qui a été fait et ce qu’il faudra prévoir.',
+  },
+];
+
+const schema = servicePageGraph({ service, title, description, image: ogImage, datePublished, dateModified, faq });
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Atelier Faye Auto" />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+
+  <body>
+    <header class="article-header">
+      <a href="/" class="logo-link" aria-label="Atelier Faye Auto">
+        <img class="logo-symbol" src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" width="450" height="202" />
+        <span class="logo-wordmark"><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+      </a>
+    </header>
+
+    <main class="article-shell service-page">
+      <div class="article-nav">
+        <a href="/" class="article-nav-btn">← Accueil</a>
+        <a href="/#services" class="article-nav-btn">Tous les services</a>
+      </div>
+      <nav class="breadcrumb" aria-label="Fil d’ariane">
+        <a href="/">Accueil</a> <span>›</span> <a href="/#services">Services</a> <span>›</span> Vidange et entretien
+      </nav>
+
+      <article class="article-body">
+        <p class="article-kicker">Services · Entretien</p>
+        <h1>Vidange et entretien de votre voiture à Dakar</h1>
+        <p class="article-byline">Par <strong>Matta Faye</strong>, mécanicien principal, Atelier Faye Auto · Mis à jour le {dateModifiedLabel}</p>
+        <img class="article-photo" src="/images/conseil-vidange.webp" alt="Huile moteur neuve versée lors d’une vidange, Atelier Faye Auto, Dakar" width="1672" height="941" loading="eager" fetchpriority="high" />
+        <p class="article-lead">
+          La vidange est l’entretien le plus simple, et celui qui protège le plus votre moteur. À Dakar, la
+          chaleur, la poussière et les embouteillages fatiguent l’huile plus vite que ne le prévoit le carnet du
+          constructeur. À l’atelier, nous faisons la vidange, les filtres, les niveaux et les contrôles
+          essentiels, et nous vous disons ce qui peut attendre.
+        </p>
+
+        <div class="service-summary">
+          <p class="service-summary-title">L’essentiel</p>
+          <p>
+            Atelier Faye Auto réalise la vidange et l’entretien courant des véhicules légers à Dakar : huile
+            moteur, filtres, niveaux et contrôles essentiels. Sous le climat et dans la circulation de Dakar, un
+            intervalle de 5 000 à 7 500 km, ou tous les six mois, est souvent plus prudent que les 10 000 à
+            15 000 km annoncés par les constructeurs. Indiquez votre modèle et votre kilométrage sur WhatsApp au
+            {garage.phoneDisplay} : nous vous donnons un tarif clair avant de passer. L’atelier est ouvert tous
+            les jours de 8h30 à 21h, à Colobane.
+          </p>
+        </div>
+
+        <h2>Les signes qu’il est temps de passer</h2>
+        <p>
+          Le premier repère est la jauge. Une huile neuve est ambrée et fluide. Quand elle ressort noire et
+          épaisse, ou que le niveau a baissé entre deux contrôles, la vidange ne doit plus attendre. Le voyant
+          d’huile ou le témoin d’entretien au tableau de bord disent la même chose, tout comme un moteur devenu
+          plus bruyant qu’avant.
+        </p>
+        <p>
+          Le second repère est le calendrier. Si vous ne savez plus quand la dernière vidange a été faite, ou si
+          vous venez d’acheter une voiture d’occasion sans carnet d’entretien, partez du principe qu’elle est à
+          faire. Pour choisir le bon intervalle selon votre usage, lisez notre article
+          <a href="/conseils/quand-faire-vidange-dakar/">quand faire sa vidange à Dakar</a>.
+        </p>
+        <p>
+          Un voyant qui s’allume sans raison évidente n’est pas toujours une question d’entretien. Dans ce cas,
+          un <a href="/services/diagnostic-auto-dakar/">diagnostic auto</a> permet de vérifier qu’il ne s’agit
+          pas d’une autre panne.
+        </p>
+
+        <h2>Comment se passe l’entretien à l’atelier</h2>
+        <ol>
+          <li>
+            <strong>Vous nous donnez les informations.</strong> Le modèle, l’année, le kilométrage et, si vous
+            la connaissez, la date de la dernière vidange, par WhatsApp.
+          </li>
+          <li>
+            <strong>Nous annonçons le tarif.</strong> Nous vous indiquons quand passer et ce que cela coûte,
+            avant votre déplacement.
+          </li>
+          <li>
+            <strong>Nous faisons la vidange.</strong> Remplacement de l’huile moteur et du filtre à huile,
+            contrôle du filtre à air, vérification des niveaux.
+          </li>
+          <li>
+            <strong>Nous faisons le tour des points essentiels.</strong> Freins, batterie, pneus et
+            climatisation : ce que l’on suit à chaque entretien.
+          </li>
+          <li>
+            <strong>Nous vous rendons compte.</strong> Ce qui a été fait, ce qu’il faudra prévoir, et quand
+            revenir pour la prochaine vidange.
+          </li>
+        </ol>
+
+        <div class="service-case">
+          <h2>Ce que racontent nos clients</h2>
+          <p>
+            <strong>Une voiture suivie depuis son achat.</strong> Avant d’acheter, Souleymane C. a fait
+            contrôler trois véhicules par l’atelier. Il a pris celui que Matta lui a confirmé. Dans son avis
+            Google, il écrit que la voiture n’est pas tombée en panne depuis, et que c’est aussi l’atelier qui
+            en assure l’entretien.
+          </p>
+          <p>
+            <strong>Des véhicules d’entreprise.</strong> Saliou F. indique confier à l’atelier le dépannage et
+            l’entretien des véhicules de son entreprise, et souligne les bons conseils reçus.
+          </p>
+          <p class="service-case-source">
+            Source : avis publiés par ces clients sur la
+            <a href={garage.mapsUrl} target="_blank" rel="noopener">fiche Google d’Atelier Faye Auto</a>.
+          </p>
+        </div>
+
+        <h2>Le mot de Matta Faye</h2>
+        <p class="matta-word">
+          « Une vidange faite à temps coûte toujours moins cher qu’un moteur fatigué. Quand je fais votre
+          entretien, je vous dis franchement ce qui doit être fait maintenant et ce qui peut attendre le
+          prochain passage. Je ne vous fais pas tout changer d’un coup. »
+        </p>
+        <p class="matta-sign"><strong>Matta Faye</strong>, mécanicien principal d’Atelier Faye Auto</p>
+
+        <section class="faq" aria-label="Questions fréquentes">
+          <h2>Questions fréquentes sur la vidange et l’entretien</h2>
+          {faq.map((item) => (
+            <details>
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
+        </section>
+
+        <div class="article-cta">
+          <h2>Votre vidange approche ? Dites-nous votre modèle</h2>
+          <p>
+            Envoyez le modèle de votre voiture, son année et son kilométrage sur WhatsApp. Nous vous indiquons
+            quand passer à l’atelier, à Dakar, et ce que cela coûte.
+          </p>
+          <div class="cta-row">
+            <a class="whatsapp-button" href={whatsappUrl}>Demander ma vidange sur WhatsApp</a>
+            <a class="call-button" href={telUrl}>Appeler le {garage.phoneDisplay}</a>
+          </div>
+        </div>
+
+        <h2>Nos autres services à Dakar</h2>
+        <div class="article-nav">
+          {otherServices.map((item) => (
+            <a class="article-nav-btn" href={item.path}>{item.name}</a>
+          ))}
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col footer-brand">
+          <div class="footer-logo">
+            <img src="/images/logo-af-header-transparent.webp" alt="Atelier Faye Auto" width="450" height="202" loading="lazy" decoding="async" />
+            <span><strong>ATELIER</strong> <em>FAYE</em> <strong>AUTO</strong></span>
+          </div>
+          <p>Garage auto à Dakar : diagnostic, entretien et réparation.</p>
+          <p class="footer-addr">Colobane, Dakar, à proximité de la mosquée Massalikoul Djinane.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="/services/diagnostic-auto-dakar/">Diagnostic auto</a></li>
+            <li><a href="/services/vidange-entretien-dakar/">Vidange et entretien</a></li>
+            <li><a href="/services/climatisation-auto-dakar/">Climatisation auto</a></li>
+            <li><a href="/services/reparation-freins-dakar/">Réparation des freins</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href={whatsappUrl}>Nous écrire sur WhatsApp</a></li>
+            <li><a href="tel:+221774797157">Appeler le 77 479 71 57</a></li>
+            <li>Ouvert tous les jours, de 8h30 à 21h</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/#services">Tous les services</a></li>
+            <li><a href="/conseils/">Conseils auto</a></li>
+            <li><a href="/#contact">Adresse et itinéraire</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Atelier Faye Auto</span>
+        <span>Site réalisé par <a href="https://teranga-web-digital.com/" target="_blank" rel="noopener">Teranga Web Digital</a></span>
+      </div>
+    </footer>
+    <button class="back-to-top" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <script>
+      const topBtn = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', () => {
+        topBtn.classList.toggle('visible', window.scrollY > 400);
+      });
+    </script>
+  </body>
+</html>
